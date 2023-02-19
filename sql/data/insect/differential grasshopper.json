@@ -1,0 +1,34 @@
+{
+	"id": "17",
+	"korean_name": "\ube57\uc0b4\ubb34\ub2ac\ubbf8\uc8fc\uba54\ub69c\uae30",
+	"english_name": "differential grasshopper",
+	"summary": "The differential grasshopper (Melanoplus differentialis) is a species of grasshopper belonging to the genus Melanoplus. It is found throughout northern Mexico, the central United States and southern Ontario, Canada. It is considered a pest over most of its range.",
+	"kind": "insect",
+	"image": "https://kias.nie.re.kr/upload_data/cls/202208/20220818161855330_thumb.jpg",
+	"shape": "Adults are green, yellow, brown, etc., and melanistic objects are found in some areas. The black V-shaped pattern on the back of the femur in both males and females is an important classification feature, the size of males is 28-37mm, the size of females is about 34-50mm, belonging to a large species compared to common locusts in Korea,",
+	"ecological": {
+		"habitat": "no data",
+		"lifespan": "no data",
+		"etc": "There is one generation per year, and it grows into an adult in 32 days in the early summer heat."
+	},
+	"introduction": {
+		"origin": "North and Central America, including Canada, the United States, and Mexico",
+		"period": "no data",
+		"purpose": "no data"
+	},
+	"distribution": "Found in Ulsan Industrial Complex",
+	"effect": {
+		"ecosystem": "As a polyphagous pest, it feeds on both narrow-leaved and broad-leaved herbaceous plants, and generally prefers broad-leaved plants over narrow-leaved plants. It favors scarred sunflowers, causing serious damage to a variety of herbaceous plants and fruit trees, including cereals, maize, alfalfa, soybeans, and cotton. The nymphs attack grain, alfalfa, and pasture crops, and the adult flies devastate corn fields in three to four days.",
+		"entity": "no data"
+	},
+	"regulate": {
+		"past": "no data",
+		"reason": "no data",
+		"method": "no data"
+	},
+	"designation": {
+		"domestic": "Announcement on designation of organisms disturbing ecosystems 2020. 12. 30.",
+		"overseas": "no data",
+		"organization": "no data"
+	}
+}

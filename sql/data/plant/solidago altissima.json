@@ -1,0 +1,30 @@
+{
+	"id": "33",
+	"korean_name": "\uc591\ubbf8\uc5ed\ucde8",
+	"english_name": "solidago altissima",
+	"summary": "Solidago altissima, the tall goldenrod or late goldenrod, is a North American species of goldenrod in the family Asteraceae which is widespread across much of Canada, the United States, and northern Mexico. It is common in much of its range and fairly tolerant of landscapes which have been disturbed by humans. It has become naturalized in many parts of the world.",
+	"kind": "plant",
+	"image": "https://kias.nie.re.kr/upload_data/cls/202112/20211201163846461",
+	"shape": {
+		"flower": {
+			"description": "Guns are cylindrical, 3-4mm high, snow shoes are magnetic, and the end of the stigma is double-rowed. Normal flowers are benign, the stigma is in two rows, and the lobe is oblong.",
+			"color": "yellow"
+		},
+		"size": "100-250cm",
+		"stem": "There is an underground stem, and there are soft and long coarse hairs all over.",
+		"leaf": "It is lanceolate with a length of 3~10cm, has 3 distinct veins, both ends are pointed, and has a slight low serrate on the upper half.",
+		"fruit": "Tubular white, three times as many as achene."
+	},
+	"ecological": {
+		"habitat": {
+			"domestic": "roadside",
+			"oversea": "roadside"
+		},
+		"growth_period": "perennial",
+		"bloom_period": "no data"
+	},
+	"introduction": {
+		"origin": "North America",
+		"period": "Influx before 1974"
+	}
+}

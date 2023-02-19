@@ -1,0 +1,34 @@
+{
+	"id": "2",
+	"korean_name": "\ub291\ub300\uac70\ubd81",
+	"english_name": "common snapping turtle",
+	"summary": "The common snapping turtle (Chelydra serpentina) is a species of large freshwater turtle in the family Chelydridae. Its natural range extends from southeastern Canada, southwest to the edge of the Rocky Mountains, as far east as Nova Scotia and Florida. The three species of Chelydra and the larger alligator snapping turtles (genus Macrochelys) are the only extant chelydrids, a family now restricted to the Americas. The common snapping turtle, as its name implies, is the most widespread.The common snapping turtle is noted for its combative disposition when out of the water with its powerful beak-like jaws, and highly mobile head and neck (hence the specific epithet serpentina, meaning \"snake-like\"). In water, it is likely to flee and hide underwater in sediment. The common snapping turtle has a life-history strategy characterized by high and variable mortality of embryos and hatchlings, delayed sexual maturity, extended adult longevity, and iteroparity (repeated reproductive events) with low reproductive success per reproductive event.Females, and presumably also males, in more northern populations mature later (at 15\u201320 years) and at a larger size than in more southern populations (about 12 years). Lifespan in the wild is poorly known, but long-term mark-recapture data from Algonquin Park in Ontario, Canada, suggest a maximum age over 100 years.",
+	"kind": "reptile",
+	"image": "https://kias.nie.re.kr/upload_data/cls/202211/20221101174631201_thumb.jpg",
+	"shape": "The tortoiseshell of the wolf turtle grows up to 50 cm at maximum growth, and is usually about 25 to 47 cm. The weight is about 6 kg on average, and males have a larger body size than females, and in the case of males, the weight grows to about 10 kg. Although not common in the wild, individuals weighing 39 kg have been reported. The tail is long, similar to the length of the carapace. The color of the carapace is dark brown to yellowish brown, but some individuals have black carapaces. The color of the neck, legs and tail is yellow, and the legs and neck have small nodules, making them look bumpy. The head is a bit darker than the rest of the body.",
+	"ecological": {
+		"habitat": "Its habitat is shallow ponds or streams, but some individuals live in brackish waters. They usually hide in the mud at the bottom of shallow rivers and breathe by sticking their necks out and putting their heads out of the water.",
+		"lifespan": "The wolf turtle has a very good appetite, so it can eat anything it can eat with its jaws. They also eat a variety of taxa, including dead animals, invertebrates, fish, birds, small mammals, amphibians, and aquatic plants.",
+		"etc": "no data"
+	},
+	"introduction": {
+		"origin": "Canada, USA",
+		"period": "no data",
+		"purpose": "bred as pets"
+	},
+	"distribution": "no data",
+	"effect": {
+		"ecosystem": "If bitten by a wolf turtle, it can cause serious injury and there is a risk of infection, so you need to be careful. Even if you hold the tail, it can be bitten or scratched, and care must be taken as it can harm other animals. Out of the water, it is aggressive, has a strong beak, strong legs and claws, and requires sufficient attention due to its long neck and tail. Both young and adult wolves that are privately owned should not go out into the natural ecosystem.",
+		"entity": "no data"
+	},
+	"regulate": {
+		"past": "no data",
+		"reason": "no data",
+		"method": "no data"
+	},
+	"designation": {
+		"domestic": "no data",
+		"overseas": "Japan (Specified Alien Organisms), USA (Arizona, California, Nevada, Oregon), Germany (DAISE), Netherlands (DAISE)",
+		"organization": "no data"
+	}
+}

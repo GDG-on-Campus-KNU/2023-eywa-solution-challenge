@@ -1,0 +1,34 @@
+{
+	"id": "12",
+	"korean_name": "\uae34\ub2e4\ub9ac\ube44\ud2c0\uac1c\ubbf8",
+	"english_name": "crazy ant",
+	"summary": "Paratrechina is one of seven ant genera (alongside Euprenolepis, Nylanderia, Paraparatrechina, Prenolepis, Pseudolasius, and Zatania) in the Prenolepis genus-group from the subfamily Formicinae (tribe Lasiini). Six species are included in Paratrechina; one of which, the longhorn crazy ant (Paratrechina longicornis), is a widespread, pantropical pest.",
+	"kind": "insect",
+	"image": "https://kias.nie.re.kr/upload_data/cls/202103/20210302090808140_thumb.jpg",
+	"shape": "It is a typical small-medium size, usually 2-4mm in length, and there are individuals that are more than 5mm depending on the class difference. Worker ants are monomorphic, the same size and shape, and workers are all the same size. The chest is yellow and the abdomen is brownish. It is characterized by its antennae and legs being longer than its body, and its chest is also thin and long. The large jaw has 8 teeth, and the antenna has 11 segments. The antennal scape is more than twice the length of the head. There are thick hairs on the head and abdomen, but no thick hairs on the chest.",
+	"ecological": {
+		"habitat": "It creates a colony regardless of whether it is an agricultural area or a city. In addition, yellow crazy ants that have invaded the forest live in symbiosis with aphids and increase their population, forming a much denser colony than normal ants. It also recorded the highest density ever with a density of 2,254 individuals per square meter and 10.5 colonies.",
+		"lifespan": "In the invaded area, most creatures such as arthropods, reptiles, birds, and mammals, including endemic species, are attacked or collided with.",
+		"etc": "Worker ants live 76-84 days for their size."
+	},
+	"introduction": {
+		"origin": "Tropical Africa, Southeast Asia",
+		"period": "no data",
+		"purpose": "no data"
+	},
+	"distribution": "no data",
+	"effect": {
+		"ecosystem": "In the invaded area, most creatures such as arthropods, reptiles, birds, and mammals, including endemic species, are attacked or collided with. High colony densities prey on the central species of the area, rapidly altering ecosystem structure and harming native species. In particular, unstable and disturbed environments such as cities, forested areas, and agricultural lands are suitable habitats for rapid invasions and are susceptible to exposure.",
+		"entity": "In the tropical rain forest of Christmas Island in the Indian Ocean, a case of attack and death by Anoploepis gracilipes, an endemic red crab, has been reported. It also predicts that endemic birds, unique to Christmas Island, are endangered and will face extinction through habitat change and direct attack. Cinnamon, tangerine, coffee, banana, rambutan, mango, durian, etc. settle in various farmlands to form colonies and cause damage."
+	},
+	"regulate": {
+		"past": "no data",
+		"reason": "no data",
+		"method": "For chemical control, there is a method of using a drug that acts on the digestive system by mixing poison with bait and a method of using a drug that inhibits growth. Drugs that act on the digestive system have the advantage of being fast-acting, while growth inhibitory drugs act relatively slowly, but can be expected to have an effect that spreads to the entire population. When using these chemical controls, special care must be taken to ensure that they do not affect native ants and only affect invasive species. Overseas, research on pheromones, baits, and drugs is continuously progressing."
+	},
+	"designation": {
+		"domestic": "Announcement on designation of organisms disturbing ecosystems 2020. 12. 30.",
+		"overseas": "no data",
+		"organization": "IUCN-100 harmful alien species to the ecosystem, IUCN/SSC-Invasive Species Group (ISSG) (specific invasive species)"
+	}
+}

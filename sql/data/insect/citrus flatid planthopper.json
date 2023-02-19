@@ -1,0 +1,34 @@
+{
+	"id": "15",
+	"korean_name": "\ubbf8\uad6d\uc120\ub140\ubc8c\ub808",
+	"english_name": "citrus flatid planthopper",
+	"summary": "Metcalfa pruinosa, the citrus flatid planthopper, is a species of insect in the Flatidae family of planthoppers first described by Thomas Say in 1830.",
+	"kind": "insect",
+	"image": "https://kias.nie.re.kr/upload_data/cls/202111/20211125141647913_thumb.jpg",
+	"shape": "The adult size is 7.5~8.5mm, the width is about 2~3mm, and the egg is about 0.8mm in size and has a white cylindrical shape. The size of the nymph is about 3 to 4 mm, and it is white to light green in color. A white waxy substance is attached to the tip of the back. The size of the last nymph is about 5-6mm and has white waxy hairs attached. Forewing gray to brownish, almost rectangular, with 3 to 6 black spots on the prothorax and scattered white spots on the back. The pronotum is gray to blackish brown, the whole body is covered with hairs, and the compound eyes are bright yellow to yellowish. It has sucking mouthparts, its legs are yellow, and its hind legs are developed so it bounces well.",
+	"ecological": {
+		"habitat": "no data",
+		"lifespan": "no data",
+		"etc": "no data"
+	},
+	"introduction": {
+		"origin": "North America",
+		"period": "no data",
+		"purpose": "no data"
+	},
+	"distribution": "In Korea, it was first confirmed in 2009 in Seoul, Gyeonggi, and Gyeongnam. However, judging from the 2005 report on cicada damage by the Korea Persimmon Research Association, it is presumed to be an invading pest before that time. Distribution in Korea: Nationwide",
+	"effect": {
+		"ecosystem": "Nymphs eat the leaves of trees, and adults suck the sap of plants to weaken the vigor of trees. In addition, nectar is discharged to cause soot disease, and mold and the like are adsorbed on persimmon leaves, branches, and fruits, causing damage such as sluggish growth and product inhibition. Since viral diseases are reported, children and the elderly need to be careful to avoid contact as much as possible.",
+		"entity": "no data"
+	},
+	"regulate": {
+		"past": "no data",
+		"reason": "no data",
+		"method": "In the method of using insecticides as managed pests defined by the Plant Quarantine Service, pesticidal effects were shown for 5 organophosphates (dichlorvos, fenitrothion, fenthion, methidathion, phenthoate) and 1 carbamate, and control of adjacent forests at the same time shall. For effective control, pesticides are sprayed between May and mid-June, the nymph season, to kill nymphs and imagos, and then control is carried out once more 7 to 10 days after hatching from eggs. Also remove dead branches of plants in winter to block the source."
+	},
+	"designation": {
+		"domestic": "Announcement on designation of organisms disturbing ecosystems 2020. 3. 30.",
+		"overseas": "no data",
+		"organization": "no data"
+	}
+}
