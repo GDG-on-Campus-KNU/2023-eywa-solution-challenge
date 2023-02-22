@@ -1,0 +1,30 @@
+{
+	"id": "20",
+	"korean_name": "\uac00\uc2dc\ubc15",
+	"english_name": "bur cucumber",
+	"summary": "Bur cucumber is a common name for several plants and may refer to:  Cucumis anguria, native to Africa and naturalized in many other parts of the world Echinocystis lobata, native to North America Sicyos Sicyos angulatus, native to eastern North America",
+	"kind": "plant",
+	"image": "https://kias.nie.re.kr/upload_data/cls/202203/20220321103023133",
+	"shape": {
+		"flower": {
+			"description": "Monoecious, male flower length 10cm, diameter 1cm, hangs at the end of long peduncle, anthers are fused to form a lump. 1 cm in diameter and about 10 cm in length. Female flowers are 6mm in diameter, light green, with one pistil, forming a cap at the end of a short peduncle.",
+			"color": "Yellowish white (male flowers), pale green (female flowers)"
+		},
+		"size": "4-8 pm",
+		"stem": "vine nature. Climbs to wind other objects with tendrils split into 3 or 4, angular, densely pubescent.",
+		"leaf": "Round, 5-7 thousand rows, 8-12 cm in diameter, base, acute or apices. Petiole 3-12 cm long, densely hairy.",
+		"fruit": "Long oval shape, no stalk, 3-10 clustered, covered with thin thorns"
+	},
+	"ecological": {
+		"habitat": {
+			"domestic": "river side",
+			"overseas": "no data"
+		},
+		"growth_period": "first year",
+		"bloom_period": "no data"
+	},
+	"introduction": {
+		"origin": "North America",
+		"period": "'89 - '93"
+	}
+}

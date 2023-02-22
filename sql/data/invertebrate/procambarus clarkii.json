@@ -1,0 +1,34 @@
+{
+	"id": "19",
+	"korean_name": "\ubbf8\uad6d\uac00\uc7ac",
+	"english_name": "procambarus clarkii",
+	"summary": "Procambarus clarkii, known variously as the red swamp crayfish, Louisiana crawfish or mudbug, is a species of cambarid crayfish native to freshwater bodies of northern Mexico, and southern and southeastern United States, but also introduced elsewhere (both in North America and other continents), where it is often an invasive pest.",
+	"kind": "invertebrate",
+	"image": "https://kias.nie.re.kr/upload_data/cls/202111/20211125133343949_thumb.jpg",
+	"shape": "Adults are red, and juveniles are black with a deep red tone. The claws are large and thick. The antennae are two, thread-shaped with tapered ends. Four pairs of small legs run on each side of the belly. The shell is hard and forms six nodes on the back side to cover the back. The eyes are protruding and the tail feathers are spread out like a fan.",
+	"ecological": {
+		"habitat": "Lives in warm freshwater with steady or slow flow",
+		"lifespan": "no data",
+		"etc": "no data"
+	},
+	"introduction": {
+		"origin": "U.S. Gulf Coast Mexico, Florida, Illinois, and Ohio",
+		"period": "no data",
+		"purpose": "For pets and viewing"
+	},
+	"distribution": "In 2006, several fish were caught in the pond of Yongsan Family Park in Seoul.",
+	"effect": {
+		"ecosystem": "no data",
+		"entity": "In Europe, the population of the native European crayfish (Astacus astacus) has declined significantly due to red crayfish, which is not due to habitat or food competition, but to disease transmission by Aphabomyces astaci, a fungus associated with red crayfish."
+	},
+	"regulate": {
+		"past": "no data",
+		"reason": "The red crayfish has large and sharp claws, so it is easy to injure them if bitten. Red crayfish are mainly imported, distributed, and bred for ornamental purposes, but attention is required because of the high possibility of settlement when released into nature. Resistance to water pollution is also higher than that of indigenous crayfish in Korea, so attention should be paid to the possibility of settling in the discharged area and leading to secondary spread.",
+		"method": "Areas where red crayfish sellers and individual owners are connected require attention to prevent them from going out into the natural ecosystem, and certain observational investigations are required in areas with high risk of entering the ecosystem or areas where they have already appeared. Areas where incipient settling is confirmed and a spreading tendency is indicated require removal."
+	},
+	"designation": {
+		"domestic": "Announcement on the designation of organisms disturbing the ecosystem 2019. 10. 11.",
+		"overseas": "US (California), UK, Netherlands, China",
+		"organization": "no data"
+	}
+}

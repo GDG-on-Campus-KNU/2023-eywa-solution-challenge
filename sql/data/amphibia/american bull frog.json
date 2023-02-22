@@ -1,0 +1,34 @@
+{
+	"id": "7",
+	"korean_name": "\ud669\uc18c\uac1c\uad6c\ub9ac",
+	"english_name": "american bull frog",
+	"summary": "The American bullfrog (Lithobates catesbeianus), often simply known as the bullfrog in Canada and the United States, is a large true frog native to eastern North America. It typically inhabits large permanent water bodies such as swamps, ponds, and lakes. Bullfrogs can also be found in manmade habitats such as pools, koi ponds, canals, ditches and culverts. The bullfrog gets its name from the sound the male makes during the breeding season, which sounds similar to a bull bellowing. The bullfrog is large and is commonly eaten throughout its range, especially in the southern United States where they are plentiful. Their presence as a food source has led to bullfrogs being distributed around the world outside of their native range. Bullfrogs have been introduced into the Western United States, South America, Western Europe, China, Japan, and southeast Asia. In these places they are invasive species due to their voracious appetite and the large number of eggs they produce, having a negative effect on native amphibians and other fauna. Bullfrogs are very skittish which makes capture difficult and so they often become established. Other than for food, bullfrogs are also used for dissection in science classes. Albino bullfrogs are sometimes kept as pets, and bullfrog tadpoles are often sold at pond or fish stores.",
+	"kind": "amphibia",
+	"image": "https://kias.nie.re.kr/upload_data/cls/202111/20211125111945996_thumb.jpg",
+	"shape": "It is the largest species of frog, growing up to 20 cm in size and weighing up to 500 g. There are no projections on the entire back of the bullfrog, but both males and females have a few small projections only behind the upper part of the eye. Its skin color varies from brown to green, and it has a dark mottled pattern on its back. The color of the dorsal side is light green or brown, and there are sparse black spots on the dorsal side of the hind feet. However, it is thought that the color of the body is affected by environmental factors as it shows a slight difference depending on the gathering place or season. In particular, as the body color changes to dark brown when the temperature decreases, it seems that the body color is closely related to the maintenance of body temperature. On the other hand, in the case of males, the abdomen is dark white, and the forepaws, neck, and edges of the abdomen are golden yellow. In the case of females, the abdomen is also dark white, and the edge is characterized by brown patterns. During the breeding season, the male's neck is yellow, while the female's is white. The eardrum, which exists behind the eye, is about twice as large as the pupil in males, and similar in size to or smaller in females. And on the first toe of the male's forepaw, you can observe the mating land, which is a black raised protrusion. The toes on the hind legs are fully webbed. As examined above, males are easily distinguished from females because their eardrums are larger than their pupils and there is a mating land formed on their toes. However, coloration on the ventral side may be characteristic of the breeding season.",
+	"ecological": {
+		"habitat": "It lives in water and is found in lakes, ponds, rivers, and swamps. They prefer shallow waters with relatively high water temperatures. It likes warm temperatures, and when the weather gets cold, it digs a hole in the ground and hibernates.",
+		"lifespan": "It sits still and hunts passing prey, but quickly sticks out its tongue to catch the prey and put it into its mouth. It is carnivorous and eats snakes, insects, larvae, frogs, tadpoles, salamanders, and crustaceans, and often eats its own relatives.",
+		"etc": "The average lifespan is 7 to 9 years."
+	},
+	"introduction": {
+		"origin": "North America (Canada, USA, Mexico)",
+		"period": "1971",
+		"purpose": "edible"
+	},
+	"distribution": "Distributed nationwide",
+	"effect": {
+		"ecosystem": "In almost all areas where it has been introduced, it presents the following ecological risks. It is resistant to Batrachochytrium dendrobatidis, which is fatal to amphibians, and acts as a carrier. In the United States, it damages the native species Pseudacris regilla, Rana aurora, Lithobates blairi, Lithobates pipiens, and Lithobates yavapaiensis. Similar damage to native species has been reported in Germany, several species of the Rana genus in Florence, Italy, and damage to native fish in the province of Aquitaine in southwestern France. In addition, endangered species such as Anaxyrus nelsoni, Ambystoma californiense, Lithobates chiricahuensis, Rana draytonii, and Rana pretiosa were eaten in the United States, and there were cases of damage to native species in Japan. They also change the ecological environment in the inflow area, and several field studies have confirmed that bullfrog tadpoles change biological resources. And their voracious appetite and high population density change the nutrient system by affecting the nutrient cycle and primary production system of freshwater ecosystems. And, unlike other frog species, it competes with the native species of the introduced area and can coexist with carnivorous fish species, gaining a competitive advantage.",
+		"entity": "Among the endemic amphibians in Korea, as they compete with and dominate the species of Frogidae, the population of endemic species decreases and as a predator of native fish, fish resources are reduced."
+	},
+	"regulate": {
+		"past": "Japan and Taiwan control the import, export and possession of objects, and England, Germany, Venezuela, and France directly capture objects using firearms, spears, nets, traps, etc., collect eggs, and educate foreign species. The specimen has been exterminated in the UK. In Korea, due to large-scale eradication and natural enemies, it is on the decline, but in some areas, large populations are still maintained.",
+		"reason": "Because it shakes the ecosystem food chain, it is necessary to gradually adjust the density.",
+		"method": "Political net, trotter, longline"
+	},
+	"designation": {
+		"domestic": "2013. 2. 2. (Announcement on the designation of exotic animals and plants endangering the ecosystem 1998. 2. 19.)",
+		"overseas": "United States (Colorado, California), United Kingdom, Netherlands, Japan",
+		"organization": "Listed as one of the world's top 100 invasive alien species by IUCN"
+	}
+}

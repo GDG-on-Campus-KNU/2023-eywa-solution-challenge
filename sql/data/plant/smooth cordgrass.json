@@ -1,0 +1,30 @@
+{
+	"id": "22",
+	"korean_name": "\uac2f\uc904\ud480",
+	"english_name": "smooth cordgrass",
+	"summary": "Sporobolus alterniflorus, or synonymously known as Spartina alterniflora, the smooth cordgrass, saltmarsh cordgrass, or salt-water cordgrass, is a perennial deciduous grass which is found in intertidal wetlands, especially estuarine salt marshes. It has been reclassified as Sporobolus alterniflorus after a taxonomic revision in 2014, but it is still common to see Spartina alterniflora and in 2019 an interdisciplinary team of experts coauthored a report published in the journal Ecology supporting Spartina as a genus. It grows 1\u20131.5 m (3 ft 3 in \u2013 4 ft 11 in) tall and has smooth, hollow stems that bear leaves up to 20\u201360 cm (7.9 in \u2013 1 ft 11.6 in) long and 1.5 cm (1\u20442 in) wide at their base, which are sharply tapered and bend down at their tips. Like its relative saltmeadow cordgrass S. patens, it produces flowers and seeds on only one side of the stalk. The flowers are a yellowish-green, turning brown by the winter. It has rhizoidal roots, which, when broken off, can result in vegetative asexual growth. The roots are an important food resource for snow geese. It can grow in low marsh (frequently inundated by the tide) as well as high marsh (less frequently inundated), but it is usually restricted to low marsh because it is outcompeted by salt meadow cordgrass in the high marsh. It grows in a wide range of salinities, from about 5 psu to marine (32 psu), and has been described as the \"single most important marsh plant species in the estuary\" of Chesapeake Bay. It is described as intolerant of shade.S. alterniflorus is noted for its capacity to act as an environmental engineer. It grows out into the water at the seaward edge of a salt marsh, and accumulates sediment and enables other habitat-engineering species, such as mussels, to settle. This accumulation of sediment and other substrate-building species gradually builds up the level of the land at the seaward edge, and other, higher-marsh species move onto the new land. As the marsh accretes, S. alterniflorus moves still further out to form a new edge. S. alterniflorus grows in tallest forms at the outermost edge of a given marsh, displaying shorter morphologies up onto the landward side of the Sporobolus belt. S. alterniflorus is native to the Atlantic coast of the Americas from Newfoundland, Canada, south to northern Argentina, where it forms a dominant part of brackish coastal saltmarshes. The caterpillars of Aaron's skipper (Poanes aaroni) have only been found on this species to date.",
+	"kind": "plant",
+	"image": "https://kias.nie.re.kr/upload_data/cls/201802/20180202094818938",
+	"shape": {
+		"flower": {
+			"description": "Inflorescences 10-12 inches long, on stem ends.",
+			"color": "no data"
+		},
+		"size": "0.6-2.1m",
+		"stem": "It is soft and spongy, about 1.3 cm in diameter, and expands to the periphery using a long, hollow rhizome, from which new stems emerge.",
+		"leaf": "Foliage flattened, usually 30-51 cm long. Tapered towards the end and curled inward at the end",
+		"fruit": "Inflorescences contain 12-15 spikelets 2-3 inches long."
+	},
+	"ecological": {
+		"habitat": {
+			"domestic": "no data",
+			"overseas": "no data"
+		},
+		"growth_period": "perennial",
+		"bloom_period": "no data"
+	},
+	"introduction": {
+		"origin": "North America, Argentina",
+		"period": "no data"
+	}
+}

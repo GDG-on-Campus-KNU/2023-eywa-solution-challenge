@@ -1,0 +1,30 @@
+{
+	"id": "28",
+	"korean_name": "\ubb3c\ucc38\uc0c8\ud53c",
+	"english_name": "paspalum distichum",
+	"summary": "Paspalum distichum is a species of grass. Common names include knotgrass, water finger-grass, couch paspalum, eternity grass, gingergrass, and Thompson grass. Its native range is obscure because it has long been present on most continents, and in most areas it is certainly an introduced species. Its native range probably includes parts of the tropical Americas. This is a perennial grass forming clumps and spreading via rhizomes and stolons. It grows decumbent or erect to a maximum height near 60 centimeters. The inflorescence is usually divided into two branches lined with spikelets. Paspalum distichum is a food source for several avian species, including the long-tailed widowbird.",
+	"kind": "plant",
+	"image": "https://kias.nie.re.kr/upload_data/cls/202203/20220323103909635",
+	"shape": {
+		"flower": {
+			"description": "A small number of oblong, 3mm long, produced in fine hairs. First glumes degenerated and scaled. Second glumes 3-5 veins, same length as shoots. The first digestion is infertile, the second digestion is benign, fertile, and the same length as the prime. Oh Young-eun 3 mac. Stigma black purple, anther length 1.5mm.",
+			"color": "pale green"
+		},
+		"size": "20-40cm",
+		"stem": "Upright, basal creeping, rooted at nodes.",
+		"leaf": "5-10 cm long, 6-8 mm wide, hairless. Sheaths usually hairless, shorter than internodes.",
+		"fruit": "no data"
+	},
+	"ecological": {
+		"habitat": {
+			"domestic": "marsh",
+			"overseas": "no data"
+		},
+		"growth_period": "perennial",
+		"bloom_period": "no data"
+	},
+	"introduction": {
+		"origin": "Tropical Asia, South America",
+		"period": "1964-present"
+	}
+}

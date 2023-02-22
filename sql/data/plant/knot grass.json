@@ -1,0 +1,30 @@
+{
+	"id": "35",
+	"korean_name": "\ud138\ubb3c\ucc38\uc0c8\ud53c",
+	"english_name": "knot grass",
+	"summary": "Knotgrass or knot grass is the common name for several plants and a moth and may refer to:  Paspalum distichum, a species of grass Polygonum, a genus of plants in the buckwheat family, more often known as knot weed Acronicta rumicis, a moth of the family Noctuidae",
+	"kind": "plant",
+	"image": "https://kias.nie.re.kr/upload_data/cls/202112/20211201155924879",
+	"shape": {
+		"flower": {
+			"description": "Inflorescence consists of 2-3 shoots. Length of gun 5-10 cm, each gun has 2-4 rows of decimals. Minor oblong, 3.2-3.6 mm long, 1.2-1.6 mm wide. 1st glumes lanceolate, membranous, 1-3 veins. Second glumes 3-5 veins. First digestive sterility. Second digestion positive, mature, same length as prime. Hoyoung leather, hairless. short bristles at the ends of the prongs.",
+			"color": "no data"
+		},
+		"size": "20-40cm",
+		"stem": "Growing straight or spread widely over the water surface. prostrate protuberance.",
+		"leaf": "5-20 cm long, 5-10 mm wide, white hair. Dense growth of long white hairs in the form of papillae at the base of leaf sheaths and nodes. Lingue 0.5 mm long, truncated.",
+		"fruit": "no data"
+	},
+	"ecological": {
+		"habitat": {
+			"domestic": "marsh",
+			"overseas": "no data"
+		},
+		"growth_period": "perennial",
+		"bloom_period": "no data"
+	},
+	"introduction": {
+		"origin": "North America",
+		"period": "1994"
+	}
+}

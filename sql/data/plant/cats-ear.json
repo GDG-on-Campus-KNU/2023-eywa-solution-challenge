@@ -1,0 +1,30 @@
+{
+	"id": "30",
+	"korean_name": "\uc11c\uc591\uae08\ud63c\ucd08",
+	"english_name": "cats-ear",
+	"summary": "Cat's ear is the common name for several species of flowering plants:  Hypochaeris species, especially Hypochaeris radicata Some Calochortus species, also called mariposa lilies",
+	"kind": "plant",
+	"image": "https://kias.nie.re.kr/upload_data/cls/202203/20220321105811033",
+	"shape": {
+		"flower": {
+			"description": "It blooms one by one at the end of a douhwa branch, about 3cm in diameter, arranged in 3 overlapping rows of involucre, standing upright, in a row on the central vein. 5 inches at the tip of the tongue. Long hair on the top of the trunk. 1/2 of the crown tube. Burn scale 1.5 cm, membranous, 1 vein.",
+			"color": "orange yellow"
+		},
+		"size": "30-50cm",
+		"stem": "Many stems, hairless and thin. Scales 2-10 mm long are attached here and there, later becoming black.",
+		"leaf": "rhizome. escape type. 4-12 cm long, 1-2 cm wide, 4-8 pairs of pinnate fissures or deep fissures, both sides yellowish-brown, densely packed with long hairs.",
+		"fruit": "Spiny projections grow densely on the surface of the fruit. It has a very thin beak."
+	},
+	"ecological": {
+		"habitat": {
+			"domestic": "Fields, roadsides, grasslands, lawns, open fields, etc.",
+			"overseas": "no data"
+		},
+		"growth_period": "perennial",
+		"bloom_period": "no data"
+	},
+	"introduction": {
+		"origin": "europe",
+		"period": "Before 1992"
+	}
+}
