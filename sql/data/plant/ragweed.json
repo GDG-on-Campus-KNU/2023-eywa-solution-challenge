@@ -18,7 +18,7 @@
 	"ecological": {
 		"habitat": {
 			"domestic": "roadside, paddock, riverside",
-			"oversea": "farmland, pasture"
+			"overseas": "farmland, pasture"
 		},
 		"growth_period": "first year",
 		"bloom_period": "no data"

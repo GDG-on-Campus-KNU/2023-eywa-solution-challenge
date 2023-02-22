@@ -17,8 +17,8 @@
 	},
 	"ecological": {
 		"habitat": {
-			"domestic": "It forms a large colony in moist and fertile soil with good sunlight such as fields, roadsides, embankments, wastelands, fields, water sources, gardens, foothills, and forest edges, and grows well in other soils.",
-			"oversea": "river side"
+			"domestic": "It forms a large colony in moist and fertile soil with good sunlight such as fields, roadsides, embankments, wastelands, fields, water sources, gardens, foothills, forest edges, etc., and grows well in other soils.",
+			"overseas": "river side"
 		},
 		"growth_period": "first year",
 		"bloom_period": "July, August"

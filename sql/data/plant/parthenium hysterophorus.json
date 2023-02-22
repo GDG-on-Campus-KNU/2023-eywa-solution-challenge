@@ -4,7 +4,7 @@
 	"english_name": "parthenium hysterophorus",
 	"summary": "Parthenium hysterophorus is a species of flowering plant in the family Asteraceae. It is native to the American tropics. Common names include Santa-Maria, Santa Maria feverfew, whitetop weed, and famine weed. In India, it is locally known as carrot grass, congress grass or Gajar Ghas or Dhanura. It is a common invasive species in India, Australia, and parts of Africa.",
 	"kind": "plant",
-	"image": "https://kias.nie.re.kr/upload_data/b_image/bimage265_1.jpg",
+	"image": "https://kias.nie.re.kr/upload_data/cls/202302/20230215132217290",
 	"shape": {
 		"flower": {
 			"description": "Head flowers 3-6 mm in diameter. About 40 ornamental flowers in the center of the head flower are male flowers, and 5 tongue flowers on the edge are female flowers.",
@@ -18,7 +18,7 @@
 	"ecological": {
 		"habitat": {
 			"domestic": "roadside, beach",
-			"oversea": "me"
+			"overseas": "me"
 		},
 		"growth_period": "first year",
 		"bloom_period": "no data"

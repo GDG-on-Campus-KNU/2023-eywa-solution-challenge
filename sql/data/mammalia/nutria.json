@@ -1,34 +1,34 @@
 {
-	"id": "\ufeff1",
-	"korean_name": "\ub274\ud2b8\ub9ac\uc544",
-	"english_name": "nutria",
-	"summary": "The nutria (Myocastor coypus), also known as the coypu, is a large, herbivorous, semiaquatic rodent. Classified for a long time as the only member of the family Myocastoridae, Myocastor is now included within Echimyidae, the family of the spiny rats. The nutria lives in burrows alongside stretches of water, and feeds on river plant stems. Originally native to subtropical and temperate South America, it has since been introduced to North America, Europe, Asia, and Africa, primarily by fur farmers. Although it is still hunted and trapped for its fur in some regions, its destructive burrowing and feeding habits often bring it into conflict with humans, and it is considered an invasive species. Nutria also transmit various diseases to humans and animals mainly through water contamination.",
-	"kind": "mammalia",
-	"image": "https://kias.nie.re.kr/upload_data/cls/202111/20211125102224793_thumb.jpg",
-	"shape": "The body length is 43 to 63 cm, the tail length is 22 to 42 cm, and the weight of an adult is about 5 to 9 kg. The color of the fur is usually dark brown, black brown and white. The hind feet have webbed feet, which are suitable for aquatic life, and the front feet are used for gripping objects or digging burrows.",
-	"ecological": {
-		"habitat": "bank of a river or pond",
-		"lifespan": "Since it is a herbivore-oriented omnivore, it selectively eats the parts it prefers among the whole plant parts, and also feeds on the roots and stem bark parts.",
-		"etc": "6 years in captivity"
-	},
-	"introduction": {
-		"origin": "South America",
-		"period": "1985",
-		"purpose": "Introduced for meat and fur production"
-	},
-	"distribution": "Distribution centered on the southern region (Nakdong River area)",
-	"effect": {
-		"ecosystem": "They ate wetland plants and damaged crops within protected wetland areas, and also destroyed embankments and embankments due to their burrowing habits. It mainly feeds on aquatic plants, reducing the aquatic belt in the habitat, and sometimes causing subsidence of riverbanks, shorelines, and coastal areas due to excessive density growth. It feeds on all parts of plants, but prefers to eat soft parts or roots of tall aquatic plants growing on the waterside.",
-		"entity": "Eating prickly lotuses native to Upo Wetland in Changnyeong, Gyeongsangnam-do, a wetland protection area, or eating the leaves and roots of wetland plants, and house crops were damaged in winter in farmhouses near wetlands."
-	},
-	"regulate": {
-		"past": "It is difficult to catch nutria because it is nocturnal and it is difficult to detect their activity.",
-		"reason": "There are no natural enemies in Korea, and it is omnivorous, has high fertility, and has a wide range of movement in water, so it can be spread over a long distance due to flooding and flooding, so damage caused by nutria is also highly likely to spread.",
-		"method": "It is necessary to systematically manage by establishing a capture, water system interception, and nutria management program."
-	},
-	"designation": {
-		"domestic": "2013. 2. 2. Designation of organisms disturbing the ecosystem",
-		"overseas": "Europe, America, Japan",
-		"organization": "Listed as one of the world's top 100 invasive alien species by IUCN"
-	}
+  "id": "1",
+  "korean_name": "\ub274\ud2b8\ub9ac\uc544",
+  "english_name": "nutria",
+  "summary": "The nutria (Myocastor coypus), also known as the coypu, is a large, herbivorous, semiaquatic rodent. Classified for a long time as the only member of the family Myocastoridae, Myocastor is now included within Echimyidae, the family of the spiny rats. The nutria lives in burrows alongside stretches of water, and feeds on river plant stems. Originally native to subtropical and temperate South America, it has since been introduced to North America, Europe, Asia, and Africa, primarily by fur farmers. Although it is still hunted and trapped for its fur in some regions, its destructive burrowing and feeding habits often bring it into conflict with humans, and it is considered an invasive species. Nutria also transmit various diseases to humans and animals mainly through water contamination.",
+  "kind": "mammalia",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202111/20211125102224793_thumb.jpg",
+  "shape": "The body length is 43 to 63 cm, the tail length is 22 to 42 cm, and the weight of an adult is about 5 to 9 kg. The color of the fur is usually dark brown, black brown and white. The hind feet have webbed feet, which are suitable for aquatic life, and the front feet are used for gripping objects or digging burrows.",
+  "ecological": {
+    "habitat": "bank of a river or pond",
+    "lifespan": "Since it is a herbivore-oriented omnivore, it selectively eats the parts it prefers among the whole plant parts, and also feeds on the roots and stem bark parts.",
+    "etc": "6 years in captivity"
+  },
+  "introduction": {
+    "origin": "South America",
+    "period": "1985",
+    "purpose": "Introduced for meat and fur production"
+  },
+  "distribution": "Distribution centered on the southern region (Nakdong River area)",
+  "effect": {
+    "ecosystem": "They ate wetland plants and damaged crops in wetland protection areas, and also destroyed embankments and dikes with their burrowing habits. It mainly feeds on aquatic plants, reducing the aquatic belt in the habitat, and sometimes causing subsidence of riverbanks, shorelines, and coastal areas due to excessive density growth. It feeds on all parts of plants, but prefers to eat soft parts or roots of tall aquatic plants growing on the waterside.",
+    "entity": "Eating prickly lotuses native to Upo Wetland in Changnyeong, Gyeongsangnam-do, a wetland protection area, or eating the leaves and roots of wetland plants, and house crops were damaged in winter in farmhouses near wetlands."
+  },
+  "regulate": {
+    "past": "It is difficult to catch nutria because it is nocturnal and it is difficult to detect their activity.",
+    "reason": "There is no natural enemy in Korea, and it is omnivorous, has high fertility, and has a wide range of movement in water, so it can be spread over a long distance due to flooding and flooding, so damage caused by nutria is also highly likely to spread.",
+    "method": "It is necessary to systematically manage by establishing a capture, water system interception, and nutria management program."
+  },
+  "designation": {
+    "domestic": "2013. 2. 2. Designation of organisms disturbing the ecosystem",
+    "overseas": "Europe, America, Japan",
+    "organization": "Listed as one of the world's top 100 invasive alien species by IUCN"
+  }
 }

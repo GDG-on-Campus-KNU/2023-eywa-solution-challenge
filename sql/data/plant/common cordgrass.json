@@ -12,13 +12,13 @@
 		},
 		"size": "130-190\u339d",
 		"stem": "Stem hollow, nodule present. Each segment is about 4.9-5.4 cm long. Nodes are not visible from the outside",
-		"leaf": "Bright green, leaf width 1-1.5 cm, length 40-50 cm, leaf ligule 1.5-2.0 mm long, very densely grown in the form of a brush, not visible from the outside.",
+		"leaf": "Bright green, leaf width 1-1.5 cm, length 40-50 cm, ligule 1.5-2.0 mm long, very densely grown in the form of a brush, not visible from the outside.",
 		"fruit": "Seeds are 5-8 mm long and 0.8-1 mm wide."
 	},
 	"ecological": {
 		"habitat": {
 			"domestic": "no data",
-			"oversea": "no data"
+			"overseas": "no data"
 		},
 		"growth_period": "perennial",
 		"bloom_period": "no data"

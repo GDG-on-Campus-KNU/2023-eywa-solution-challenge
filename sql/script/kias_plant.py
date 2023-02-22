@@ -16,7 +16,7 @@ with open('csv/ecosystem_disruptor.csv', newline='') as csvfile:
 
   shape_key = ['size', 'stem', 'leaf', 'description', 'fruit', 'color']
   ecological_key = ['growth_period', 'bloom_period']
-  habitat_key = ['domestic', 'oversea']
+  habitat_key = ['domestic', 'overseas']
   introduction_key = ['origin', 'period', 'purpose']
 
   for idx, row in enumerate(reader):
