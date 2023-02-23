@@ -1,8 +1,17 @@
+import 'package:eywa_client/view_model/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(const Eywa());
+import 'view/00_loading_page/loading_page.dart';
+import 'view/01_sign_in_page/sign_in_page.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
+  return runApp(const Eywa());
+}
 
 class Eywa extends StatelessWidget {
   const Eywa({Key? key}) : super(key: key);
@@ -15,9 +24,24 @@ class Eywa extends StatelessWidget {
         return GetMaterialApp(
           title: 'Eywa',
           debugShowCheckedModeBanner: false,
-            initialRoute: "/",
-            initialBinding: BindingsBuilder(() {}),
-            getPages: const [
+            initialRoute: "/sign_in",
+            initialBinding: BindingsBuilder(() {
+              Get.put(UserController());
+            }),
+
+            getPages: [
+              //Loading Page
+              GetPage(
+                name: "/",
+                page: () => const LoadingPage(),
+              ),
+
+              //Sign In Page
+              GetPage(
+                name: "/sign_in",
+                page: () => const SignInPage(),
+              ),
+
               // GetPage(
               //   name: "/<Name>",
               //   page: () => Widget(),
