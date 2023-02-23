@@ -1,6 +1,6 @@
 package kr.ac.knu.gdsc.Eywa.domain.dictionary.animal;
 
-import kr.ac.knu.gdsc.Eywa.domain.dictionary.dictionary;
+import kr.ac.knu.gdsc.Eywa.domain.dictionary.Dictionary;
 import lombok.Getter;
 
 import javax.persistence.DiscriminatorValue;
@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 @Getter
 @Entity
 @DiscriminatorValue("Animal")
-public class Animal extends dictionary {
+public class Animal extends Dictionary {
     private String shape;
 
     @Embedded

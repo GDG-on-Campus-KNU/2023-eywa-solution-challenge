@@ -1,11 +1,10 @@
 package kr.ac.knu.gdsc.Eywa.domain;
 
+import kr.ac.knu.gdsc.Eywa.domain.dictionary.Dictionary;
+import kr.ac.knu.gdsc.Eywa.domain.member.Member;
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -22,5 +21,12 @@ public class Report {
 
     private LocalDateTime time;
 
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+    @ManyToOne
+    @JoinColumn(name = "dictionary_id")
+    private Dictionary dictionary;
 
 }
