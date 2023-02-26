@@ -1,8 +1,14 @@
 package kr.ac.knu.gdsc.Eywa.domain.dictionary.plant;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Embeddable
 public class PlantEcological {
     @Column(name = "ecological_growth_period")

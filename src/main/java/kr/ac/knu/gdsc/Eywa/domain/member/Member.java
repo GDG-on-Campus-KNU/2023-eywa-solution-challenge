@@ -1,5 +1,6 @@
 package kr.ac.knu.gdsc.Eywa.domain.member;
 
+import kr.ac.knu.gdsc.Eywa.common.domain.BaseTimeEntity;
 import kr.ac.knu.gdsc.Eywa.domain.Level;
 import kr.ac.knu.gdsc.Eywa.domain.Register;
 import kr.ac.knu.gdsc.Eywa.domain.Report;
@@ -10,22 +11,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-@Builder
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
-public class Member {
+public class Member extends BaseTimeEntity {
     @Id @GeneratedValue
     @Column(name = "member_id")
     private Long Id;
-
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
+    private String email;
+    @Column(nullable = false)
     private int exp;
 
     private String image;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Role role;
 
     @OneToOne
@@ -37,4 +40,13 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<Report> reports = new ArrayList<>();
+
+    @Builder
+    public Member(String name, int exp, String image, Role role, Level level) {
+        this.name = name;
+        this.exp = exp;
+        this.image = image;
+        this.role = role;
+        this.level = level;
+    }
 }

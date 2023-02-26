@@ -1,8 +1,15 @@
 package kr.ac.knu.gdsc.Eywa.domain.dictionary.plant;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Embeddable
 public class PlantIntroduction {
     @Column(name = "introduction_origin")
