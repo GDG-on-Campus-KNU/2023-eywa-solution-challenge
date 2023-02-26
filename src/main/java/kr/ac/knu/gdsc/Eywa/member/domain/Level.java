@@ -1,6 +1,5 @@
-package kr.ac.knu.gdsc.Eywa.domain;
+package kr.ac.knu.gdsc.Eywa.member.domain;
 
-import kr.ac.knu.gdsc.Eywa.domain.member.Member;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

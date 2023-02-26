@@ -1,9 +1,8 @@
-package kr.ac.knu.gdsc.Eywa.domain.member;
+package kr.ac.knu.gdsc.Eywa.member.domain;
 
 import kr.ac.knu.gdsc.Eywa.common.domain.BaseTimeEntity;
-import kr.ac.knu.gdsc.Eywa.domain.Level;
-import kr.ac.knu.gdsc.Eywa.domain.Register;
-import kr.ac.knu.gdsc.Eywa.domain.Report;
+import kr.ac.knu.gdsc.Eywa.register.domain.Register;
+import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import lombok.*;
 
 import javax.persistence.*;

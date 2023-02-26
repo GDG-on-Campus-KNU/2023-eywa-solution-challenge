@@ -1,4 +1,4 @@
-package kr.ac.knu.gdsc.Eywa.domain.dictionary.animal;
+package kr.ac.knu.gdsc.Eywa.dictionary.domain.animal;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

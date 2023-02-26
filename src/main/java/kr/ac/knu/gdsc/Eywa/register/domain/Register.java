@@ -1,24 +1,25 @@
-package kr.ac.knu.gdsc.Eywa.domain;
+package kr.ac.knu.gdsc.Eywa.register.domain;
 
 import kr.ac.knu.gdsc.Eywa.common.domain.BaseTimeEntity;
-import kr.ac.knu.gdsc.Eywa.domain.dictionary.Dictionary;
-import kr.ac.knu.gdsc.Eywa.domain.member.Member;
+import kr.ac.knu.gdsc.Eywa.dictionary.domain.Dictionary;
+import kr.ac.knu.gdsc.Eywa.member.domain.Member;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class Report extends BaseTimeEntity {
+public class Register extends BaseTimeEntity {
     @Id @GeneratedValue
-    @Column(name = "report_id")
+    @Column(name = "register_id")
     private Long id;
+
     private BigDecimal latitude;
+
     private BigDecimal longitude;
 
     @ManyToOne
@@ -30,7 +31,7 @@ public class Report extends BaseTimeEntity {
     private Dictionary dictionary;
 
     @Builder
-    public Report(BigDecimal latitude, BigDecimal longitude) {
+    public Register(BigDecimal latitude, BigDecimal longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
     }

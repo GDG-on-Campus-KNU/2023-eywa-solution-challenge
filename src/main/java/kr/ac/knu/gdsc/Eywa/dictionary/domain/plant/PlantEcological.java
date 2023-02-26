@@ -1,4 +1,4 @@
-package kr.ac.knu.gdsc.Eywa.domain.dictionary.plant;
+package kr.ac.knu.gdsc.Eywa.dictionary.domain.plant;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

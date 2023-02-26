@@ -1,7 +1,7 @@
-package kr.ac.knu.gdsc.Eywa.domain.dictionary;
+package kr.ac.knu.gdsc.Eywa.dictionary.domain;
 
-import kr.ac.knu.gdsc.Eywa.domain.Register;
-import kr.ac.knu.gdsc.Eywa.domain.Report;
+import kr.ac.knu.gdsc.Eywa.register.domain.Register;
+import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

@@ -1,4 +1,4 @@
-package kr.ac.knu.gdsc.Eywa.domain.dictionary.animal;
+package kr.ac.knu.gdsc.Eywa.dictionary.domain.plant;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,13 +11,10 @@ import javax.persistence.Embeddable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Embeddable
-public class AnimalIntroduction {
+public class PlantIntroduction {
     @Column(name = "introduction_origin")
     private String origin;
 
     @Column(name = "introduction_period")
     private String period;
-
-    @Column(name = "introduction_purpose")
-    private String purpose;
 }
