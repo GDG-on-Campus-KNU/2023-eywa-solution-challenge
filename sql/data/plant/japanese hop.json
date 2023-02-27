@@ -1,30 +1,30 @@
 {
-	"id": "36",
-	"korean_name": "\ud658\uc0bc\ub369\uad74",
-	"english_name": "japanese hop",
-	"summary": "Humulus japonicus, known as Japanese hop, is an ornamental plant in the family Cannabaceae. Some authorities have it as a synonym of Humulus scandens.Originally native to East Asian countries such as China, Japan, Korea, and extending its habitat to Vietnam, it was imported to North America in the late 19th century as an ornamental. Since its arrival in North America, it has spread widely. It can be found throughout the Northeastern U.S. and eastern Canada, and considered an invasive species in North America. It also features on the list of invasive alien species of Union Concern since 2019. This means it can no longer be imported in the European Union. Additionally, it has become illegal to plant it, breed it, transport it, or bring it into the wild in all Member States.",
-	"kind": "plant",
-	"image": "https://kias.nie.re.kr/upload_data/cls/202112/20211201105642760",
-	"shape": {
-		"flower": {
-			"description": "Male flowers are branched several times and straight up, and female flowers have no peduncle, so the flowers are densely hung.",
-			"color": "green"
-		},
-		"size": "It is a vine, and the stem is about 2-4m long.",
-		"stem": "The main stem is square, and rough spines pointing downward are developed on the main stem and petiole.",
-		"leaf": "It is deeply divided into 5-7 lobes, and the edge is serrated.",
-		"fruit": "It is 4-5mm long and wide, and ripens yellowish brown in September-November."
-	},
-	"ecological": {
-		"habitat": {
-			"domestic": "It forms a large colony in moist and fertile soil with good sunlight such as fields, roadsides, embankments, wastelands, fields, water sources, gardens, foothills, forest edges, etc., and grows well in other soils.",
-			"overseas": "river side"
-		},
-		"growth_period": "first year",
-		"bloom_period": "July, August"
-	},
-	"introduction": {
-		"origin": "East Asia (Korea, China, Japan)",
-		"period": "no data"
-	}
+  "id": "36",
+  "korean_name": "\ud658\uc0bc\ub369\uad74",
+  "english_name": "japanese hop",
+  "summary": "Humulus japonicus, known as Japanese hop, is an ornamental plant in the family Cannabaceae. Some authorities have it as a synonym of Humulus scandens.Originally native to East Asian countries such as China, Japan, Korea, and extending its habitat to Vietnam, it was imported to North America in the late 19th century as an ornamental. Since its arrival in North America, it has spread widely. It can be found throughout the Northeastern U.S. and eastern Canada, and considered an invasive species in North America. It also features on the list of invasive alien species of Union Concern since 2019. This means it can no longer be imported in the European Union. Additionally, it has become illegal to plant it, breed it, transport it, or bring it into the wild in all Member States.",
+  "kind": "plant",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202112/20211201105642760_thumb.jpg",
+  "shape": {
+    "flower": {
+      "description": "Male flowers are branched several times and straight up, and female flowers have no peduncle, so the flowers are densely hung.",
+      "color": "green"
+    },
+    "size": "It is a vine, and the stem is about 2-4m long.",
+    "stem": "The main stem is square, and rough spines pointing downward are developed on the main stem and petiole.",
+    "leaf": "It is deeply divided into 5-7 lobes, and the edge is serrated.",
+    "fruit": "It is 4-5mm long and wide, and ripens yellowish brown in September-November."
+  },
+  "ecological": {
+    "habitat": {
+      "domestic": "It forms a large colony in moist and fertile soil with good sunlight such as fields, roadsides, embankments, wastelands, fields, water sources, gardens, foothills, forest edges, etc., and grows well in other soils.",
+      "overseas": "river side"
+    },
+    "growth_period": "first year",
+    "bloom_period": "July, August"
+  },
+  "introduction": {
+    "origin": "East Asia (Korea, China, Japan)",
+    "period": null
+  }
 }

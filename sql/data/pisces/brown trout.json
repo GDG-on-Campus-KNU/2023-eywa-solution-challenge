@@ -1,34 +1,34 @@
 {
-	"id": "9",
-	"korean_name": "\ube0c\ub77c\uc6b4\uc1a1\uc5b4",
-	"english_name": "brown trout",
-	"summary": "The brown trout (Salmo trutta) is a European species of salmonid fish that has been widely introduced into suitable environments globally. It includes purely freshwater populations, referred to as the riverine ecotype, Salmo trutta morpha fario, a lacustrine ecotype, S. trutta morpha lacustris, also called the lake trout, and anadromous forms known as the sea trout, S. trutta morpha trutta. The latter migrates to the oceans for much of its life and returns to fresh water only to spawn. Sea trout in Ireland and Britain have many regional names: sewin in Wales, finnock in Scotland, peal in the West Country, mort in North West England, and white trout in Ireland. The lacustrine morph of brown trout is most usually potamodromous, migrating from lakes into rivers or streams to spawn, although evidence indicates some stocks spawn on wind-swept shorelines of lakes. S. trutta morpha fario forms stream-resident populations, typically in alpine streams, but sometimes in larger rivers. Anadromous and non-anadromous morphs coexisting in the same river appear genetically  identical. What determines whether or not they migrate remains unknown.",
-	"kind": "pisces",
-	"image": "https://kias.nie.re.kr/upload_data/cls/202110/20211020175655211_thumb.jpg",
-	"shape": "Maximum length 140 cm, dorsal fin 3-4 poles, 10-15 soft rays, anal fin 3-4 poles, 9-14 soft rays, 57-59 vertebrae. The head is small and pointed. The mouth is well developed and has many teeth and is strong. The body is gray and blue, and the sides are orange. There are numerous spots on the body. It has oil fins. It usually grows to about 1 kg, but it can grow to more than 20 kg depending on the region.",
-	"ecological": {
-		"habitat": "It is found in streams, ponds, rivers and lakes with a water temperature of 16-18 \u00b0C.",
-		"lifespan": "The fry feed mainly on aquatic insects, mollusks, crustaceans and fish. Adults in the sea eat mollusks and fish",
-		"etc": "It matures in 3 to 4 years and lives in freshwater for 1 to 5 years and in seawater for 6 to 5 years."
-	},
-	"introduction": {
-		"origin": "Europe, Asia",
-		"period": "no data",
-		"purpose": "For farming and resource creation"
-	},
-	"distribution": "no data",
-	"effect": {
-		"ecosystem": "Threat to humans: Potential pest",
-		"entity": "no data"
-	},
-	"regulate": {
-		"past": "no data",
-		"reason": "no data",
-		"method": "no data"
-	},
-	"designation": {
-		"domestic": "no data",
-		"overseas": "no data",
-		"organization": "no data"
-	}
+  "id": "9",
+  "korean_name": "\ube0c\ub77c\uc6b4\uc1a1\uc5b4",
+  "english_name": "brown trout",
+  "summary": "The brown trout (Salmo trutta) is a European species of salmonid fish that has been widely introduced into suitable environments globally. It includes purely freshwater populations, referred to as the riverine ecotype, Salmo trutta morpha fario, a lacustrine ecotype, S. trutta morpha lacustris, also called the lake trout, and anadromous forms known as the sea trout, S. trutta morpha trutta. The latter migrates to the oceans for much of its life and returns to fresh water only to spawn. Sea trout in Ireland and Britain have many regional names: sewin in Wales, finnock in Scotland, peal in the West Country, mort in North West England, and white trout in Ireland. The lacustrine morph of brown trout is most usually potamodromous, migrating from lakes into rivers or streams to spawn, although evidence indicates some stocks spawn on wind-swept shorelines of lakes. S. trutta morpha fario forms stream-resident populations, typically in alpine streams, but sometimes in larger rivers. Anadromous and non-anadromous morphs coexisting in the same river appear genetically  identical. What determines whether or not they migrate remains unknown.",
+  "kind": "pisces",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202110/20211020175655211_thumb.jpg",
+  "shape": "Maximum length 140 cm, dorsal fin 3-4 poles, 10-15 soft rays, anal fin 3-4 poles, 9-14 soft rays, 57-59 vertebrae. The head is small and pointed. The mouth is well developed and has many teeth and is strong. The body is gray and blue, and the sides are orange. There are numerous spots on the body. It has oil fins. It usually grows to about 1 kg, but it can grow to more than 20 kg depending on the region.",
+  "ecological": {
+    "habitat": "It is found in streams, ponds, rivers and lakes with a water temperature of 16-18 \u00b0C.",
+    "lifespan": "The fry feed mainly on aquatic insects, mollusks, crustaceans and fish. Adults in the sea eat mollusks and fish",
+    "etc": "It matures in 3 to 4 years and lives in freshwater for 1 to 5 years and in seawater for 6 to 5 years."
+  },
+  "introduction": {
+    "origin": "Europe, Asia",
+    "period": null,
+    "purpose": "For farming and resource creation"
+  },
+  "distribution": null,
+  "effect": {
+    "ecosystem": "Threat to humans: Potential pest",
+    "entity": null
+  },
+  "regulate": {
+    "past": null,
+    "reason": null,
+    "method": null
+  },
+  "designation": {
+    "domestic": null,
+    "overseas": null,
+    "organization": null
+  }
 }

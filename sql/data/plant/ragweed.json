@@ -1,30 +1,30 @@
 {
-	"id": "25",
-	"korean_name": "\ub3fc\uc9c0\ud480",
-	"english_name": "ragweed",
-	"summary": "Ragweeds are flowering plants in the genus Ambrosia in the aster family, Asteraceae. They are distributed in the tropical and subtropical regions of the Americas, especially North America, where the origin and center of diversity of the genus are in the southwestern United States and northwestern Mexico. Several species have been introduced to the Old World and some have naturalized and have become invasive species. Ragweed species are expected to continue spreading across Europe in the near future in response to ongoing climate change.Other common names include bursages and burrobrushes. The genus name is from the Greek ambrosia, meaning \"food or drink of immortality\".Ragweed pollen is notorious for causing allergic reactions in humans, specifically allergic rhinitis. Up to half of all cases of pollen-related allergic rhinitis in North America are caused by ragweeds.The most widespread species of the genus in North America is Ambrosia artemisiifolia.",
-	"kind": "plant",
-	"image": "https://kias.nie.re.kr/upload_data/cls/202203/20220321104235766",
-	"shape": {
-		"flower": {
-			"description": "It is monoecious and the small capitulum forming raceme is infertile and male, and each capitulum consists of about 15 common flowers. Their guns are dish-shaped with a diameter of 5 mm. The female flower is a fertile head flower, and it is gathered in the leaf axil of the bract and is a top or obovate shape.",
-			"color": "yellowish green"
-		},
-		"size": "paternal uncle",
-		"stem": "It is erect by extending underground stems. It has many branches and coarse hairs.",
-		"leaf": "The outline is oval or broadly ovate, reaching 20-30 cm in length and width, with 3-5 rows. Lobes have serrated edges and coarse hairs on both sides.",
-		"fruit": "6-12mm long, 4-5mm wide, ovate, with 5-7 ridges, with a small hump at the top of each ridge."
-	},
-	"ecological": {
-		"habitat": {
-			"domestic": "roadside, paddock, riverside",
-			"overseas": "farmland, pasture"
-		},
-		"growth_period": "first year",
-		"bloom_period": "no data"
-	},
-	"introduction": {
-		"origin": "North America",
-		"period": "after division"
-	}
+  "id": "25",
+  "korean_name": "\ub3fc\uc9c0\ud480",
+  "english_name": "ragweed",
+  "summary": "Ragweeds are flowering plants in the genus Ambrosia in the aster family, Asteraceae. They are distributed in the tropical and subtropical regions of the Americas, especially North America, where the origin and center of diversity of the genus are in the southwestern United States and northwestern Mexico. Several species have been introduced to the Old World and some have naturalized and have become invasive species. Ragweed species are expected to continue spreading across Europe in the near future in response to ongoing climate change.Other common names include bursages and burrobrushes. The genus name is from the Greek ambrosia, meaning \"food or drink of immortality\".Ragweed pollen is notorious for causing allergic reactions in humans, specifically allergic rhinitis. Up to half of all cases of pollen-related allergic rhinitis in North America are caused by ragweeds.The most widespread species of the genus in North America is Ambrosia artemisiifolia.",
+  "kind": "plant",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202203/20220321104235766_thumb.jpg",
+  "shape": {
+    "flower": {
+      "description": "It is monoecious and the small capitulum forming raceme is infertile and male, and each capitulum consists of about 15 common flowers. Their guns are dish-shaped with a diameter of 5 mm. The female flower is a fertile head flower, and it is gathered in the leaf axil of the bract and is a top or obovate shape.",
+      "color": "yellowish green"
+    },
+    "size": "paternal uncle",
+    "stem": "It is erect by extending underground stems. It has many branches and coarse hairs.",
+    "leaf": "The outline is oval or broadly ovate, reaching 20-30 cm in length and width, with 3-5 rows. Lobes have serrated edges and coarse hairs on both sides.",
+    "fruit": "6-12mm long, 4-5mm wide, ovate, with 5-7 ridges, with a small hump at the top of each ridge."
+  },
+  "ecological": {
+    "habitat": {
+      "domestic": "roadside, paddock, riverside",
+      "overseas": "farmland, pasture"
+    },
+    "growth_period": "first year",
+    "bloom_period": null
+  },
+  "introduction": {
+    "origin": "North America",
+    "period": "after division"
+  }
 }

@@ -1,34 +1,34 @@
 {
-	"id": "10",
-	"korean_name": "\ube14\ub8e8\uae38",
-	"english_name": "bluegill",
-	"summary": "The bluegill (Lepomis macrochirus), sometimes referred to as \"bream\", \"brim\", \"sunny\", or \"copper nose\" as is common in Texas, is a species of North American freshwater fish, native to and commonly found in streams, rivers, lakes, ponds and wetlands east of the Rocky Mountains. It is the type species of the genus Lepomis (true sunfish), from the family Centrarchidae (sunfishes, crappies and black basses) in the order Perciformes (perch-like fish).  Bluegills can grow up to 12 in (30 cm) long and about 4+1\u20442 lb (2.0 kg). While their color can vary from population to population, they typically have a very distinctive coloring, with deep blue and purple on the face and gill cover, dark olive-colored bands down the side, and a fiery orange to yellow belly. They are omnivorous and will consume anything they can fit in their mouth, but mostly feed on small aquatic insects and baitfishes. The fish are important prey for bass, other larger sunfish, northern pike and muskellunge, walleye, trout, herons, kingfishers, snapping turtles and otters, and play a key role within the food chain of its freshwater ecosystem. A popular panfish among anglers, bluegill usually hide around and inside old tree stumps in swamps and other underwater structures (e.g. snags), and can live in either deep or very shallow water. Bluegills also like to find shelter among aquatic plants and in the shade of trees along banks, and will often move from one cover to another depending on the time of day or season.",
-	"kind": "pisces",
-	"image": "https://kias.nie.re.kr/upload_data/cls/202111/20211125132643962_thumb.jpg",
-	"shape": "Both the head and body are flattened, and the body height is high and the body length is short. The body shape is oval, the snout is pointed, and the lower jaw protrudes slightly ahead of the upper jaw. The upper half of the body is dark blue, and the belly has a yellow sheen. On the body side, there are 8-9 lines of brown long transverse patches. As it grows, the body side turns black from dark grayish brown to dark brown, and the transverse spots gradually become indistinct. Both males and females have a dark blue spot on the slightly protruding part of the rear end of the gill cover. During the spawning season, the males have a yellow-orange nuptial color with light blue bands. The body length is 15 to 20 cm.",
-	"ecological": {
-		"habitat": "It prefers coastal zones such as the lower reaches of rivers, dams, reservoirs, and ponds with slow or stagnant waters. It lives mainly in well-developed water plants.",
-		"lifespan": "no data",
-		"etc": "4-5 years"
-	},
-	"introduction": {
-		"origin": "Southeast of North America (Virginia, Florida, Texas, Mexico, New York)",
-		"period": "It was introduced in Japan in 1969.",
-		"purpose": "for resource creation"
-	},
-	"distribution": "no data",
-	"effect": {
-		"ecosystem": "It is a fish introduced and released for the purpose of resource creation, and its distribution area and population have rapidly increased as it has adapted well to the natural conditions in Korea. If the population of this species increases, most of the fish species living in Korea are in a competitive state and, with the exception of some carnivorous fish species, they gain an upper hand in the competition, so most of the fish species become rare species or disappear, leading to a rapid decrease in biodiversity. is high",
-		"entity": "no data"
-	},
-	"regulate": {
-		"past": "This species is designated as an ecosystem disturbing wild fauna and flora. As a control and eradication project, the Ministry of Environment has held events to temporarily capture and remove them in the past, but the effect is very insignificant.",
-		"reason": "Excessive growth in the bluegill population will result in a dramatic decline in native fish stocks, requiring control.",
-		"method": "If the bluegill population is excessively increased, the population should be suppressed by reviewing the introduction of a domestic arrival fish species that can compete ecologically with this species and gain an advantage. The introduction of the target fish species should be decided after sufficient ground survey by experts. In addition, measures to use it for food must be devised."
-	},
-	"designation": {
-		"domestic": "2013. 2. 2. (Announcement on the designation of exotic animals and plants endangering the ecosystem 1998. 2. 19.)",
-		"overseas": "japan",
-		"organization": "no data"
-	}
+  "id": "10",
+  "korean_name": "\ube14\ub8e8\uae38",
+  "english_name": "bluegill",
+  "summary": "The bluegill (Lepomis macrochirus), sometimes referred to as \"bream\", \"brim\", \"sunny\", or \"copper nose\" as is common in Texas, is a species of North American freshwater fish, native to and commonly found in streams, rivers, lakes, ponds and wetlands east of the Rocky Mountains. It is the type species of the genus Lepomis (true sunfish), from the family Centrarchidae (sunfishes, crappies and black basses) in the order Perciformes (perch-like fish).  Bluegills can grow up to 12 in (30 cm) long and about 4+1\u20442 lb (2.0 kg). While their color can vary from population to population, they typically have a very distinctive coloring, with deep blue and purple on the face and gill cover, dark olive-colored bands down the side, and a fiery orange to yellow belly. They are omnivorous and will consume anything they can fit in their mouth, but mostly feed on small aquatic insects and baitfishes. The fish are important prey for bass, other larger sunfish, northern pike and muskellunge, walleye, trout, herons, kingfishers, snapping turtles and otters, and play a key role within the food chain of its freshwater ecosystem. A popular panfish among anglers, bluegill usually hide around and inside old tree stumps in swamps and other underwater structures (e.g. snags), and can live in either deep or very shallow water. Bluegills also like to find shelter among aquatic plants and in the shade of trees along banks, and will often move from one cover to another depending on the time of day or season.",
+  "kind": "pisces",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202111/20211125132643962_thumb.jpg",
+  "shape": "Both the head and body are flattened, and the body height is high and the body length is short. The body shape is oval, the snout is pointed, and the lower jaw protrudes slightly ahead of the upper jaw. The upper half of the body is dark blue, and the belly has a yellow sheen. On the body side, there are 8-9 lines of brown long transverse patches. As it grows, the body side turns black from dark grayish brown to dark brown, and the transverse spots gradually become indistinct. Both males and females have a dark blue spot on the slightly protruding part of the rear end of the gill cover. During the spawning season, the males have a yellow-orange nuptial color with light blue bands. The body length is 15 to 20 cm.",
+  "ecological": {
+    "habitat": "It prefers coastal zones such as the lower reaches of rivers, dams, reservoirs, and ponds with slow or stagnant waters. It lives mainly in well-developed water plants.",
+    "lifespan": null,
+    "etc": "4-5 years"
+  },
+  "introduction": {
+    "origin": "Southeast of North America (Virginia, Florida, Texas, Mexico, New York)",
+    "period": "It was introduced in Japan in 1969.",
+    "purpose": "for resource creation"
+  },
+  "distribution": null,
+  "effect": {
+    "ecosystem": "It is a fish introduced and released for the purpose of resource creation, and its distribution area and population have rapidly increased as it has adapted well to the natural conditions in Korea. If the population of this species increases, most of the fish species living in Korea are in a competitive state and, with the exception of some carnivorous fish species, they gain an upper hand in the competition, so most of the fish species become rare species or disappear, leading to a rapid decrease in biodiversity. is high",
+    "entity": null
+  },
+  "regulate": {
+    "past": "This species is designated as an ecosystem disturbing wild fauna and flora. As a control and eradication project, the Ministry of Environment has held events to temporarily capture and remove them in the past, but the effect is very insignificant.",
+    "reason": "Excessive growth in the bluegill population will result in a dramatic decline in native fish stocks, requiring control.",
+    "method": "If the bluegill population is excessively increased, the population should be suppressed by reviewing the introduction of a domestic arrival fish species that can compete ecologically with this species and gain an advantage. The introduction of the target fish species should be decided after sufficient ground survey by experts. In addition, measures to use it for food must be devised."
+  },
+  "designation": {
+    "domestic": "2013. 2. 2. (Announcement on the designation of exotic animals and plants endangering the ecosystem 1998. 2. 19.)",
+    "overseas": "japan",
+    "organization": null
+  }
 }

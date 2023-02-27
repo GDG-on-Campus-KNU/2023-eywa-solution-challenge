@@ -1,34 +1,34 @@
 {
-	"id": "4",
-	"korean_name": "\uc545\uc5b4\uac70\ubd81",
-	"english_name": "alligator snapping turtle",
-	"summary": "The alligator snapping turtle (Macrochelys temminckii) is a large species of turtle in the family Chelydridae. The species is native to freshwater habitats in the United States. M. temminckii is one of the heaviest freshwater turtles in the world. It is the largest freshwater species of turtle in North America. It is often associated with, but not closely related to, the common snapping turtle, which is in the genus Chelydra. The specific epithet temminckii is in honor of Dutch zoologist Coenraad Jacob Temminck.",
-	"kind": "reptile",
-	"image": "https://kias.nie.re.kr/upload_data/cls/202207/20220704094705275_thumb.jpg",
-	"shape": "It is the world's largest species of freshwater turtle, measuring 79 to 101 cm and weighing 70 to 80 kg. It has a powerful jaw, eyes on the sides of its large head, and an overall primitive appearance.",
-	"ecological": {
-		"habitat": "It lives deep in large rivers, canals, lakes, and swamps, and lives in shallow streams when young.",
-		"lifespan": "It hunts by opening its mouth in the water and attracting prey with its tongue that looks like an earthworm. It feeds on fish, mollusks, other turtles, frogs, snakes, clams, crayfish, insects and aquatic plants, and has been known to eat medium-sized rodents such as squirrels, nutria and muskrats, as well as medium-sized mammals including raccoons, opossums and armadillos.",
-		"etc": "The average lifespan of males is slightly longer than that of females, with males ranging from 11 to 45 years and females from 15 to 37 years."
-	},
-	"introduction": {
-		"origin": "USA",
-		"period": "no data",
-		"purpose": "Exhibiting at the zoo and trading as companion animals between individuals"
-	},
-	"distribution": "Observed at Seoul Grand Park and COEX Aquarium.",
-	"effect": {
-		"ecosystem": "Care should be taken when handling it as it has an aggressive nature and can cause serious injury to people using its strong jaws. Predatory activities of the introduced species in Japan have reduced the populations of native aquatic species, competed for food with native turtles, and have been reported to bite people. Its powerful jaws are so powerful that it can cause severe injuries when bitten. In Bavaria, Germany, there have been cases where an individual introduced into the wild has injured a child.",
-		"entity": "no data"
-	},
-	"regulate": {
-		"past": "Japan: Prohibited possession or release of the object without permission.",
-		"reason": "no data",
-		"method": "Crocodile turtles grow larger than other freshwater turtles and are highly aggressive, which can cause many problems if introduced into the domestic ecosystem. It is necessary to block the inflow of objects raised as pets into the natural ecosystem in advance."
-	},
-	"designation": {
-		"domestic": "Announcement on designation of organisms disturbing ecosystems 2020. 12. 30.",
-		"overseas": "japan",
-		"organization": "no data"
-	}
+  "id": "4",
+  "korean_name": "\uc545\uc5b4\uac70\ubd81",
+  "english_name": "alligator snapping turtle",
+  "summary": "The alligator snapping turtle (Macrochelys temminckii) is a large species of turtle in the family Chelydridae. The species is native to freshwater habitats in the United States. M. temminckii is one of the heaviest freshwater turtles in the world. It is the largest freshwater species of turtle in North America. It is often associated with, but not closely related to, the common snapping turtle, which is in the genus Chelydra. The specific epithet temminckii is in honor of Dutch zoologist Coenraad Jacob Temminck.",
+  "kind": "reptile",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202207/20220704094705275_thumb.jpg",
+  "shape": "It is the world's largest species of freshwater turtle, measuring 79 to 101 cm and weighing 70 to 80 kg. It has a powerful jaw, eyes on the sides of its large head, and an overall primitive appearance.",
+  "ecological": {
+    "habitat": "It lives deep in large rivers, canals, lakes, and swamps, and lives in shallow streams when young.",
+    "lifespan": "It hunts by opening its mouth in the water and attracting prey with its tongue that looks like an earthworm. It feeds on fish, mollusks, other turtles, frogs, snakes, clams, crayfish, insects and aquatic plants, and has been known to eat medium-sized rodents such as squirrels, nutria and muskrats, as well as medium-sized mammals including raccoons, opossums and armadillos.",
+    "etc": "The average lifespan of males is slightly longer than that of females, with males ranging from 11 to 45 years and females from 15 to 37 years."
+  },
+  "introduction": {
+    "origin": "USA",
+    "period": null,
+    "purpose": "Exhibiting at the zoo and trading as companion animals between individuals"
+  },
+  "distribution": "Observed at Seoul Grand Park and COEX Aquarium.",
+  "effect": {
+    "ecosystem": "Care should be taken when handling it as it has an aggressive nature and can cause serious injury to people using its strong jaws. Predatory activities of the introduced species in Japan have reduced the populations of native aquatic species, competed for food with native turtles, and have been reported to bite people. Its powerful jaws are so powerful that it can cause severe injuries when bitten. In Bavaria, Germany, there have been cases where an individual introduced into the wild has injured a child.",
+    "entity": null
+  },
+  "regulate": {
+    "past": "Japan: Prohibited possession or release of the object without permission.",
+    "reason": null,
+    "method": "Crocodile turtles grow larger than other freshwater turtles and are highly aggressive, which can cause many problems if introduced into the domestic ecosystem. It is necessary to block the inflow of objects raised as pets into the natural ecosystem in advance."
+  },
+  "designation": {
+    "domestic": "Announcement on designation of organisms disturbing ecosystems 2020. 12. 30.",
+    "overseas": "japan",
+    "organization": null
+  }
 }

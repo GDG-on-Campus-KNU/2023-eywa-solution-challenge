@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("Animal")
 public class Animal extends Dictionary {
+    @Column(columnDefinition = "clob")
     private String shape;
 
     @Embedded
@@ -21,6 +23,7 @@ public class Animal extends Dictionary {
     @Embedded
     private AnimalIntroduction introduction;
 
+    @Column(columnDefinition = "clob")
     private String distribution;
 
     @Embedded
@@ -31,6 +34,7 @@ public class Animal extends Dictionary {
 
     @Embedded
     private Designation designation;
+
     @Builder
     public Animal(String korName, String engName, String summary, String kind, String image, String shape, AnimalEcological ecological, AnimalIntroduction introduction, String distribution, Effect effect, Regulate regulate, Designation designation) {
         super(korName, engName, summary, kind, image);

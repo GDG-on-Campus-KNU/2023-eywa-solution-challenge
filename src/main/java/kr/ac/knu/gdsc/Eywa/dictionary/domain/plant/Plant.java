@@ -14,7 +14,6 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("Plant")
 public class Plant extends Dictionary {
-
     @Embedded
     private Shape shape;
 
