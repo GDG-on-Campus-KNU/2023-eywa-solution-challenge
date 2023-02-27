@@ -16,19 +16,19 @@
     "period": "Introduction date unconfirmed",
     "purpose": "Introduction as an exhibition animal or companion animal"
   },
-  "distribution": "no data",
+  "distribution": null,
   "effect": {
     "ecosystem": "When introduced into the natural ecosystem, it competes with other turtles and can cause ecosystem disturbance.",
-    "entity": "no data"
+    "entity": null
   },
   "regulate": {
-    "past": "no data",
-    "reason": "no data",
-    "method": "no data"
+    "past": null,
+    "reason": null,
+    "method": null
   },
   "designation": {
     "domestic": "Announcement on designation of organisms disturbing ecosystems 2020. 3. 30.",
     "overseas": "japan",
-    "organization": "no data"
+    "organization": null
   }
 }

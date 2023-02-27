@@ -1,34 +1,34 @@
 {
-	"id": "8",
-	"korean_name": "\ubc30\uc2a4",
-	"english_name": "largemouth bass",
-	"summary": "The largemouth bass (Micropterus salmoides) is a carnivorous freshwater gamefish in the Centrarchidae (sunfish) family, a species of black bass native to the eastern and central United States, southeastern Canada and northern Mexico, but widely introduced elsewhere. It is known by a variety of regional names, such as the widemouth bass, bigmouth bass, black bass, bucketmouth, largies, Potter's fish, Florida bass, Florida largemouth, green bass, bucketmouth bass, Green trout, gilsdorf bass, Oswego bass, LMB, and southern largemouth and northern largemouth. The largemouth bass is the state fish of Georgia and Mississippi, and the state freshwater fish of Florida and Alabama.",
-	"kind": "pisces",
-	"image": "https://kias.nie.re.kr/upload_data/cls/202111/20211125131547752_thumb.jpg",
-	"shape": "The back is dark blue, the belly is yellow, and there is a long blue-brown stripe in the center of the side of the body. The body length is 25 to 60 cm. The head and body are laterally flat and not very high, but the body is long and fusiform. The head is large, the eyes are relatively small, and the snout is long and pointed. The mouth is large and the lower jaw protrudes slightly ahead of the upper jaw.",
-	"ecological": {
-		"habitat": "It prefers coastal zones such as the lower reaches of rivers, dams, reservoirs, and ponds with slow or stagnant waters. It lives mainly in well-developed water plants.",
-		"lifespan": "It is carnivorous with strong attack power and feeds on shrimp and fish.",
-		"etc": "4-5 years"
-	},
-	"introduction": {
-		"origin": "Southeast of North America (northeast Mexico and Florida, Mississippi River basin, southern Great Lakes coast)",
-		"period": "It was introduced in the United States in 1973.",
-		"purpose": "for resource creation"
-	},
-	"distribution": "Initially, it was released in Jojongcheon, Gapyeong-gun, Gyeonggi-do, and these individuals have spread and now spread throughout the country, and are distributed in reservoirs, dam lakes, and downstream areas except for the upper reaches of the rivers.",
-	"effect": {
-		"ecosystem": "It is a fish introduced and released for the purpose of resource creation, and its distribution area and population have rapidly increased as it has adapted well to the natural conditions in Korea. If the population of this species increases, most of the fish species living in Korea are in a competitive state and, with the exception of some carnivorous fish species, they gain an upper hand in the competition, so most of the fish species become rare species or disappear, leading to a rapid decrease in biodiversity. is high",
-		"entity": "no data"
-	},
-	"regulate": {
-		"past": "This species is designated as an ecosystem disturbing wild fauna and flora. As a control and eradication project, the Ministry of Environment has held events to temporarily capture and remove them in the past, but the effect is very insignificant.",
-		"reason": "Excessive growth of bass populations will result in a dramatic decline in native fish stocks, requiring control.",
-		"method": "Recently, the Ministry of Environment and local governments are making efforts to control the population of largemouth bass using various methods, such as holding largemouth bass fishing competitions, removing eggs using artificial spawning grounds, and catching largemouth bass using harpoons."
-	},
-	"designation": {
-		"domestic": "2013. 2. 2. (Announcement on the designation of exotic animals and plants endangering the ecosystem 1998. 2. 19.)",
-		"overseas": "Netherlands, China, Malaysia",
-		"organization": "Listed as one of the world's top 100 invasive alien species by UCN"
-	}
+  "id": "8",
+  "korean_name": "\ubc30\uc2a4",
+  "english_name": "largemouth bass",
+  "summary": "The largemouth bass (Micropterus salmoides) is a carnivorous freshwater gamefish in the Centrarchidae (sunfish) family, a species of black bass native to the eastern and central United States, southeastern Canada and northern Mexico, but widely introduced elsewhere. It is known by a variety of regional names, such as the widemouth bass, bigmouth bass, black bass, bucketmouth, largies, Potter's fish, Florida bass, Florida largemouth, green bass, bucketmouth bass, Green trout, gilsdorf bass, Oswego bass, LMB, and southern largemouth and northern largemouth. The largemouth bass is the state fish of Georgia and Mississippi, and the state freshwater fish of Florida and Alabama.",
+  "kind": "pisces",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202111/20211125131547752_thumb.jpg",
+  "shape": "The back is dark blue, the belly is yellow, and there is a long blue-brown stripe in the center of the side of the body. The body length is 25 to 60 cm. The head and body are laterally flat and not very high, but the body is long and fusiform. The head is large, the eyes are relatively small, and the snout is long and pointed. The mouth is large and the lower jaw protrudes slightly ahead of the upper jaw.",
+  "ecological": {
+    "habitat": "It prefers coastal zones such as the lower reaches of rivers, dams, reservoirs, and ponds with slow or stagnant waters. It lives mainly in well-developed water plants.",
+    "lifespan": "It is carnivorous with strong attack power and feeds on shrimp and fish.",
+    "etc": "4-5 years"
+  },
+  "introduction": {
+    "origin": "Southeast of North America (northeast Mexico and Florida, Mississippi River basin, southern Great Lakes coast)",
+    "period": "It was introduced in the United States in 1973.",
+    "purpose": "for resource creation"
+  },
+  "distribution": "Initially, it was released in Jojongcheon, Gapyeong-gun, Gyeonggi-do, and these individuals have spread and now spread throughout the country, and are distributed in reservoirs, dam lakes, and downstream areas except for the upper reaches of the rivers.",
+  "effect": {
+    "ecosystem": "It is a fish introduced and released for the purpose of resource creation, and its distribution area and population have rapidly increased as it has adapted well to the natural conditions in Korea. If the population of this species increases, most of the fish species living in Korea are in a competitive state and, with the exception of some carnivorous fish species, they gain an upper hand in the competition, so most of the fish species become rare species or disappear, leading to a rapid decrease in biodiversity. is high",
+    "entity": null
+  },
+  "regulate": {
+    "past": "This species is designated as an ecosystem disturbing wild fauna and flora. As a control and eradication project, the Ministry of Environment has held events to temporarily capture and remove them in the past, but the effect is very insignificant.",
+    "reason": "Excessive growth of bass populations will result in a dramatic decline in native fish stocks, requiring control.",
+    "method": "Recently, the Ministry of Environment and local governments are making efforts to control the population of largemouth bass using various methods, such as holding largemouth bass fishing competitions, removing eggs using artificial spawning grounds, and catching largemouth bass using harpoons."
+  },
+  "designation": {
+    "domestic": "2013. 2. 2. (Announcement on the designation of exotic animals and plants endangering the ecosystem 1998. 2. 19.)",
+    "overseas": "Netherlands, China, Malaysia",
+    "organization": "Listed as one of the world's top 100 invasive alien species by UCN"
+  }
 }

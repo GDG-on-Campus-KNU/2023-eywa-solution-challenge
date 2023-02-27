@@ -37,7 +37,7 @@ def crawl_plant():
         driver.find_element(By.XPATH, r'//div[@class="thumwrap mar_t20"]/ul/li/ol/li[2]/dl/dt/a').click()
         
         # 이미지 경로
-        entity['image'] = driver.find_element(By.XPATH, r'//dt[@class="taC"]/img').get_attribute('src')
+        entity['image'] = driver.find_element(By.XPATH, r'//dt[@class="taC"]/img').get_attribute('src') + "_thumb.jpg"
         
         # 형태 특성
         entity['shape'] = dict()

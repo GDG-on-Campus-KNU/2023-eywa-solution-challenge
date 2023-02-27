@@ -1,30 +1,30 @@
 {
-	"id": "26",
-	"korean_name": "\ub3fc\uc9c0\ud480\uc544\uc7ac\ube44",
-	"english_name": "parthenium hysterophorus",
-	"summary": "Parthenium hysterophorus is a species of flowering plant in the family Asteraceae. It is native to the American tropics. Common names include Santa-Maria, Santa Maria feverfew, whitetop weed, and famine weed. In India, it is locally known as carrot grass, congress grass or Gajar Ghas or Dhanura. It is a common invasive species in India, Australia, and parts of Africa.",
-	"kind": "plant",
-	"image": "https://kias.nie.re.kr/upload_data/cls/202302/20230215132217290",
-	"shape": {
-		"flower": {
-			"description": "Head flowers 3-6 mm in diameter. About 40 ornamental flowers in the center of the head flower are male flowers, and 5 tongue flowers on the edge are female flowers.",
-			"color": "White"
-		},
-		"size": "30-90cm",
-		"stem": "Stand upright, branch from above. have hair",
-		"leaf": "The outline is ovate or elliptical, with 2 pinnate lobes, 8-20 cm long and 4-5 cm wide, and the upper one gradually becomes smaller.",
-		"fruit": "It is obovate, 1-1.5mm long, flat, with two spoon-shaped appendages on the top, and the color of the fruit is black."
-	},
-	"ecological": {
-		"habitat": {
-			"domestic": "roadside, beach",
-			"overseas": "me"
-		},
-		"growth_period": "first year",
-		"bloom_period": "no data"
-	},
-	"introduction": {
-		"origin": "tropical america",
-		"period": "Before 1996"
-	}
+  "id": "26",
+  "korean_name": "\ub3fc\uc9c0\ud480\uc544\uc7ac\ube44",
+  "english_name": "parthenium hysterophorus",
+  "summary": "Parthenium hysterophorus is a species of flowering plant in the family Asteraceae. It is native to the American tropics. Common names include Santa-Maria, Santa Maria feverfew, whitetop weed, and famine weed. In India, it is locally known as carrot grass, congress grass or Gajar Ghas or Dhanura. It is a common invasive species in India, Australia, and parts of Africa.",
+  "kind": "plant",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202302/20230215132217290_thumb.jpg",
+  "shape": {
+    "flower": {
+      "description": "Head flowers 3-6 mm in diameter. About 40 ornamental flowers in the center of the head flower are male flowers, and 5 tongue flowers on the edge are female flowers.",
+      "color": "White"
+    },
+    "size": "30-90cm",
+    "stem": "Stand upright, branch from above. have hair",
+    "leaf": "The outline is ovate or elliptical, with 2 pinnate lobes, 8-20 cm long and 4-5 cm wide, and the upper one gradually becomes smaller.",
+    "fruit": "It is obovate, 1-1.5mm long, flat, with two spoon-shaped appendages on the top, and the color of the fruit is black."
+  },
+  "ecological": {
+    "habitat": {
+      "domestic": "roadside, beach",
+      "overseas": "me"
+    },
+    "growth_period": "first year",
+    "bloom_period": null
+  },
+  "introduction": {
+    "origin": "tropical america",
+    "period": "Before 1996"
+  }
 }

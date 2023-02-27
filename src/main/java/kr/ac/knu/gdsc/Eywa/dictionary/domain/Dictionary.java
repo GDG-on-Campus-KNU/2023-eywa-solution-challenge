@@ -1,5 +1,7 @@
 package kr.ac.knu.gdsc.Eywa.dictionary.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import kr.ac.knu.gdsc.Eywa.register.domain.Register;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import lombok.Getter;
@@ -23,8 +25,9 @@ public abstract class Dictionary {
     private String korName;
 
     @Column(name = "english_name")
-    private String EngName;
+    private String engName;
 
+    @Column(columnDefinition = "clob")
     private String summary;
 
     private String kind;
@@ -32,14 +35,16 @@ public abstract class Dictionary {
     private String image;
 
     @OneToMany(mappedBy = "dictionary")
+    @JsonIgnore
     private List<Report> reports = new ArrayList<>();
 
     @OneToMany(mappedBy = "dictionary")
+    @JsonIgnore
     private List<Register> registers = new ArrayList<>();
 
     public Dictionary(String korName, String engName, String summary, String kind, String image) {
         this.korName = korName;
-        EngName = engName;
+        this.engName = engName;
         this.summary = summary;
         this.kind = kind;
         this.image = image;

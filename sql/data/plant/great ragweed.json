@@ -1,30 +1,30 @@
 {
-	"id": "23",
-	"korean_name": "\ub2e8\ud48d\uc78e\ub3fc\uc9c0\ud480",
-	"english_name": "great ragweed",
-	"summary": "Ambrosia trifida,  the giant ragweed, is a species of flowering plant in the family Asteraceae. It is native to North America, where it is widespread in Canada, the United States, and northern Mexico.",
-	"kind": "plant",
-	"image": "https://kias.nie.re.kr/upload_data/cls/202203/20220321104235766",
-	"shape": {
-		"flower": {
-			"description": "It is monoecious and the small capitulum forming raceme is infertile and male, and each capitulum consists of about 15 common flowers. Their guns are dish-shaped with a diameter of 5 mm. The female flower is a fertile head flower, and it is gathered in the leaf axil of the bract and is a top or obovate shape.",
-			"color": "yellowish green"
-		},
-		"size": "paternal uncle",
-		"stem": "It is erect by extending underground stems. It has many branches and coarse hairs.",
-		"leaf": "The outline is oval or broadly ovate, reaching 20-30 cm in length and width, with 3-5 rows. Lobes have serrated edges and coarse hairs on both sides.",
-		"fruit": "6-12mm long, 4-5mm wide, ovate, with 5-7 ridges, with a small hump at the top of each ridge."
-	},
-	"ecological": {
-		"habitat": {
-			"domestic": "roadside, paddock, riverside",
-			"overseas": "farmland, pasture"
-		},
-		"growth_period": "first year",
-		"bloom_period": "no data"
-	},
-	"introduction": {
-		"origin": "North America",
-		"period": "after division"
-	}
+  "id": "23",
+  "korean_name": "\ub2e8\ud48d\uc78e\ub3fc\uc9c0\ud480",
+  "english_name": "great ragweed",
+  "summary": "Ambrosia trifida,  the giant ragweed, is a species of flowering plant in the family Asteraceae. It is native to North America, where it is widespread in Canada, the United States, and northern Mexico.",
+  "kind": "plant",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202203/20220321104235766_thumb.jpg",
+  "shape": {
+    "flower": {
+      "description": "It is monoecious and the small capitulum forming raceme is infertile and male, and each capitulum consists of about 15 common flowers. Their guns are dish-shaped with a diameter of 5 mm. The female flower is a fertile head flower, and it is gathered in the leaf axil of the bract and is a top or obovate shape.",
+      "color": "yellowish green"
+    },
+    "size": "paternal uncle",
+    "stem": "It is erect by extending underground stems. It has many branches and coarse hairs.",
+    "leaf": "The outline is oval or broadly ovate, reaching 20-30 cm in length and width, with 3-5 rows. Lobes have serrated edges and coarse hairs on both sides.",
+    "fruit": "6-12mm long, 4-5mm wide, ovate, with 5-7 ridges, with a small hump at the top of each ridge."
+  },
+  "ecological": {
+    "habitat": {
+      "domestic": "roadside, paddock, riverside",
+      "overseas": "farmland, pasture"
+    },
+    "growth_period": "first year",
+    "bloom_period": null
+  },
+  "introduction": {
+    "origin": "North America",
+    "period": "after division"
+  }
 }

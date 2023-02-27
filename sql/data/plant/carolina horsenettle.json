@@ -1,30 +1,30 @@
 {
-	"id": "24",
-	"korean_name": "\ub3c4\uae68\ube44\uac00\uc9c0",
-	"english_name": "carolina horsenettle",
-	"summary": "Solanum carolinense, the Carolina horsenettle, is not a true nettle, but a member of the Solanaceae, or nightshade family. It is a perennial herbaceous plant, native to the southeastern United States, though its range has expanded throughout much of temperate North America. The plant is an invasive in parts of Europe, Asia, and Australia. The stem and undersides of larger leaf veins are covered with prickles. \"Horsenettle\" is also written \"horse nettle\" or \"horse-nettle\", though USDA publications usually use the one-word form. Though there are other horsenettle nightshades, S. carolinense is the species most commonly called \"the horsenettle\". Other common names include radical weed, sand brier or briar, bull nettle, tread-softly, Solanum mammosum (\"apple of Sodom\"), devil's tomato and wild tomato.",
-	"kind": "plant",
-	"image": "https://kias.nie.re.kr/upload_data/cls/202203/20220323161948176",
-	"shape": {
-		"flower": {
-			"description": "About 2.5 cm in diameter, white or pale purple. There are 5 sepals. The lobe of the corolla is egg-shaped and lanceolate with a pointed end.",
-			"color": "white or pale purple"
-		},
-		"size": "40-70cm",
-		"stem": "4-8 branched stellate hairs present. Stems erect and branched. Awl-shaped yellow thorny ash",
-		"leaf": "Oblong or ovate, 7-14 cm long, 3-6.5 cm wide, undulate, petiole 6-15 mm long. Leaf veins and side veins are interspersed with yellow awl-shaped spines.",
-		"fruit": "It is spherical, 1.5 cm in diameter, ripe and orange."
-	},
-	"ecological": {
-		"habitat": {
-			"domestic": "ranch, ranch",
-			"overseas": "no data"
-		},
-		"growth_period": "perennial",
-		"bloom_period": "no data"
-	},
-	"introduction": {
-		"origin": "North America",
-		"period": "1964-present"
-	}
+  "id": "24",
+  "korean_name": "\ub3c4\uae68\ube44\uac00\uc9c0",
+  "english_name": "carolina horsenettle",
+  "summary": "Solanum carolinense, the Carolina horsenettle, is not a true nettle, but a member of the Solanaceae, or nightshade family. It is a perennial herbaceous plant, native to the southeastern United States, though its range has expanded throughout much of temperate North America. The plant is an invasive in parts of Europe, Asia, and Australia. The stem and undersides of larger leaf veins are covered with prickles. \"Horsenettle\" is also written \"horse nettle\" or \"horse-nettle\", though USDA publications usually use the one-word form. Though there are other horsenettle nightshades, S. carolinense is the species most commonly called \"the horsenettle\". Other common names include radical weed, sand brier or briar, bull nettle, tread-softly, Solanum mammosum (\"apple of Sodom\"), devil's tomato and wild tomato.",
+  "kind": "plant",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202203/20220323161948176_thumb.jpg",
+  "shape": {
+    "flower": {
+      "description": "About 2.5 cm in diameter, white or pale purple. There are 5 sepals. The lobe of the corolla is egg-shaped and lanceolate with a pointed end.",
+      "color": "white or pale purple"
+    },
+    "size": "40-70cm",
+    "stem": "4-8 branched stellate hairs present. Stems erect and branched. Awl-shaped yellow thorny ash",
+    "leaf": "Oblong or ovate, 7-14 cm long, 3-6.5 cm wide, undulate, petiole 6-15 mm long. Leaf veins and side veins are interspersed with yellow awl-shaped spines.",
+    "fruit": "It is spherical, 1.5 cm in diameter, ripe and orange."
+  },
+  "ecological": {
+    "habitat": {
+      "domestic": "ranch, ranch",
+      "overseas": null
+    },
+    "growth_period": "perennial",
+    "bloom_period": null
+  },
+  "introduction": {
+    "origin": "North America",
+    "period": "1964-present"
+  }
 }

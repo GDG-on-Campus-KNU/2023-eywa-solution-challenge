@@ -1,30 +1,30 @@
 {
-	"id": "29",
-	"korean_name": "\ubbf8\uad6d\uc465\ubd80\uc7c1\uc774",
-	"english_name": "white heath aster",
-	"summary": "White heath aster is a common name for several plants native to North America and may refer to:  Symphyotrichum ericoides Symphyotrichum pilosum",
-	"kind": "plant",
-	"image": "https://kias.nie.re.kr/upload_data/cls/202203/20220321105239631",
-	"shape": {
-		"flower": {
-			"description": "There are several heads with a diameter of 10-17mm, and the gun barrel is bell-shaped, and the gun barrel piece is 6mm high and leathery. Snowshoes are 15-25 pieces, 6-9mm long. Normal shoes have a crown. Many peduncles emerge from the ends of branches.",
-			"color": "White or pale rose (snowflower), yellow (ordinary flower)"
-		},
-		"size": "30-100cm",
-		"stem": "It splits into a conical shape, the lower part becomes woody, and the stem has fine hairs densely. Branches form racemes, with smaller branches pointing to one side.",
-		"leaf": "The lower leaves are spatula-shaped and have hairs on the edge of the leaf. Stem leaves are 3-10 cm long, narrow, linear, pointed at the end, without sawtooth. The leaves of the small branch are linear or awl-shaped, and many are attached.",
-		"fruit": "The fruit has short hairs and the crown is white."
-	},
-	"ecological": {
-		"habitat": {
-			"domestic": "Roadside, roadside, bare land, riverside, field, inside and outside the forest, etc.",
-			"overseas": "no data"
-		},
-		"growth_period": "perennial",
-		"bloom_period": "no data"
-	},
-	"introduction": {
-		"origin": "North America",
-		"period": "Before 1986"
-	}
+  "id": "29",
+  "korean_name": "\ubbf8\uad6d\uc465\ubd80\uc7c1\uc774",
+  "english_name": "white heath aster",
+  "summary": "White heath aster is a common name for several plants native to North America and may refer to:  Symphyotrichum ericoides Symphyotrichum pilosum",
+  "kind": "plant",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202203/20220321105239631_thumb.jpg",
+  "shape": {
+    "flower": {
+      "description": "There are several heads with a diameter of 10-17mm, and the gun barrel is bell-shaped, and the gun barrel piece is 6mm high and leathery. Snowshoes are 15-25 pieces, 6-9mm long. Normal shoes have a crown. Many peduncles emerge from the ends of branches.",
+      "color": "White or pale rose (snowflower), yellow (ordinary flower)"
+    },
+    "size": "30-100cm",
+    "stem": "It splits into a conical shape, the lower part becomes woody, and the stem has fine hairs densely. Branches form racemes, with smaller branches pointing to one side.",
+    "leaf": "The lower leaves are spatula-shaped and have hairs on the edge of the leaf. Stem leaves are 3-10 cm long, narrow, linear, pointed at the end, without sawtooth. The leaves of the small branch are linear or awl-shaped, and many are attached.",
+    "fruit": "The fruit has short hairs and the crown is white."
+  },
+  "ecological": {
+    "habitat": {
+      "domestic": "Roadside, roadside, bare land, riverside, field, inside and outside the forest, etc.",
+      "overseas": null
+    },
+    "growth_period": "perennial",
+    "bloom_period": null
+  },
+  "introduction": {
+    "origin": "North America",
+    "period": "Before 1986"
+  }
 }

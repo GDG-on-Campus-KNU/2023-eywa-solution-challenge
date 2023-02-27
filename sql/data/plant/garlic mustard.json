@@ -1,30 +1,30 @@
 {
-	"id": "27",
-	"korean_name": "\ub9c8\ub298\ub0c9\uc774",
-	"english_name": "garlic mustard",
-	"summary": "Alliaria petiolata, or  garlic mustard, is a biennial flowering plant in the mustard family (Brassicaceae). It is native to Europe, western and central Asia, north-western Africa, Morocco, Iberia and the British Isles, north to northern Scandinavia, and east to northern Pakistan and Xinjiang in western China.In the first year of growth, plants form clumps of round, slightly wrinkled leaves, that when crushed smell like garlic. The plants flower in spring of the next year, producing cross shaped white flowers in dense clusters. As the flowering stems bloom they elongate into a spike-like shape. When flowering is complete, plants produce upright fruits that release seeds in mid-summer. Plants are often found growing along the margins of hedges, giving rise to the old British folk name of jack-by-the-hedge. Other common names include: garlic mustard, garlic root, hedge garlic, sauce-alone, jack-in-the-bush, penny hedge and poor man's mustard. The genus name Alliaria, \"resembling Allium\", refers to the garlic-like odour of the crushed foliage. All parts of the plant, including the roots, give off a strong odour like garlic.",
-	"kind": "plant",
-	"image": "https://kias.nie.re.kr/upload_data/cls/202112/20211202104757492",
-	"shape": {
-		"flower": {
-			"description": "Inflorescence consists of 10-25 flowers, lower flowers with bracts. Sepals 2.5-3.5\u00d70.7-1.5 mm, petals 4-8\u00d72-3 mm. Operating table 2-3.5mm, pollen elongated, 0.7-1mm long. The style is 1-2 mm",
-			"color": "no data"
-		},
-		"size": "20-100cm",
-		"stem": "Erect, branched at the top. smooth or hairy at base",
-		"leaf": "Radical leaf blades are heart-shaped to kidney-shaped, 1.7-4\u00d71.5-5cm, base is heart-shaped, leaves are serrate, leaf lines are dull. The petiole of leaves on the stem is 1-10 cm long, smooth or sparsely hairy, and the leaf blade is ovate, heart-shaped or triangular, 6-10.5\u00d76.5-10.5 cm. The base is cordate or arcuate, the leaf margin is serrated, and the leaf line is pointed.",
-		"fruit": "The fruit has a 3-5 mm long peduncle. Fruits are linear, 3-7\u00d71.2-2.5 mm. Seeds are dark brown or black, 2-4.5\u00d70.7-2mm."
-	},
-	"ecological": {
-		"habitat": {
-			"domestic": "no data",
-			"overseas": "no data"
-		},
-		"growth_period": "sophomore",
-		"bloom_period": "May, June"
-	},
-	"introduction": {
-		"origin": "Europe, Southwest Asia",
-		"period": "no data"
-	}
+  "id": "27",
+  "korean_name": "\ub9c8\ub298\ub0c9\uc774",
+  "english_name": "garlic mustard",
+  "summary": "Alliaria petiolata, or  garlic mustard, is a biennial flowering plant in the mustard family (Brassicaceae). It is native to Europe, western and central Asia, north-western Africa, Morocco, Iberia and the British Isles, north to northern Scandinavia, and east to northern Pakistan and Xinjiang in western China.In the first year of growth, plants form clumps of round, slightly wrinkled leaves, that when crushed smell like garlic. The plants flower in spring of the next year, producing cross shaped white flowers in dense clusters. As the flowering stems bloom they elongate into a spike-like shape. When flowering is complete, plants produce upright fruits that release seeds in mid-summer. Plants are often found growing along the margins of hedges, giving rise to the old British folk name of jack-by-the-hedge. Other common names include: garlic mustard, garlic root, hedge garlic, sauce-alone, jack-in-the-bush, penny hedge and poor man's mustard. The genus name Alliaria, \"resembling Allium\", refers to the garlic-like odour of the crushed foliage. All parts of the plant, including the roots, give off a strong odour like garlic.",
+  "kind": "plant",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202112/20211202104757492_thumb.jpg",
+  "shape": {
+    "flower": {
+      "description": "Inflorescence consists of 10-25 flowers, lower flowers with bracts. Sepals 2.5-3.5\u00d70.7-1.5 mm, petals 4-8\u00d72-3 mm. Operating table 2-3.5mm, pollen elongated, 0.7-1mm long. The style is 1-2 mm",
+      "color": null
+    },
+    "size": "20-100cm",
+    "stem": "Erect, branched at the top. smooth or hairy at base",
+    "leaf": "Radical leaf blades are heart-shaped to kidney-shaped, 1.7-4\u00d71.5-5cm, base is heart-shaped, leaves are serrate, leaf lines are dull. The petiole of leaves on the stem is 1-10 cm long, smooth or sparsely hairy, and the leaf blade is ovate, heart-shaped or triangular, 6-10.5\u00d76.5-10.5 cm. The base is cordate or arcuate, the leaf margin is serrated, and the leaf line is pointed.",
+    "fruit": "The fruit has a 3-5 mm long peduncle. Fruits are linear, 3-7\u00d71.2-2.5 mm. Seeds are dark brown or black, 2-4.5\u00d70.7-2mm."
+  },
+  "ecological": {
+    "habitat": {
+      "domestic": null,
+      "overseas": null
+    },
+    "growth_period": "sophomore",
+    "bloom_period": "May, June"
+  },
+  "introduction": {
+    "origin": "Europe, Southwest Asia",
+    "period": null
+  }
 }
