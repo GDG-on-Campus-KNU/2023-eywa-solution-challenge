@@ -15,14 +15,14 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Designation {
     @Column(name = "designation_domestic",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String domestic;
 
     @Column(name = "designation_oversea",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String oversea;
 
     @Column(name = "designation_organization",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String organization;
 }

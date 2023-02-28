@@ -27,7 +27,7 @@ public abstract class Dictionary {
     @Column(name = "english_name")
     private String engName;
 
-    @Column(columnDefinition = "clob")
+    @Column(columnDefinition = "text")
     private String summary;
 
     private String kind;

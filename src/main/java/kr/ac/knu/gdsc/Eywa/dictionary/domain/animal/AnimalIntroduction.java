@@ -15,14 +15,14 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class AnimalIntroduction {
     @Column(name = "introduction_origin",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String origin;
 
     @Column(name = "introduction_period",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String period;
 
     @Column(name = "introduction_purpose",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String purpose;
 }

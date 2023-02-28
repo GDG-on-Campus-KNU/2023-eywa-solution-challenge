@@ -15,14 +15,14 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class AnimalEcological {
     @Column(name = "ecological_habitat",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String habitat;
 
     @Column(name = "ecological_lifespan",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String lifeSpan;
 
     @Column(name = "ecological_etc",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String etc;
 }
