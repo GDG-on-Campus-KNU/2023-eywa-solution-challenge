@@ -14,18 +14,18 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class PlantEcological {
     @Column(name = "ecological_growth_period",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String growthPeriod;
 
     @Column(name = "ecological_bloom_period",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String bloomPeriod;
 
     @Column(name = "ecological_habitat_domestic",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String habitatDomestic;
 
     @Column(name = "ecological_habitat_overseas",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String habitatOverseas;
 }

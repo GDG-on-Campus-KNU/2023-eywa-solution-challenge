@@ -14,10 +14,10 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Effect {
     @Column(name = "effect_ecosystem",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String effect;
 
     @Column(name = "effect_entity",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String entity;
 }

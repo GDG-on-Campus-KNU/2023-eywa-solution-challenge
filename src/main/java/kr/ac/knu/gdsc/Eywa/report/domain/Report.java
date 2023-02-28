@@ -29,8 +29,10 @@ public class Report extends BaseTimeEntity {
     private Dictionary dictionary;
 
     @Builder
-    public Report(BigDecimal latitude, BigDecimal longitude) {
+    public Report(BigDecimal latitude, BigDecimal longitude, Member member, Dictionary dictionary) {
         this.latitude = latitude;
         this.longitude = longitude;
+        this.member = member;
+        this.dictionary = dictionary;
     }
 }

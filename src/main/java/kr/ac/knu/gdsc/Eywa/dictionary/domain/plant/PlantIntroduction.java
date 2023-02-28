@@ -15,10 +15,10 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class PlantIntroduction {
     @Column(name = "introduction_origin",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String origin;
 
     @Column(name = "introduction_period",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String period;
 }

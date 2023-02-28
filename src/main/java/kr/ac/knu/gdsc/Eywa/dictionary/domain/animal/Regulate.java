@@ -15,14 +15,14 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Regulate {
     @Column(name = "regulate_past",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String past;
 
     @Column(name = "regulate_reason",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String reason;
 
     @Column(name = "regulate_method",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String method;
 }

@@ -15,26 +15,26 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Shape {
     @Column(name = "shape_size",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String size;
 
     @Column(name = "shape_stem",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String stem;
 
     @Column(name = "shape_leaf",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String leaf;
 
     @Column(name = "shape_flower_description",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String flowerDescription;
 
     @Column(name = "shape_flower_color",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String flowerColor;
 
     @Column(name = "shape_fruit",
-            columnDefinition = "clob")
+            columnDefinition = "text")
     private String fruit;
 }

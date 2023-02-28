@@ -14,7 +14,7 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("Animal")
 public class Animal extends Dictionary {
-    @Column(columnDefinition = "clob")
+    @Column(columnDefinition = "text")
     private String shape;
 
     @Embedded
@@ -23,7 +23,7 @@ public class Animal extends Dictionary {
     @Embedded
     private AnimalIntroduction introduction;
 
-    @Column(columnDefinition = "clob")
+    @Column(columnDefinition = "text")
     private String distribution;
 
     @Embedded
