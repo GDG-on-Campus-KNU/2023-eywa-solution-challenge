@@ -1,3 +1,5 @@
+import 'package:eywa_client/view/10_home_page/home_page.dart';
+import 'package:eywa_client/view_model/home_page_controller.dart';
 import 'package:eywa_client/view_model/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,7 +26,7 @@ class Eywa extends StatelessWidget {
         return GetMaterialApp(
           title: 'Eywa',
           debugShowCheckedModeBanner: false,
-            initialRoute: "/sign_in",
+            initialRoute: "/home",
             initialBinding: BindingsBuilder(() {
               Get.put(UserController());
             }),
@@ -40,6 +42,15 @@ class Eywa extends StatelessWidget {
               GetPage(
                 name: "/sign_in",
                 page: () => const SignInPage(),
+              ),
+
+              //Sign In Page
+              GetPage(
+                name: "/home",
+                page: () => const HomePage(),
+                binding: BindingsBuilder(() {
+                  Get.put(HomePageController());
+                }),
               ),
 
               // GetPage(
