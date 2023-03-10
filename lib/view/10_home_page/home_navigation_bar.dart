@@ -35,6 +35,7 @@ Widget homeNavigationBar(BuildContext context){
 Widget _fieldGuide(BuildContext context) => Positioned(
   left: 56.w,
   child: GestureDetector(
+    onTap: () => Get.toNamed("/field_guide"),
     child: Image.asset("assets/icons/bag.png", width: 30.w,),
   ),
 );
