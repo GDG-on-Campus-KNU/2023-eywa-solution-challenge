@@ -1,4 +1,6 @@
 import 'package:eywa_client/view/10_home_page/home_page.dart';
+import 'package:eywa_client/view/20_field_guide_page/field_guide_page.dart';
+import 'package:eywa_client/view_model/field_guide_page_controller.dart';
 import 'package:eywa_client/view_model/home_page_controller.dart';
 import 'package:eywa_client/view_model/user_controller.dart';
 import 'package:flutter/material.dart';
@@ -44,13 +46,24 @@ class Eywa extends StatelessWidget {
                 page: () => const SignInPage(),
               ),
 
-              //Sign In Page
+              //Home Page
               GetPage(
                 name: "/home",
                 page: () => const HomePage(),
                 binding: BindingsBuilder(() {
                   Get.put(HomePageController());
                 }),
+              ),
+
+              //Field Guide Page
+              GetPage(
+                name: "/field_guide",
+                page: () => const FieldGuidePage(),
+                binding: BindingsBuilder(() {
+                  Get.put(FieldGuidePageController());
+                }),
+                transition: Transition.downToUp,
+                transitionDuration: Duration(milliseconds: 100),
               ),
 
               // GetPage(
