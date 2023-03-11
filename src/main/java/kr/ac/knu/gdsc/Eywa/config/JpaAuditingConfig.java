@@ -1,4 +1,4 @@
-package kr.ac.knu.gdsc.Eywa.common;
+package kr.ac.knu.gdsc.Eywa.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;

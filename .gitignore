@@ -37,5 +37,6 @@ out/
 ### VS Code ###
 .vscode/
 
+application-oauth.properties
 images/*
 eywa-379006-cf4fa2b9a758.json
