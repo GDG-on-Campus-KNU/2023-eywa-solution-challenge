@@ -1,3 +1,4 @@
+import 'package:eywa_client/model/service/alien_species_descriminate.dart';
 import 'package:flutter/material.dart';
 
 class LoadingPage extends StatelessWidget {
@@ -5,6 +6,7 @@ class LoadingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    loadModel();
     return Container();
   }
 }

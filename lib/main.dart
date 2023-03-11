@@ -1,7 +1,9 @@
 import 'package:eywa_client/view/10_home_page/home_page.dart';
 import 'package:eywa_client/view/20_field_guide_page/field_guide_page.dart';
+import 'package:eywa_client/view/30_search_result_page/search_result_page.dart';
 import 'package:eywa_client/view_model/field_guide_page_controller.dart';
 import 'package:eywa_client/view_model/home_page_controller.dart';
+import 'package:eywa_client/view_model/search_page_view_controller.dart';
 import 'package:eywa_client/view_model/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -61,6 +63,17 @@ class Eywa extends StatelessWidget {
                 page: () => const FieldGuidePage(),
                 binding: BindingsBuilder(() {
                   Get.put(FieldGuidePageController());
+                }),
+                transition: Transition.downToUp,
+                transitionDuration: Duration(milliseconds: 100),
+              ),
+
+              //Search Page
+              GetPage(
+                name: "/search_result",
+                page: () => const SearchResultPage(),
+                binding: BindingsBuilder(() {
+                  Get.put(SearchPageViewController());
                 }),
                 transition: Transition.downToUp,
                 transitionDuration: Duration(milliseconds: 100),

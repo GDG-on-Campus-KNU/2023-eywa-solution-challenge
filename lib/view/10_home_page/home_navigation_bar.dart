@@ -1,3 +1,4 @@
+import 'package:eywa_client/model/service/alien_species_descriminate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -52,6 +53,9 @@ Widget _camera(BuildContext context) => Positioned(
     alignment: Alignment.center,
     padding: EdgeInsets.only(bottom: 6.h),
     child: GestureDetector(
+      onTap: (){
+        Get.toNamed("/search_result");
+      },
       child: Image.asset("assets/icons/camera.png", width: 30.w,),
     ),
   ),
