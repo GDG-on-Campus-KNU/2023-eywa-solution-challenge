@@ -1,7 +1,6 @@
 package kr.ac.knu.gdsc.Eywa.dictionary.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import kr.ac.knu.gdsc.Eywa.register.domain.Register;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import lombok.Getter;
@@ -49,4 +48,14 @@ public abstract class Dictionary {
         this.kind = kind;
         this.image = image;
     }
+
+    /**
+     * 연관관계 편의 메서드
+     */
+
+
+    /**
+     * 비즈니스 로직
+     */
+
 }
