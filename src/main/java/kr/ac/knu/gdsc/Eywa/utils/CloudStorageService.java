@@ -4,7 +4,7 @@ import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import kr.ac.knu.gdsc.Eywa.GcpConfiguration;
+import kr.ac.knu.gdsc.Eywa.config.GcpConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,11 +18,11 @@ import java.util.Objects;
 
 @Service
 public class CloudStorageService {
-    private final GcpConfiguration gcpConfiguration;
+    private final GcpConfig gcpConfiguration;
     private Storage storage;
 
     @Autowired
-    public CloudStorageService(GcpConfiguration gcpConfiguration) {
+    public CloudStorageService(GcpConfig gcpConfiguration) {
         this.gcpConfiguration = gcpConfiguration;
         try {
             this.storage = StorageOptions.newBuilder()
