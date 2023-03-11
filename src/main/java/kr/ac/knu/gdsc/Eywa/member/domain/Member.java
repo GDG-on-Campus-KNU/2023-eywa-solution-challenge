@@ -41,8 +41,9 @@ public class Member extends BaseTimeEntity {
     private List<Report> reports = new ArrayList<>();
 
     @Builder
-    public Member(String name, int exp, String image, Role role, Level level) {
+    public Member(String name, String email, int exp, String image, Role role, Level level) {
         this.name = name;
+        this.email = email;
         this.exp = exp;
         this.image = image;
         this.role = role;
