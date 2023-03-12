@@ -8,6 +8,7 @@ import kr.ac.knu.gdsc.Eywa.dictionary.domain.plant.PlantIntroduction;
 import kr.ac.knu.gdsc.Eywa.dictionary.domain.plant.Shape;
 import kr.ac.knu.gdsc.Eywa.dictionary.service.DictionaryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -122,13 +123,18 @@ public class DictionaryController {
     }
 
     @RequestMapping(method=RequestMethod.GET)
-    public List<Dictionary> getDictionaryList() {
-        return dictionaryService.getDictionaryList();
+    public ResponseEntity<List<Dictionary>> getDictionaryList() {
+        List<Dictionary> dictionaryList = dictionaryService.getDictionaryList();
+        if (dictionaryList.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(dictionaryList);
+        }
     }
 
     @RequestMapping(value="/{id}", method=RequestMethod.GET)
-    public Dictionary getDictionary(@PathVariable Long id) {
+    public ResponseEntity<Dictionary> getDictionary(@PathVariable Long id) {
         Optional<Dictionary> dictionary = dictionaryService.getDictionary(id);
-        return dictionary.orElse(null);
+        return dictionary.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 }
