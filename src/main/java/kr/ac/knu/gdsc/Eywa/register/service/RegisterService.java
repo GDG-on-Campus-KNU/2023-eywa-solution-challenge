@@ -21,13 +21,13 @@ public class RegisterService {
     private final RegisterRepository registerRepository;
     private final DictionaryRepository dictionaryRepository;
 
-
     /**
-     * 저장
+     * 도감 등록
      */
     public RegisterSaveResponseDto save(Member member, RegisterSaveRequestDto request) {
         Dictionary dictionary = dictionaryRepository.findById(request.getDictionaryId()).get();
 
+        // TODO: 회원 정보 추가
         Register register = Register.builder()
                 .latitude(request.getLatitude())
                 .longitude(request.getLongitude())
@@ -38,9 +38,8 @@ public class RegisterService {
     }
 
     /**
-     * 조회
+     * 도감 등록 목록 조회
      */
-
     public List<Register> findAll(Member member) {
         return registerRepository.findAll();
     }
