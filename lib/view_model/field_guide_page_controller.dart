@@ -42,4 +42,15 @@ class FieldGuidePageController extends GetxController {
     animalElements(newList.animals);
   }
 
+  //////////////////////////////////////////////////////////////////////////////Detail Page
+  Rx<int> cardIndex = 0.obs;
+  void initCardIndex() {
+    cardIndex(0);
+  }
+  void decreaseCardIndex() {
+    if (cardIndex.value >= 1) cardIndex(cardIndex.value - 1);
+  }
+  void increaseCardIndex() {
+    if (cardIndex.value <= (ifPlant.value ? 1 : 4)) cardIndex(cardIndex.value + 1);
+  }
 }

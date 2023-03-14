@@ -33,6 +33,9 @@ class Eywa extends StatelessWidget {
             initialRoute: "/home",
             initialBinding: BindingsBuilder(() {
               Get.put(UserController());
+              Get.put(HomePageController());
+              Get.put(FieldGuidePageController());
+              Get.put(SearchPageViewController());
             }),
 
             getPages: [
@@ -52,18 +55,12 @@ class Eywa extends StatelessWidget {
               GetPage(
                 name: "/home",
                 page: () => const HomePage(),
-                binding: BindingsBuilder(() {
-                  Get.put(HomePageController());
-                }),
               ),
 
               //Field Guide Page
               GetPage(
                 name: "/field_guide",
                 page: () => const FieldGuidePage(),
-                binding: BindingsBuilder(() {
-                  Get.put(FieldGuidePageController());
-                }),
                 transition: Transition.downToUp,
                 transitionDuration: Duration(milliseconds: 100),
               ),
@@ -72,9 +69,6 @@ class Eywa extends StatelessWidget {
               GetPage(
                 name: "/search_result",
                 page: () => const SearchResultPage(),
-                binding: BindingsBuilder(() {
-                  Get.put(SearchPageViewController());
-                }),
                 transition: Transition.downToUp,
                 transitionDuration: Duration(milliseconds: 100),
               ),
