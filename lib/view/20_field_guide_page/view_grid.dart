@@ -1,3 +1,4 @@
+import 'package:eywa_client/view/21_detail_dialog/detail_dialog_animal.dart';
 import 'package:eywa_client/view/21_detail_dialog/detail_dialog_plant.dart';
 import "package:flutter/material.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
@@ -49,18 +50,21 @@ Widget _gridViewElementPlant(BuildContext context, FieldGuideElementPlant elemen
 Widget _gridViewElementAnimal(BuildContext context, FieldGuideElementAnimal element){
   return GestureDetector(
     onTap: (){
-      // Get.dialog(DetailDialogPlant(context, element));
+      Get.dialog(DetailDialogAnimal(context, element));
     },
-    child: Container(
-      width: 100.w,
-      height: 100.w,
-      margin: EdgeInsets.all(11.w),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: context.theme.primaryColorDark, width: 5.w),
-        image: DecorationImage(
-          image: NetworkImage(element.image!),
-          fit: BoxFit.cover,
+    child: Hero(
+      tag: "fieldGuideElement",
+      child: Container(
+        width: 100.w,
+        height: 100.w,
+        margin: EdgeInsets.all(11.w),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(color: context.theme.primaryColorDark, width: 5.w),
+          image: DecorationImage(
+            image: NetworkImage(element.image!),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     ),

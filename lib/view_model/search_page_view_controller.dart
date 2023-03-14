@@ -9,8 +9,7 @@ class SearchPageViewController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-
-    takePhoto();
+    loadModel();
   }
 
   RxBool ifImageNull = true.obs;
@@ -34,7 +33,6 @@ class SearchPageViewController extends GetxController {
       ifImageNull(true);
       return false;
     }
-    print("hello");
     classifyImage(image!);
     ifImageNull(false);
     return true;
