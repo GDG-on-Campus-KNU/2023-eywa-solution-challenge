@@ -20,7 +20,7 @@ public class AnimalEcological {
 
     @Column(name = "ecological_lifespan",
             columnDefinition = "text")
-    private String lifeSpan;
+    private String lifespan;
 
     @Column(name = "ecological_etc",
             columnDefinition = "text")

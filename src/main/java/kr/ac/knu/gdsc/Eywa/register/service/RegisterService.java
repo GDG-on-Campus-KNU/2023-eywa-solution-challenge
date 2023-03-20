@@ -2,8 +2,8 @@ package kr.ac.knu.gdsc.Eywa.register.service;
 
 import kr.ac.knu.gdsc.Eywa.dictionary.domain.Dictionary;
 import kr.ac.knu.gdsc.Eywa.dictionary.repository.DictionaryRepository;
-import kr.ac.knu.gdsc.Eywa.member.domain.Member;
-import kr.ac.knu.gdsc.Eywa.member.respository.MemberRepository;
+import kr.ac.knu.gdsc.Eywa.members.domain.Member;
+import kr.ac.knu.gdsc.Eywa.members.respository.MemberRepository;
 import kr.ac.knu.gdsc.Eywa.register.domain.Register;
 import kr.ac.knu.gdsc.Eywa.register.dto.RegisterSaveRequestDto;
 import kr.ac.knu.gdsc.Eywa.register.dto.RegisterSaveResponseDto;
@@ -12,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -43,10 +42,4 @@ public class RegisterService {
     public List<Register> findAll(Member member) {
         return registerRepository.findAll();
     }
-
-
-
-
-
-
 }

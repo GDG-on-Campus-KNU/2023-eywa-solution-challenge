@@ -20,11 +20,8 @@ public abstract class Dictionary {
     @Column(name = "dictionary_id")
     private Long id;
 
-    @Column(name = "korean_name")
-    private String korName;
-
-    @Column(name = "english_name")
-    private String engName;
+    private String koreanName;
+    private String englishName;
 
     @Column(columnDefinition = "text")
     private String summary;
@@ -41,9 +38,9 @@ public abstract class Dictionary {
     @JsonIgnore
     private List<Register> registers = new ArrayList<>();
 
-    public Dictionary(String korName, String engName, String summary, String kind, String image) {
-        this.korName = korName;
-        this.engName = engName;
+    public Dictionary(String koreanName, String englishName, String summary, String kind, String image) {
+        this.koreanName = koreanName;
+        this.englishName = englishName;
         this.summary = summary;
         this.kind = kind;
         this.image = image;
@@ -57,5 +54,4 @@ public abstract class Dictionary {
     /**
      * 비즈니스 로직
      */
-
 }

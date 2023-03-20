@@ -57,7 +57,7 @@ public class DictionaryController {
             String period = (String) introductionMap.get("period");
             PlantIntroduction introduction = new PlantIntroduction(origin, period);
 
-            Plant plant = new Plant().builder()
+            Plant plant = Plant.builder()
                     .korName(korName)
                     .engName(engName)
                     .summary(summary)
@@ -103,7 +103,7 @@ public class DictionaryController {
             String organization = (String) designationMap.get("organization");
             Designation designation = new Designation(domestic, overseas, organization);
 
-            Animal animal = new Animal().builder()
+            Animal animal = Animal.builder()
                     .korName(korName)
                     .engName(engName)
                     .summary(summary)

@@ -15,7 +15,7 @@ import javax.persistence.Embeddable;
 public class Effect {
     @Column(name = "effect_ecosystem",
             columnDefinition = "text")
-    private String effect;
+    private String ecosystem;
 
     @Column(name = "effect_entity",
             columnDefinition = "text")

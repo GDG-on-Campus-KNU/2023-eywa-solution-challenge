@@ -1,10 +1,11 @@
-package kr.ac.knu.gdsc.Eywa.member.domain;
+package kr.ac.knu.gdsc.Eywa.members.domain;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @NoArgsConstructor
@@ -14,13 +15,13 @@ public class Level {
     @Column(name = "level_id")
     private Long id;
 
-    @Column(nullable = false)
+    @NotNull
     private int level;
 
-    @Column(name="max_exp", nullable = false)
+    @NotNull
     private int maxExp;
 
-    @Column(name="min_exp", nullable = false)
+    @NotNull
     private int minExp;
 
     @OneToOne(mappedBy = "level")
