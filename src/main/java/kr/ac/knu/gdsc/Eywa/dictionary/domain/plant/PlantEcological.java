@@ -25,7 +25,7 @@ public class PlantEcological {
             columnDefinition = "text")
     private String habitatDomestic;
 
-    @Column(name = "ecological_habitat_overseas",
+    @Column(name = "econological_habitat_overseas",
             columnDefinition = "text")
     private String habitatOverseas;
 }
