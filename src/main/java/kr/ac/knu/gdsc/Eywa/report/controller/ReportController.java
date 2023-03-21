@@ -45,14 +45,13 @@ public class ReportController {
         BigDecimal longitude = reportRequestDto.getLongitude();
         BigDecimal latitude = reportRequestDto.getLatitude();
         Long dictionaryId = reportRequestDto.getDictionaryId();
-
-        Report report = new Report().builder()
+        String picture = this.cloudStorageService.saveImage("registers", image);
+        Report report = Report.builder()
                 .longitude(longitude)
                 .latitude(latitude)
+                .picture(picture)
                 .dictionary(this.dictionaryService.getDictionary(dictionaryId).orElse(null))
                 .build();
-
         this.reportService.saveReport(report);
-        this.cloudStorageService.saveImage("registers", image);
     }
 }

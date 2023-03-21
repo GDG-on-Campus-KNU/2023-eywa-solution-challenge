@@ -31,18 +31,20 @@ public class CloudStorageService {
                 .getService();
     }
 
-    public void uploadImageToCloudStorage(String imagePath, String imageName) {
+    public String uploadImageToCloudStorage(String imagePath, String imageName) {
         try {
             storage.create(
                     BlobInfo.newBuilder(gcpConfiguration.getBucketName(), imageName).build(),
                     new FileInputStream(imagePath)
             );
+            return "https://storage.googleapis.com/" + gcpConfiguration.getBucketName() + "/" + imageName;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            return null;
         }
     }
 
-    public void saveImage(String dirName, MultipartFile image) {
+    public String saveImage(String dirName, MultipartFile image) {
         try {
             String originalImageName = Objects.requireNonNull(image.getOriginalFilename());
             String extension = originalImageName.substring(originalImageName.lastIndexOf("."));
@@ -53,9 +55,10 @@ public class CloudStorageService {
                 Files.createDirectories(imageDir);
             }
             image.transferTo(new File(imagePath));
-            uploadImageToCloudStorage(imagePath, imageName);
+            return uploadImageToCloudStorage(imagePath, imageName);
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
     }
 }
