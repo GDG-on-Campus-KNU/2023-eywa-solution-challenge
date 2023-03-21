@@ -1,10 +1,10 @@
 package kr.ac.knu.gdsc.Eywa.members.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import kr.ac.knu.gdsc.Eywa.common.domain.BaseTimeEntity;
 import kr.ac.knu.gdsc.Eywa.register.domain.Register;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import lombok.*;
-import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
