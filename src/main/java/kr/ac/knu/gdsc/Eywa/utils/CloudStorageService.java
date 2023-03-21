@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Objects;
 
@@ -46,7 +47,11 @@ public class CloudStorageService {
             String originalImageName = Objects.requireNonNull(image.getOriginalFilename());
             String extension = originalImageName.substring(originalImageName.lastIndexOf("."));
             String imageName = System.nanoTime() + extension;
-            String imagePath = Path.of(System.getProperty("user.dir"), "images", dirName, imageName).toString();
+            Path imageDir = Path.of(System.getProperty("user.dir"), "images", dirName);
+            String imagePath = imageDir + "/" + imageName;
+            if (!Files.isDirectory(imageDir)) {
+                Files.createDirectories(imageDir);
+            }
             image.transferTo(new File(imagePath));
             uploadImageToCloudStorage(imagePath, imageName);
         } catch (IOException e) {
