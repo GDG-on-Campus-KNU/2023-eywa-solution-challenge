@@ -36,3 +36,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+application-oauth.properties
+images/*
+src/main/resources/eywa-gcp-key.json

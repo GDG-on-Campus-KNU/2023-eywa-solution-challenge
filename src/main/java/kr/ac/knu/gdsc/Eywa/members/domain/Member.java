@@ -1,33 +1,44 @@
-package kr.ac.knu.gdsc.Eywa.member.domain;
+package kr.ac.knu.gdsc.Eywa.members.domain;
 
 import kr.ac.knu.gdsc.Eywa.common.domain.BaseTimeEntity;
 import kr.ac.knu.gdsc.Eywa.register.domain.Register;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import lombok.*;
+import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
+@Setter
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class Member extends BaseTimeEntity {
-    @Id @GeneratedValue
+    @JsonIgnore
+    @Id @GeneratedValue()
     @Column(name = "member_id")
-    private Long Id;
-    @Column(nullable = false)
+    private Long id;
+
+    @NotNull
+    private String sub;
+
+    @NotNull
     private String name;
 
-    @Column(nullable = false)
+    @NotNull
     private String email;
-    @Column(nullable = false)
+
+    @NotNull
     private int exp;
 
-    private String image;
+    @NotNull
+    private String picture;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @NotNull
     private Role role;
 
     @OneToOne
@@ -41,11 +52,11 @@ public class Member extends BaseTimeEntity {
     private List<Report> reports = new ArrayList<>();
 
     @Builder
-    public Member(String name, int exp, String image, Role role, Level level) {
+    public Member(String sub, String name, String picture, String email, String role) {
+        this.sub = sub;
         this.name = name;
-        this.exp = exp;
-        this.image = image;
-        this.role = role;
-        this.level = level;
+        this.picture = picture;
+        this.email = email;
+        this.role = Role.valueOf(role);
     }
 }

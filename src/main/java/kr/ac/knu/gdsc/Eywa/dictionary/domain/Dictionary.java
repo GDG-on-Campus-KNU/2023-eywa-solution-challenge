@@ -1,7 +1,6 @@
 package kr.ac.knu.gdsc.Eywa.dictionary.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import kr.ac.knu.gdsc.Eywa.register.domain.Register;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import lombok.Getter;
@@ -16,16 +15,19 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn //하위 테이블의 구분 칼럼 생성 default = DTYPE
+@SequenceGenerator(
+        name = "dictionary_seq_generator",
+        sequenceName = "dictionary_seq",
+        initialValue = 1,
+        allocationSize = 1)
 public abstract class Dictionary {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dictionary_seq_generator")
     @Column(name = "dictionary_id")
     private Long id;
 
-    @Column(name = "korean_name")
-    private String korName;
-
-    @Column(name = "english_name")
-    private String engName;
+    private String koreanName;
+    private String englishName;
 
     @Column(columnDefinition = "text")
     private String summary;
@@ -42,11 +44,20 @@ public abstract class Dictionary {
     @JsonIgnore
     private List<Register> registers = new ArrayList<>();
 
-    public Dictionary(String korName, String engName, String summary, String kind, String image) {
-        this.korName = korName;
-        this.engName = engName;
+    public Dictionary(String koreanName, String englishName, String summary, String kind, String image) {
+        this.koreanName = koreanName;
+        this.englishName = englishName;
         this.summary = summary;
         this.kind = kind;
         this.image = image;
     }
+
+    /**
+     * 연관관계 편의 메서드
+     */
+
+
+    /**
+     * 비즈니스 로직
+     */
 }

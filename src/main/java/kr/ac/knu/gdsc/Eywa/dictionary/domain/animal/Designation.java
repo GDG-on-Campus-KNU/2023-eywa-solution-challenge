@@ -18,9 +18,9 @@ public class Designation {
             columnDefinition = "text")
     private String domestic;
 
-    @Column(name = "designation_oversea",
+    @Column(name = "designation_overseas",
             columnDefinition = "text")
-    private String oversea;
+    private String overseas;
 
     @Column(name = "designation_organization",
             columnDefinition = "text")
