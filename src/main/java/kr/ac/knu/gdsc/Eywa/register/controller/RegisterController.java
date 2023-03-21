@@ -23,18 +23,35 @@ public class RegisterController {
     private final MemberService memberService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<RegisterSaveResponseDto> register(@ModelAttribute RegisterSaveRequestDto request) {
-        RegisterSaveResponseDto response = registerService.save(null, request);
+    public ResponseEntity<RegisterSaveResponseDto> register(@RequestBody RegisterSaveRequestDto request, @AuthenticationPrincipal OAuth2User oAuth2User) {
+        Long dictionaryId = request.getDictionaryId();
+        Optional<Member> memberOptional = memberService.getMember(oAuth2User);
+        if (memberOptional.isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+        Member member = memberOptional.get();
+        Optional<Register> registerOptional = registerService.getRegisterByDictionaryAndMember(dictionaryId, member.getId());
+        if (registerOptional.isPresent()) {
+            return ResponseEntity.badRequest().build();
+        }
+        RegisterSaveResponseDto response = registerService.saveRegister(member, request);
         return ResponseEntity.ok().body(response);
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<Register>> getRegisterList(@AuthenticationPrincipal OAuth2User oAuth2User) {
-        Optional<Member> userOptional = memberService.getMember(oAuth2User);
-        if (userOptional.isEmpty()) {
+    public ResponseEntity<List<Register>> getAllRegisters() {
+        List<Register> registers = registerService.getAllRegisters();
+        System.out.println(registers);
+        return ResponseEntity.ok().body(registers);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value="/{memberId}")
+    public ResponseEntity<List<Register>> getRegistersByMember(@PathVariable String memberId) {
+        Optional<Member> memberOptional = memberService.getMember(Long.valueOf(memberId));
+        if (memberOptional.isEmpty()) {
             return ResponseEntity.badRequest().build();
         }
-        List<Register> registers = registerService.findAll(userOptional.get());
+        List<Register> registers = registerService.getRegistersByMember(Long.valueOf(memberId));
         return ResponseEntity.ok().body(registers);
     }
 }

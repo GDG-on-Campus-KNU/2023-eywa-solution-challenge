@@ -42,4 +42,8 @@ public class MemberService extends DefaultOAuth2UserService {
     public Optional<Member> getMember(OAuth2User oAuth2User) {
         return memberRepository.findBySub(oAuth2User.getName());
     }
+
+    public Optional<Member> getMember(Long memberId) {
+        return memberRepository.findById(memberId);
+    }
 }

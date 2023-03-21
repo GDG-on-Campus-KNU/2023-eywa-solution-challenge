@@ -15,8 +15,14 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn //하위 테이블의 구분 칼럼 생성 default = DTYPE
+@SequenceGenerator(
+        name = "dictionary_seq_generator",
+        sequenceName = "dictionary_seq",
+        initialValue = 1,
+        allocationSize = 1)
 public abstract class Dictionary {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dictionary_seq_generator")
     @Column(name = "dictionary_id")
     private Long id;
 
