@@ -17,8 +17,10 @@ public class Report extends BaseTimeEntity {
     @Id @GeneratedValue
     @Column(name = "report_id")
     private Long id;
+
     private BigDecimal latitude;
     private BigDecimal longitude;
+    private String picture;
 
     @ManyToOne
     @JoinColumn(name = "member_id")
@@ -29,9 +31,10 @@ public class Report extends BaseTimeEntity {
     private Dictionary dictionary;
 
     @Builder
-    public Report(BigDecimal latitude, BigDecimal longitude, Member member, Dictionary dictionary) {
+    public Report(BigDecimal latitude, BigDecimal longitude, String picture, Member member, Dictionary dictionary) {
         this.latitude = latitude;
         this.longitude = longitude;
+        this.picture = picture;
         this.member = member;
         this.dictionary = dictionary;
     }
