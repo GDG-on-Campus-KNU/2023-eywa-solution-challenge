@@ -19,19 +19,15 @@ import java.util.Objects;
 @Service
 public class CloudStorageService {
     private final GcpConfig gcpConfiguration;
-    private Storage storage;
+    private final Storage storage;
 
     @Autowired
     public CloudStorageService(GcpConfig gcpConfiguration) {
         this.gcpConfiguration = gcpConfiguration;
-        try {
-            this.storage = StorageOptions.newBuilder()
-                    .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream(gcpConfiguration.getKeyPath())))
-                    .build()
-                    .getService();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.storage = StorageOptions.newBuilder()
+//                    .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream(gcpConfiguration.getKeyPath())))
+                .build()
+                .getService();
     }
 
     public void uploadImageToCloudStorage(String imagePath, String imageName) {

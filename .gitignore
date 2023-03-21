@@ -39,4 +39,4 @@ out/
 
 application-oauth.properties
 images/*
-src/main/resources/eywa-storage-key.json
+src/main/resources/eywa-gcp-key.json

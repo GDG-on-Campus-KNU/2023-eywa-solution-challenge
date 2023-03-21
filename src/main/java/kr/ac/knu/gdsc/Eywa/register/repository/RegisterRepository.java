@@ -2,9 +2,11 @@ package kr.ac.knu.gdsc.Eywa.register.repository;
 
 
 import kr.ac.knu.gdsc.Eywa.register.domain.Register;
+import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.sql.DataSource;
 import java.util.List;
 import java.util.Optional;
 

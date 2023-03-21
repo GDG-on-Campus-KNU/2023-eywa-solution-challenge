@@ -41,7 +41,6 @@ public class RegisterController {
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Register>> getAllRegisters() {
         List<Register> registers = registerService.getAllRegisters();
-        System.out.println(registers);
         return ResponseEntity.ok().body(registers);
     }
 
