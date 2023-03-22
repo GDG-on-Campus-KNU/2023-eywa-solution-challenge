@@ -24,4 +24,8 @@ public class ReportService {
     public List<Report> getReportList() {
         return reportRepository.findAll();
     }
+
+    public List<Report> getReportListByMemberId(Long memberId) {
+        return reportRepository.findAllByMemberId(memberId);
+    }
 }
