@@ -13,48 +13,52 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Objects;
 
 @Service
 public class CloudStorageService {
     private final GcpConfig gcpConfiguration;
-    private Storage storage;
+    private final Storage storage;
 
     @Autowired
-    public CloudStorageService(GcpConfig gcpConfiguration) {
+    public CloudStorageService(GcpConfig gcpConfiguration) throws IOException {
         this.gcpConfiguration = gcpConfiguration;
-        try {
-            this.storage = StorageOptions.newBuilder()
-                    .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream(gcpConfiguration.getKeyPath())))
-                    .build()
-                    .getService();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.storage = StorageOptions.newBuilder()
+                .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream(gcpConfiguration.getKeyPath())))
+                .build()
+                .getService();
     }
 
-    public void uploadImageToCloudStorage(String imagePath, String imageName) {
+    public String uploadImageToCloudStorage(String imagePath, String imageName) {
         try {
             storage.create(
                     BlobInfo.newBuilder(gcpConfiguration.getBucketName(), imageName).build(),
                     new FileInputStream(imagePath)
             );
+            return "https://storage.googleapis.com/" + gcpConfiguration.getBucketName() + "/" + imageName;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            return null;
         }
     }
 
-    public void saveImage(String dirName, MultipartFile image) {
+    public String saveImage(String dirName, MultipartFile image) {
         try {
             String originalImageName = Objects.requireNonNull(image.getOriginalFilename());
             String extension = originalImageName.substring(originalImageName.lastIndexOf("."));
             String imageName = System.nanoTime() + extension;
-            String imagePath = Path.of(System.getProperty("user.dir"), "images", dirName, imageName).toString();
+            Path imageDir = Path.of(System.getProperty("user.dir"), "images", dirName);
+            String imagePath = imageDir + "/" + imageName;
+            if (!Files.isDirectory(imageDir)) {
+                Files.createDirectories(imageDir);
+            }
             image.transferTo(new File(imagePath));
-            uploadImageToCloudStorage(imagePath, imageName);
+            return uploadImageToCloudStorage(imagePath, imageName);
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
     }
 }

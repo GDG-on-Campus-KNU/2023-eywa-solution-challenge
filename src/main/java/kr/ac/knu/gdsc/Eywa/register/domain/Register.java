@@ -1,8 +1,10 @@
 package kr.ac.knu.gdsc.Eywa.register.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import kr.ac.knu.gdsc.Eywa.common.domain.BaseTimeEntity;
 import kr.ac.knu.gdsc.Eywa.dictionary.domain.Dictionary;
-import kr.ac.knu.gdsc.Eywa.members.domain.Member;
+import kr.ac.knu.gdsc.Eywa.member.domain.Member;
+import kr.ac.knu.gdsc.Eywa.register.dto.RegisterResponseDto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,7 +25,9 @@ public class Register extends BaseTimeEntity {
     private BigDecimal longitude;
 
     @ManyToOne
+
     @JoinColumn(name = "member_id")
+    @JsonIgnore
     private Member member;
 
     @ManyToOne
@@ -31,8 +35,15 @@ public class Register extends BaseTimeEntity {
     private Dictionary dictionary;
 
     @Builder
-    public Register(BigDecimal latitude, BigDecimal longitude) {
+    public Register(BigDecimal latitude, BigDecimal longitude, Member member, Dictionary dictionary) {
         this.latitude = latitude;
         this.longitude = longitude;
+        this.member = member;
+        this.dictionary = dictionary;
+    }
+
+    // convert to dto
+    public RegisterResponseDto toDto() {
+        return new RegisterResponseDto(this.latitude, this.longitude, this.getCreatedAt());
     }
 }

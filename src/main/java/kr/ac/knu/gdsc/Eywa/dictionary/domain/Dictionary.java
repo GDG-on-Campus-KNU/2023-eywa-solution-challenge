@@ -1,7 +1,9 @@
 package kr.ac.knu.gdsc.Eywa.dictionary.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import kr.ac.knu.gdsc.Eywa.dictionary.dto.DictionaryDto;
 import kr.ac.knu.gdsc.Eywa.register.domain.Register;
+import kr.ac.knu.gdsc.Eywa.register.dto.RegisterResponseDto;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,14 +11,21 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Getter
 @NoArgsConstructor
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn //하위 테이블의 구분 칼럼 생성 default = DTYPE
+@SequenceGenerator(
+        name = "dictionary_seq_generator",
+        sequenceName = "dictionary_seq",
+        initialValue = 1,
+        allocationSize = 1)
 public abstract class Dictionary {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dictionary_seq_generator")
     @Column(name = "dictionary_id")
     private Long id;
 
@@ -33,10 +42,10 @@ public abstract class Dictionary {
     @OneToMany(mappedBy = "dictionary")
     @JsonIgnore
     private List<Report> reports = new ArrayList<>();
-
     @OneToMany(mappedBy = "dictionary")
     @JsonIgnore
     private List<Register> registers = new ArrayList<>();
+
 
     public Dictionary(String koreanName, String englishName, String summary, String kind, String image) {
         this.koreanName = koreanName;
@@ -46,12 +55,18 @@ public abstract class Dictionary {
         this.image = image;
     }
 
-    /**
-     * 연관관계 편의 메서드
-     */
+    // convert to dto
+    public DictionaryDto toDto(Long memberId) {
+        RegisterResponseDto registerResponseDto = null;
+        for (Register register: this.registers) {
+            if (register.getMember().getId().equals(memberId)) {
+                registerResponseDto = register.toDto();
+            }
+        }
+       return new DictionaryDto(this, registerResponseDto);
+    }
 
-
-    /**
-     * 비즈니스 로직
-     */
+    public DictionaryDto toDto() {
+        return new DictionaryDto(this, null);
+    }
 }

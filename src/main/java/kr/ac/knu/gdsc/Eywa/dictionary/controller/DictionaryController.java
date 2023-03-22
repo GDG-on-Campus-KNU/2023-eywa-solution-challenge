@@ -6,11 +6,18 @@ import kr.ac.knu.gdsc.Eywa.dictionary.domain.plant.Plant;
 import kr.ac.knu.gdsc.Eywa.dictionary.domain.plant.PlantEcological;
 import kr.ac.knu.gdsc.Eywa.dictionary.domain.plant.PlantIntroduction;
 import kr.ac.knu.gdsc.Eywa.dictionary.domain.plant.Shape;
+import kr.ac.knu.gdsc.Eywa.dictionary.dto.DictionaryDto;
 import kr.ac.knu.gdsc.Eywa.dictionary.service.DictionaryService;
+import kr.ac.knu.gdsc.Eywa.member.domain.Member;
+import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetail;
+import kr.ac.knu.gdsc.Eywa.register.domain.Register;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -25,16 +32,17 @@ public class DictionaryController {
         this.dictionaryService = dictionaryService;
     }
 
+    // 도감 등록
     @RequestMapping(method=RequestMethod.POST)
-    public void addDictionary(@RequestBody HashMap<String, Object> reqBody) {
-        String korName = (String) reqBody.get("korean_name");
-        String engName = (String) reqBody.get("english_name");
-        String summary = (String) reqBody.get("summary");
-        String kind = (String) reqBody.get("kind");
-        String image = (String) reqBody.get("image");
+    public void addDictionary(@RequestBody HashMap<String, Object> dictionary) {
+        String korName = (String) dictionary.get("korean_name");
+        String engName = (String) dictionary.get("english_name");
+        String summary = (String) dictionary.get("summary");
+        String kind = (String) dictionary.get("kind");
+        String image = (String) dictionary.get("image");
 
         if (kind.equals("plant")) {
-            HashMap<String, Object> shapeMap = (HashMap<String, Object>) reqBody.get("shape");
+            HashMap<String, Object> shapeMap = (HashMap<String, Object>) dictionary.get("shape");
             HashMap<String, Object> flowerMap = (HashMap<String, Object>) shapeMap.get("flower");
             String flowerDescription = (String) flowerMap.get("description");
             String flowerColor = (String) flowerMap.get("color");
@@ -44,7 +52,7 @@ public class DictionaryController {
             String fruit = (String) shapeMap.get("fruit");
             Shape shape = new Shape(size, stem, leaf, flowerDescription, flowerColor, fruit);
 
-            HashMap<String, Object> ecologicalMap = (HashMap<String, Object>) reqBody.get("ecological");
+            HashMap<String, Object> ecologicalMap = (HashMap<String, Object>) dictionary.get("ecological");
             HashMap<String, Object> habitat = (HashMap<String, Object>) ecologicalMap.get("habitat");
             String habitatDomestic = (String) habitat.get("domestic");
             String habitatOverseas = (String) habitat.get("overseas");
@@ -52,7 +60,7 @@ public class DictionaryController {
             String bloomPeriod = (String) ecologicalMap.get("bloom_period");
             PlantEcological ecological = new PlantEcological(growthPeriod, bloomPeriod, habitatDomestic, habitatOverseas);
 
-            HashMap<String, Object> introductionMap = (HashMap<String, Object>) reqBody.get("introduction");
+            HashMap<String, Object> introductionMap = (HashMap<String, Object>) dictionary.get("introduction");
             String origin = (String) introductionMap.get("origin");
             String period = (String) introductionMap.get("period");
             PlantIntroduction introduction = new PlantIntroduction(origin, period);
@@ -70,34 +78,34 @@ public class DictionaryController {
 
             dictionaryService.saveDictionary(plant);
         } else {
-            String shape = (String) reqBody.get("shape");
+            String shape = (String) dictionary.get("shape");
 
-            HashMap<String, Object> ecologicalMap = (HashMap<String, Object>) reqBody.get("ecological");
+            HashMap<String, Object> ecologicalMap = (HashMap<String, Object>) dictionary.get("ecological");
             String habitat = (String) ecologicalMap.get("habitat");
             String lifespan = (String) ecologicalMap.get("lifespan");
             String etc = (String) ecologicalMap.get("etc");
             AnimalEcological ecological = new AnimalEcological(habitat, lifespan, etc);
 
-            HashMap<String, Object> introductionMap = (HashMap<String, Object>) reqBody.get("introduction");
+            HashMap<String, Object> introductionMap = (HashMap<String, Object>) dictionary.get("introduction");
             String origin = (String) introductionMap.get("origin");
             String period = (String) introductionMap.get("period");
             String purpose = (String) introductionMap.get("purpose");
             AnimalIntroduction introduction = new AnimalIntroduction(origin, period, purpose);
 
-            String distribution = (String) reqBody.get("distribution");
+            String distribution = (String) dictionary.get("distribution");
 
-            HashMap<String, Object> effectMap = (HashMap<String, Object>) reqBody.get("effect");
+            HashMap<String, Object> effectMap = (HashMap<String, Object>) dictionary.get("effect");
             String ecosystem = (String) effectMap.get("ecosystem");
             String entity = (String) effectMap.get("entity");
             Effect effect = new Effect(ecosystem, entity);
 
-            HashMap<String, Object> regulateMap = (HashMap<String, Object>) reqBody.get("regulate");
+            HashMap<String, Object> regulateMap = (HashMap<String, Object>) dictionary.get("regulate");
             String past = (String) regulateMap.get("past");
             String reason = (String) regulateMap.get("reason");
             String method = (String) regulateMap.get("method");
             Regulate regulate = new Regulate(past, reason, method);
 
-            HashMap<String, Object> designationMap = (HashMap<String, Object>) reqBody.get("designation");
+            HashMap<String, Object> designationMap = (HashMap<String, Object>) dictionary.get("designation");
             String domestic = (String) designationMap.get("domestic");
             String overseas = (String) designationMap.get("overseas");
             String organization = (String) designationMap.get("organization");
@@ -122,19 +130,39 @@ public class DictionaryController {
         }
     }
 
+    // 도감 목록 조회
     @RequestMapping(method=RequestMethod.GET)
-    public ResponseEntity<List<Dictionary>> getDictionaryList() {
-        List<Dictionary> dictionaryList = dictionaryService.getDictionaryList();
+    public ResponseEntity<List<DictionaryDto>> getDictionaryList(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
+        List<DictionaryDto> dictionaryList = new ArrayList<>();
+        if (oAuth2User == null) {
+            dictionaryService.getDictionaryList().forEach(dictionary -> {
+                dictionaryList.add(dictionary.toDto());
+            });
+        } else { // 로그인 한 경우, 도감 기록 여부 포함
+            Member member = oAuth2User.getMember();
+            dictionaryService.getDictionaryList().forEach(dictionary -> {
+                dictionaryList.add(dictionary.toDto(member.getId()));
+            });
+        }
         if (dictionaryList.isEmpty()) {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.badRequest().build();
         } else {
             return ResponseEntity.ok(dictionaryList);
         }
     }
 
+    // 도감 상세 조회
     @RequestMapping(value="/{id}", method=RequestMethod.GET)
-    public ResponseEntity<Dictionary> getDictionary(@PathVariable Long id) {
+    public ResponseEntity<DictionaryDto> getDictionary(@AuthenticationPrincipal PrincipalDetail oAuth2User, @PathVariable Long id) {
         Optional<Dictionary> dictionary = dictionaryService.getDictionary(id);
-        return dictionary.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        if (dictionary.isPresent()) {
+            if (oAuth2User == null) {
+                return ResponseEntity.ok(dictionary.get().toDto());
+            } else { // 로그인 한 경우, 도감 기록 여부 포함
+                return ResponseEntity.ok(dictionary.get().toDto(oAuth2User.getMember().getId()));
+            }
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
     }
 }
