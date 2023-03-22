@@ -16,20 +16,14 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(value = "/member")
+@RequestMapping(value = "/members")
 public class MemberController {
     private final MemberService memberService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, value="/me")
     public ResponseEntity<MemberDto> getMember(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
         Member member = oAuth2User.getMember();
         return ResponseEntity.ok().body(member.toDto());
-    }
-
-    @RequestMapping(method = RequestMethod.GET, value = "/registers")
-    public ResponseEntity<List<Register>> getRegisters(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
-        Member member = oAuth2User.getMember();
-        return ResponseEntity.ok().body(member.getRegisters());
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/reports")

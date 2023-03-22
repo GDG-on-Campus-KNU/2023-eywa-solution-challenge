@@ -3,6 +3,7 @@ package kr.ac.knu.gdsc.Eywa.report.controller;
 import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetail;
 import kr.ac.knu.gdsc.Eywa.dictionary.service.DictionaryService;
 import kr.ac.knu.gdsc.Eywa.member.domain.Member;
+import kr.ac.knu.gdsc.Eywa.member.domain.Authorities;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import kr.ac.knu.gdsc.Eywa.report.dto.ReportRequestDto;
 import kr.ac.knu.gdsc.Eywa.report.dto.ReportResponseDto;
@@ -11,7 +12,7 @@ import kr.ac.knu.gdsc.Eywa.utils.CloudStorageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,6 +30,7 @@ public class ReportController {
     private final DictionaryService dictionaryService;
     private final CloudStorageService cloudStorageService;
 
+    // 생태계교란종 신고 목록 조회
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<ReportResponseDto>> getReportList() {
         List<ReportResponseDto> reportResponseDtoList = new ArrayList<>();
@@ -38,13 +40,27 @@ public class ReportController {
         return ResponseEntity.ok(reportResponseDtoList);
     }
 
+    // 생태계교란종 본인 신고 목록 조회
+    @RequestMapping(method = RequestMethod.GET, value = "/members/me")
+    public ResponseEntity<List<ReportResponseDto>> getMyReportList(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
+        Member member = oAuth2User.getMember();
+        List<Report> reportList = this.reportService.getReportListByMemberId(member.getId());
+        List<ReportResponseDto> reportResponseDtoList = new ArrayList<>();
+        reportList.forEach(report -> {
+            reportResponseDtoList.add(report.toDto());
+        });
+        return ResponseEntity.ok(reportResponseDtoList);
+    }
+
+    // 생태계교란종 신고 상세 조회
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<ReportResponseDto> getReport(@PathVariable Long id) {
         Optional<Report> report = this.reportService.getReport(id);
         return report.map(value -> ResponseEntity.ok(value.toDto())).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PreAuthorize("hasRole('ROLE_USER')")
+    // 생태계교란종 신고
+    @Secured(Authorities.ROLES.USER)
     @RequestMapping(
             method = RequestMethod.POST,
             consumes = {
@@ -57,6 +73,7 @@ public class ReportController {
             @RequestPart ReportRequestDto reportRequestDto,
             @RequestPart MultipartFile image)
     {
+
         Member member = principalDetail.getMember();
         BigDecimal longitude = reportRequestDto.getLongitude();
         BigDecimal latitude = reportRequestDto.getLatitude();

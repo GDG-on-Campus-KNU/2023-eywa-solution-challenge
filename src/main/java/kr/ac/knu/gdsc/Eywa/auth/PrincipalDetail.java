@@ -6,6 +6,7 @@ import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
@@ -16,12 +17,14 @@ public class PrincipalDetail implements OAuth2User {
     private Map<String, Object> attributes;
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+    public String getName() {
+        return this.member.getName();
     }
 
     @Override
-    public String getName() {
-        return this.member.getName();
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        Collection<GrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(member.getAuthority());
+        return authorities;
     }
 }
