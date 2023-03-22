@@ -46,7 +46,7 @@ public class Member extends BaseTimeEntity {
 
     @Enumerated(EnumType.STRING)
     @NotNull
-    private Role role;
+    private Authorities authority;
 
     @OneToOne
     @JoinColumn(name = "level_id")
@@ -59,12 +59,12 @@ public class Member extends BaseTimeEntity {
     private List<Report> reports = new ArrayList<>();
 
     @Builder
-    public Member(String sub, String name, String picture, String email, String role) {
+    public Member(String sub, String name, String picture, String email, Authorities authority) {
         this.sub = sub;
         this.name = name;
         this.picture = picture;
         this.email = email;
-        this.role = Role.valueOf(role);
+        this.authority = authority;
     }
 
     // convert to dto

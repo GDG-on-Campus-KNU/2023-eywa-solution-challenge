@@ -26,7 +26,7 @@ public class CloudStorageService {
     public CloudStorageService(GcpConfig gcpConfiguration) throws IOException {
         this.gcpConfiguration = gcpConfiguration;
         this.storage = StorageOptions.newBuilder()
-                // .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream(gcpConfiguration.getKeyPath())))
+                .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream(gcpConfiguration.getKeyPath())))
                 .build()
                 .getService();
     }

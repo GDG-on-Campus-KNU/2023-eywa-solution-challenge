@@ -1,5 +1,6 @@
 package kr.ac.knu.gdsc.Eywa.auth;
 
+import kr.ac.knu.gdsc.Eywa.member.domain.Authorities;
 import kr.ac.knu.gdsc.Eywa.member.domain.GoogleUserInfo;
 import kr.ac.knu.gdsc.Eywa.member.domain.Member;
 import kr.ac.knu.gdsc.Eywa.member.respository.MemberRepository;
@@ -31,7 +32,7 @@ public class PrincipalDetailService extends DefaultOAuth2UserService {
                     .name(googleUserInfo.getName())
                     .picture(googleUserInfo.getPicture())
                     .email(googleUserInfo.getEmail())
-                    .role("USER")
+                    .authority(Authorities.USER)
                     .build();
         } else { // 회원 가입한 경우 이메일 갱신
             member = memberOptional.get();

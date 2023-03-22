@@ -10,5 +10,6 @@ public class MemberDto {
     private String email;
     private int exp;
     private String picture;
+    private String role;
     private int level;
 }

@@ -3,6 +3,7 @@ package kr.ac.knu.gdsc.Eywa.report.controller;
 import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetail;
 import kr.ac.knu.gdsc.Eywa.dictionary.service.DictionaryService;
 import kr.ac.knu.gdsc.Eywa.member.domain.Member;
+import kr.ac.knu.gdsc.Eywa.member.domain.Authorities;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import kr.ac.knu.gdsc.Eywa.report.dto.ReportRequestDto;
 import kr.ac.knu.gdsc.Eywa.report.dto.ReportResponseDto;
@@ -11,7 +12,7 @@ import kr.ac.knu.gdsc.Eywa.utils.CloudStorageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -44,7 +45,7 @@ public class ReportController {
         return report.map(value -> ResponseEntity.ok(value.toDto())).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PreAuthorize("hasRole('ROLE_USER')")
+    @Secured(Authorities.ROLES.USER)
     @RequestMapping(
             method = RequestMethod.POST,
             consumes = {
@@ -57,6 +58,7 @@ public class ReportController {
             @RequestPart ReportRequestDto reportRequestDto,
             @RequestPart MultipartFile image)
     {
+
         Member member = principalDetail.getMember();
         BigDecimal longitude = reportRequestDto.getLongitude();
         BigDecimal latitude = reportRequestDto.getLatitude();
