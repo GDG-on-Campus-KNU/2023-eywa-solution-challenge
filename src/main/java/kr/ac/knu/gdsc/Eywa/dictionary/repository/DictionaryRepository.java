@@ -9,6 +9,9 @@ import java.util.Optional;
 
 @Transactional
 public interface DictionaryRepository extends JpaRepository<Dictionary, Long> {
+    @Override
     Optional<Dictionary> findById(Long id);
+
+    @Override
     List<Dictionary> findAll();
 }

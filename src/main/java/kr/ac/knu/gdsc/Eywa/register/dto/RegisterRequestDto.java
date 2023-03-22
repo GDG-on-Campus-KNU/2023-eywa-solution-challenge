@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @Getter
 @AllArgsConstructor
-public class RegisterSaveRequestDto{
+public class RegisterRequestDto {
     // 위치
     private BigDecimal latitude;
     private BigDecimal longitude;

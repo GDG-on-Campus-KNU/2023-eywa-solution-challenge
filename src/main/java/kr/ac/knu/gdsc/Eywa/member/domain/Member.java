@@ -1,7 +1,8 @@
-package kr.ac.knu.gdsc.Eywa.members.domain;
+package kr.ac.knu.gdsc.Eywa.member.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import kr.ac.knu.gdsc.Eywa.common.domain.BaseTimeEntity;
+import kr.ac.knu.gdsc.Eywa.member.dto.MemberDto;
 import kr.ac.knu.gdsc.Eywa.register.domain.Register;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import lombok.*;
@@ -16,9 +17,15 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@SequenceGenerator(
+        name = "member_seq_generator",
+        sequenceName = "member_seq",
+        initialValue = 1,
+        allocationSize = 1)
 public class Member extends BaseTimeEntity {
     @JsonIgnore
-    @Id @GeneratedValue()
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_seq")
     @Column(name = "member_id")
     private Long id;
 
@@ -58,5 +65,16 @@ public class Member extends BaseTimeEntity {
         this.picture = picture;
         this.email = email;
         this.role = Role.valueOf(role);
+    }
+
+    // convert to dto
+    public MemberDto toDto() {
+        return MemberDto.builder()
+                .name(this.name)
+                .email(this.email)
+                .exp(this.exp)
+                .picture(this.picture)
+                .level(this.level == null ? 0 : this.level.getLevel())
+                .build();
     }
 }

@@ -16,4 +16,5 @@ public interface RegisterRepository extends JpaRepository<Register, Long> {
     List<Register> findAll();
     Optional<Register> findByDictionaryIdAndMemberId(Long dictionaryId, Long memberId);
     List<Register> findByMemberId(Long memberId);
+    Optional<Register> findById(Long registerId);
 }

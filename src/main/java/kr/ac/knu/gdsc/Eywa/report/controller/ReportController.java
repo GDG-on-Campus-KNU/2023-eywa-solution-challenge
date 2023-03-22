@@ -1,16 +1,23 @@
 package kr.ac.knu.gdsc.Eywa.report.controller;
 
+import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetail;
 import kr.ac.knu.gdsc.Eywa.dictionary.service.DictionaryService;
+import kr.ac.knu.gdsc.Eywa.member.domain.Member;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import kr.ac.knu.gdsc.Eywa.report.dto.ReportRequestDto;
+import kr.ac.knu.gdsc.Eywa.report.dto.ReportResponseDto;
 import kr.ac.knu.gdsc.Eywa.report.service.ReportService;
 import kr.ac.knu.gdsc.Eywa.utils.CloudStorageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,16 +30,21 @@ public class ReportController {
     private final CloudStorageService cloudStorageService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Report> getReportList() {
-        return this.reportService.getReportList();
+    public ResponseEntity<List<ReportResponseDto>> getReportList() {
+        List<ReportResponseDto> reportResponseDtoList = new ArrayList<>();
+        this.reportService.getReportList().forEach(report -> {
+            reportResponseDtoList.add(report.toDto());
+        });
+        return ResponseEntity.ok(reportResponseDtoList);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Report getReport(@PathVariable Long id) {
+    public ResponseEntity<ReportResponseDto> getReport(@PathVariable Long id) {
         Optional<Report> report = this.reportService.getReport(id);
-        return report.orElse(null);
+        return report.map(value -> ResponseEntity.ok(value.toDto())).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @PreAuthorize("hasRole('ROLE_USER')")
     @RequestMapping(
             method = RequestMethod.POST,
             consumes = {
@@ -40,8 +52,12 @@ public class ReportController {
                     MediaType.MULTIPART_FORM_DATA_VALUE
             }
     )
-    public void saveReport(@RequestPart ReportRequestDto reportRequestDto,
-                           @RequestPart MultipartFile image) {
+    public void saveReport(
+            @AuthenticationPrincipal PrincipalDetail principalDetail,
+            @RequestPart ReportRequestDto reportRequestDto,
+            @RequestPart MultipartFile image)
+    {
+        Member member = principalDetail.getMember();
         BigDecimal longitude = reportRequestDto.getLongitude();
         BigDecimal latitude = reportRequestDto.getLatitude();
         Long dictionaryId = reportRequestDto.getDictionaryId();
@@ -50,6 +66,7 @@ public class ReportController {
                 .longitude(longitude)
                 .latitude(latitude)
                 .picture(picture)
+                .member(member)
                 .dictionary(this.dictionaryService.getDictionary(dictionaryId).orElse(null))
                 .build();
         this.reportService.saveReport(report);

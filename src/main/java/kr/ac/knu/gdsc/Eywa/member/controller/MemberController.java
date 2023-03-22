@@ -1,26 +1,41 @@
-package kr.ac.knu.gdsc.Eywa.members.controller;
+package kr.ac.knu.gdsc.Eywa.member.controller;
 
-import kr.ac.knu.gdsc.Eywa.members.domain.Member;
-import kr.ac.knu.gdsc.Eywa.members.service.MemberService;
+import kr.ac.knu.gdsc.Eywa.member.domain.Member;
+import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetail;
+import kr.ac.knu.gdsc.Eywa.member.dto.MemberDto;
+import kr.ac.knu.gdsc.Eywa.member.service.MemberService;
+import kr.ac.knu.gdsc.Eywa.register.domain.Register;
+import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Optional;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(value = "/members")
-public class MembersController {
+@RequestMapping(value = "/member")
+public class MemberController {
     private final MemberService memberService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public Member getMember(@AuthenticationPrincipal OAuth2User oAuth2User) {
-        Optional<Member> memberOptional = this.memberService.getMember(oAuth2User);
-        return memberOptional.orElse(null);
+    public ResponseEntity<MemberDto> getMember(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
+        Member member = oAuth2User.getMember();
+        return ResponseEntity.ok().body(member.toDto());
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/registers")
+    public ResponseEntity<List<Register>> getRegisters(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
+        Member member = oAuth2User.getMember();
+        return ResponseEntity.ok().body(member.getRegisters());
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/reports")
+    public ResponseEntity<List<Report>> getReports(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
+        Member member = oAuth2User.getMember();
+        return ResponseEntity.ok().body(member.getReports());
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/session")

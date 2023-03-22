@@ -1,8 +1,9 @@
-package kr.ac.knu.gdsc.Eywa.members.service;
+package kr.ac.knu.gdsc.Eywa.auth;
 
-import kr.ac.knu.gdsc.Eywa.members.domain.GoogleUserInfo;
-import kr.ac.knu.gdsc.Eywa.members.domain.Member;
-import kr.ac.knu.gdsc.Eywa.members.respository.MemberRepository;
+import kr.ac.knu.gdsc.Eywa.member.domain.GoogleUserInfo;
+import kr.ac.knu.gdsc.Eywa.member.domain.Member;
+import kr.ac.knu.gdsc.Eywa.member.respository.MemberRepository;
+import kr.ac.knu.gdsc.Eywa.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -14,16 +15,17 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class MemberService extends DefaultOAuth2UserService {
-    private final MemberRepository memberRepository;
+public class PrincipalDetailService extends DefaultOAuth2UserService {
+    private final MemberService memberService;
 
+    // 로그인 처리
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-        OAuth2User oauth2User = super.loadUser(userRequest);
-        GoogleUserInfo googleUserInfo = new GoogleUserInfo(oauth2User.getAttributes());
-        Optional<Member> userOptional = memberRepository.findBySub(googleUserInfo.getSub());
+        OAuth2User oAuth2User = super.loadUser(userRequest);
+        GoogleUserInfo googleUserInfo = new GoogleUserInfo(oAuth2User.getAttributes());
+        Optional<Member> memberOptional = memberService.getMemberBySub(googleUserInfo.getSub());
         Member member;
-        if (userOptional.isEmpty()) {
+        if (memberOptional.isEmpty()) { // 회원 가입 하지 않은 경우 자동 회원 가입
             member = Member.builder()
                     .sub(googleUserInfo.getSub())
                     .name(googleUserInfo.getName())
@@ -31,19 +33,11 @@ public class MemberService extends DefaultOAuth2UserService {
                     .email(googleUserInfo.getEmail())
                     .role("USER")
                     .build();
-        } else {
-            member = userOptional.get();
+        } else { // 회원 가입한 경우 이메일 갱신
+            member = memberOptional.get();
             member.setEmail(googleUserInfo.getEmail());
         }
-        memberRepository.save(member);
-        return oauth2User;
-    }
-
-    public Optional<Member> getMember(OAuth2User oAuth2User) {
-        return memberRepository.findBySub(oAuth2User.getName());
-    }
-
-    public Optional<Member> getMember(Long memberId) {
-        return memberRepository.findById(memberId);
+        memberService.saveMember(member);
+        return new PrincipalDetail(member, oAuth2User.getAttributes());
     }
 }
