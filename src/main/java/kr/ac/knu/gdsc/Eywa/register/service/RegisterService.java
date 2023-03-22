@@ -38,11 +38,11 @@ public class RegisterService {
     }
 
     // 도감 등록 목록 조회
-    public List<Register> getAllRegisters() {
+    public List<Register> getRegisterList() {
         return registerRepository.findAll();
     }
 
-    public List<Register> getRegistersByMember(Long memberId) {
+    public List<Register> getRegisterListByMember(Long memberId) {
         return registerRepository.findByMemberId(memberId);
     }
 

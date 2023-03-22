@@ -5,6 +5,7 @@ import kr.ac.knu.gdsc.Eywa.member.domain.Member;
 import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetail;
 import kr.ac.knu.gdsc.Eywa.register.domain.Register;
 import kr.ac.knu.gdsc.Eywa.register.dto.RegisterRequestDto;
+import kr.ac.knu.gdsc.Eywa.register.dto.RegisterResponseDto;
 import kr.ac.knu.gdsc.Eywa.register.service.RegisterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,8 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -19,6 +22,31 @@ import java.util.Optional;
 @RequestMapping(value="/registers")
 public class RegisterController {
     private final RegisterService registerService;
+
+    // 도감 본인 기록 조회
+    @Secured(Authorities.ROLES.USER)
+    @RequestMapping(method = RequestMethod.GET, value = "/members/me")
+    public ResponseEntity<List<RegisterResponseDto>> getMyRegisterList(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
+        Member member = oAuth2User.getMember();
+        List<Register> registerList = this.registerService.getRegisterListByMember(member.getId());
+        List<RegisterResponseDto> registerResponseDtoList = new ArrayList<>();
+        registerList.forEach(register -> {
+            registerResponseDtoList.add(register.toDto());
+        });
+        return ResponseEntity.ok().body(registerResponseDtoList);
+    }
+
+    // 도감 전체 기록 조회
+    @RequestMapping(method = RequestMethod.GET)
+    public ResponseEntity<List<RegisterResponseDto>> getRegisterList() {
+        List<Register> registerList = this.registerService.getRegisterList();
+        List<RegisterResponseDto> registerResponseDtoList = new ArrayList<>();
+        registerList.forEach(register -> {
+            registerResponseDtoList.add(register.toDto());
+        });
+        return ResponseEntity.ok().body(registerResponseDtoList);
+
+    }
 
     // 도감 기록
     @Secured(Authorities.ROLES.USER)

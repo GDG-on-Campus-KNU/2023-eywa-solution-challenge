@@ -30,6 +30,7 @@ public class ReportController {
     private final DictionaryService dictionaryService;
     private final CloudStorageService cloudStorageService;
 
+    // 생태계교란종 신고 목록 조회
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<ReportResponseDto>> getReportList() {
         List<ReportResponseDto> reportResponseDtoList = new ArrayList<>();
@@ -39,12 +40,26 @@ public class ReportController {
         return ResponseEntity.ok(reportResponseDtoList);
     }
 
+    // 생태계교란종 본인 신고 목록 조회
+    @RequestMapping(method = RequestMethod.GET, value = "/members/me")
+    public ResponseEntity<List<ReportResponseDto>> getMyReportList(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
+        Member member = oAuth2User.getMember();
+        List<Report> reportList = this.reportService.getReportListByMemberId(member.getId());
+        List<ReportResponseDto> reportResponseDtoList = new ArrayList<>();
+        reportList.forEach(report -> {
+            reportResponseDtoList.add(report.toDto());
+        });
+        return ResponseEntity.ok(reportResponseDtoList);
+    }
+
+    // 생태계교란종 신고 상세 조회
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<ReportResponseDto> getReport(@PathVariable Long id) {
         Optional<Report> report = this.reportService.getReport(id);
         return report.map(value -> ResponseEntity.ok(value.toDto())).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // 생태계교란종 신고
     @Secured(Authorities.ROLES.USER)
     @RequestMapping(
             method = RequestMethod.POST,
