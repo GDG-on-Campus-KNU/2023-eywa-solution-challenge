@@ -50,7 +50,7 @@ Widget _account(BuildContext context) => Container(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(
-            image: NetworkImage(Get.find<UserController>().profileImage),
+            image: NetworkImage(Get.find<UserController>().member.profileImage),
             fit: BoxFit.cover,
           ),
         ),
@@ -61,7 +61,7 @@ Widget _account(BuildContext context) => Container(
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(Get.find<UserController>().userName,
+          Text(Get.find<UserController>().member.name,
             style: TextStyle(
               fontSize: 40.sp,
               fontWeight: FontWeight.w600,
@@ -69,7 +69,7 @@ Widget _account(BuildContext context) => Container(
               color: context.theme.primaryColorDark,
             ),
           ),
-          Text(Get.find<UserController>().userEmail,
+          Text(Get.find<UserController>().member.email,
             style: TextStyle(
               fontSize: 15.sp,
               fontWeight: FontWeight.w600,
@@ -91,7 +91,7 @@ Widget _level(BuildContext context) => Container(
         children: [
           Flex(direction: Axis.horizontal, children: [
             Expanded(
-              flex: Get.find<UserController>().userExp.value,
+              flex: Get.find<UserController>().member.exp,
               child: Container(
                 height: 10.h,
                 decoration: BoxDecoration(
@@ -112,7 +112,7 @@ Widget _level(BuildContext context) => Container(
               )
             ),
             Expanded(
-              flex: 100 - Get.find<UserController>().userExp.value,
+              flex: 100 - Get.find<UserController>().member.exp,
               child: Container(
                 height: 10.h,
                 decoration: BoxDecoration(
@@ -131,16 +131,16 @@ Widget _level(BuildContext context) => Container(
         children: [
           Flex(direction: Axis.horizontal, children: [
             Expanded(
-              flex: Get.find<UserController>().userExp.value,
+              flex: Get.find<UserController>().member.exp,
               child: Container(),
             ),
-            Text("Lv.${Get.find<UserController>().userLevel}", style: TextStyle(
+            Text("Lv.${Get.find<UserController>().member.level}", style: TextStyle(
               fontSize: 12.sp,
               fontWeight: FontWeight.w600,
               color: context.theme.primaryColorDark,
             ),),
             Expanded(
-              flex: 100 - Get.find<UserController>().userExp.value,
+              flex: 100 - Get.find<UserController>().member.exp,
               child: Container(),
             ),
           ]),
@@ -174,4 +174,24 @@ Widget _information(BuildContext context) => Container(
 
 
 ////////////////////////////////////////////////////////////////////////////////Sign Out
-Widget _signOut(BuildContext context) => Container();
+Widget _signOut(BuildContext context) => GestureDetector(
+  onTap: (){
+    Get.toNamed("/sign_in");
+  },
+  child: Container(
+    width: 117.w,
+    height: 27.h,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Text("Sign Out", style: TextStyle(
+          fontSize: 20.sp,
+          fontWeight: FontWeight.w600,
+          color: context.theme.primaryColorDark,
+        ),),
+        SizedBox(width: 5.w,),
+        Image.asset("assets/icons/sign_out.png", width: 27.h, height: 27.h,),
+      ],
+    )
+  ),
+);
