@@ -6,11 +6,18 @@ import kr.ac.knu.gdsc.Eywa.dictionary.domain.plant.Plant;
 import kr.ac.knu.gdsc.Eywa.dictionary.domain.plant.PlantEcological;
 import kr.ac.knu.gdsc.Eywa.dictionary.domain.plant.PlantIntroduction;
 import kr.ac.knu.gdsc.Eywa.dictionary.domain.plant.Shape;
+import kr.ac.knu.gdsc.Eywa.dictionary.dto.DictionaryDto;
 import kr.ac.knu.gdsc.Eywa.dictionary.service.DictionaryService;
+import kr.ac.knu.gdsc.Eywa.member.domain.Member;
+import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetail;
+import kr.ac.knu.gdsc.Eywa.register.domain.Register;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -25,6 +32,7 @@ public class DictionaryController {
         this.dictionaryService = dictionaryService;
     }
 
+    // 도감 등록
     @RequestMapping(method=RequestMethod.POST)
     public void addDictionary(@RequestBody HashMap<String, Object> dictionary) {
         String korName = (String) dictionary.get("korean_name");
@@ -122,19 +130,39 @@ public class DictionaryController {
         }
     }
 
+    // 도감 목록 조회
     @RequestMapping(method=RequestMethod.GET)
-    public ResponseEntity<List<Dictionary>> getDictionaryList() {
-        List<Dictionary> dictionaryList = dictionaryService.getDictionaryList();
+    public ResponseEntity<List<DictionaryDto>> getDictionaryList(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
+        List<DictionaryDto> dictionaryList = new ArrayList<>();
+        if (oAuth2User == null) {
+            dictionaryService.getDictionaryList().forEach(dictionary -> {
+                dictionaryList.add(dictionary.toDto());
+            });
+        } else { // 로그인 한 경우, 도감 기록 여부 포함
+            Member member = oAuth2User.getMember();
+            dictionaryService.getDictionaryList().forEach(dictionary -> {
+                dictionaryList.add(dictionary.toDto(member.getId()));
+            });
+        }
         if (dictionaryList.isEmpty()) {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.badRequest().build();
         } else {
             return ResponseEntity.ok(dictionaryList);
         }
     }
 
+    // 도감 상세 조회
     @RequestMapping(value="/{id}", method=RequestMethod.GET)
-    public ResponseEntity<Dictionary> getDictionary(@PathVariable Long id) {
+    public ResponseEntity<DictionaryDto> getDictionary(@AuthenticationPrincipal PrincipalDetail oAuth2User, @PathVariable Long id) {
         Optional<Dictionary> dictionary = dictionaryService.getDictionary(id);
-        return dictionary.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        if (dictionary.isPresent()) {
+            if (oAuth2User == null) {
+                return ResponseEntity.ok(dictionary.get().toDto());
+            } else { // 로그인 한 경우, 도감 기록 여부 포함
+                return ResponseEntity.ok(dictionary.get().toDto(oAuth2User.getMember().getId()));
+            }
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
     }
 }

@@ -1,4 +1,4 @@
-package kr.ac.knu.gdsc.Eywa.members.domain;
+package kr.ac.knu.gdsc.Eywa.member.domain;
 
 import lombok.Builder;
 import lombok.Getter;
