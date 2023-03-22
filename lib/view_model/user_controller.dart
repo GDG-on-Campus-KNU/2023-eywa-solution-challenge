@@ -1,3 +1,4 @@
+import 'package:eywa_client/model/member.dart';
 import 'package:eywa_client/model/service/get_current_location.dart';
 import 'package:eywa_client/model/service/permissions.dart';
 import 'package:geolocator/geolocator.dart';
@@ -9,13 +10,13 @@ class UserController extends GetxController {
   //////////////////////////////////////////////////////////////////////////////methods
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     getPosition();
+    getMember();
   }
 
   //////////////////////////////////////////////////////////////////////////////Token
-  String? accessToken;
+  String sessionId = "FA8D3EEE6926EAF827256F1654F27CEE";
 
   //////////////////////////////////////////////////////////////////////////////userInformation
 
@@ -27,4 +28,15 @@ class UserController extends GetxController {
     Position curPos = await returnCurPosition();
     curPosition(LatLng(curPos.latitude, curPos.longitude));
   }
+
+  ////Member
+  Member member = Member.nullInit();
+
+  void getMember() async{
+    member = await Member.GETMember(sessionId);
+  }
+
+  int animalsFound = 12;
+  int plantsFound = 8;
+
 }

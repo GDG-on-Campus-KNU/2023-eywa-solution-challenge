@@ -1,4 +1,5 @@
 import 'package:eywa_client/model/service/alien_species_descriminate.dart';
+import 'package:eywa_client/view/40_account_page/account_page_dialog.dart';
 import 'package:eywa_client/view_model/search_page_view_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,29 +8,32 @@ import 'package:get/get.dart';
 Widget homeNavigationBar(BuildContext context){
   return Positioned(
     bottom: -11.h,
-    child: Container(
-      width: 390.w,
-      height: 76.h,
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.25),
-            spreadRadius: 2,
-            blurRadius: 7,
-            offset: Offset(0, 4), // changes position of shadow
-          ),
-        ],
+    child: Hero(
+      tag: "navigationBar",
+      child: Container(
+        width: 390.w,
+        height: 76.h,
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.25),
+              spreadRadius: 2,
+              blurRadius: 7,
+              offset: Offset(0, 4), // changes position of shadow
+            ),
+          ],
+        ),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+           _background(context),
+            _camera(context),
+            _fieldGuide(context),
+            _account(context),
+          ],
+        ),
       ),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-         _background(context),
-          _camera(context),
-          _fieldGuide(context),
-          _account(context),
-        ],
-      ),
-    )
+    ),
   );
 }
 
@@ -67,10 +71,14 @@ Widget _camera(BuildContext context) => Positioned(
 Widget _account(BuildContext context) => Positioned(
   right: 56.w,
   child: GestureDetector(
+    onTap: (){
+      Get.dialog(AccountPageDialog(context), barrierColor: Color(0x00000000));
+    },
     child: Image.asset("assets/icons/user.png", width: 30.w,),
   ),
 );
 
+////////////////////////////////////////////////////////////////////////////////Background
 
 Widget _background(BuildContext context) => Positioned(
   child: Container(
