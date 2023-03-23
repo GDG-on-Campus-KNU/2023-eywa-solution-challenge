@@ -15,6 +15,17 @@ class UserController extends GetxController {
     getMember();
   }
 
+  //////////////////////////////////////////////////////////////////////////////Session Id
+  String sessionId = "";
+  Future<bool> googleLogin() async {
+    String? newSessionId = await signInWithGoogle();
+    if(newSessionId != null && await trySignIn(newSessionId)){
+      writeSessionIdToLocalStorage(newSessionId);
+      return true;
+    }
+    return false;
+  }
+
   //////////////////////////////////////////////////////////////////////////////Token
   String sessionId = "FA8D3EEE6926EAF827256F1654F27CEE";
 
