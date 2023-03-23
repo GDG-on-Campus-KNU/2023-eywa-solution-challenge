@@ -45,7 +45,6 @@ class Member{
   static Future<Member> GETMember(String sessionId) async {
     ApiResponse apiResponse = ApiResponse();
 
-    print("Yay!@");
     try {
       final response = await http.get(
         Uri.https(baseUrl, '/$URLGetMemberInfo'),
@@ -69,7 +68,6 @@ class Member{
     } on SocketException {
       apiResponse.apiError = ApiError(error: "Server error. Please retry");
     }
-    print("fuck!");
 
     return Member.nullInit();
   }

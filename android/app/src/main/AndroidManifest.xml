@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.eywa_client">
+    <uses-permission android:name="android.permission.INTERNNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <application
@@ -8,6 +9,15 @@
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
            android:value="AIzaSyCRKxVmABtN4eBs_NwjZuAb2DOVuA5QqUc"/>
+
+        <activity android:name="com.linusu.flutter_web_auth.CallbackActivity" android:exported="true">
+            <intent-filter android:label="flutter_web_auth">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="com.googleusercontent.apps.1060976925872-qp92sbr1qjm0peso9ttqa40dgkjpff5t" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".MainActivity"
