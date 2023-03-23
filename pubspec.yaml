@@ -46,6 +46,8 @@ dependencies:
   image_picker: ^0.8.7
   tflite: ^1.1.2
   cross_file_image: ^1.0.0
+  flutter_web_auth: ^0.5.0
+  flutter_secure_storage: ^8.0.0
 
 dev_dependencies:
   flutter_test:

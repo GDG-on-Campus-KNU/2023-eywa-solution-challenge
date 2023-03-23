@@ -16,11 +16,11 @@ import 'view/01_sign_in_page/sign_in_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
-  return runApp(const Eywa());
+  return runApp(Eywa());
 }
 
 class Eywa extends StatelessWidget {
-  const Eywa({Key? key}) : super(key: key);
+  Eywa({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class Eywa extends StatelessWidget {
         return GetMaterialApp(
           title: 'Eywa',
           debugShowCheckedModeBanner: false,
-            initialRoute: "/home",
+            initialRoute: "/",
             initialBinding: BindingsBuilder(() {
               Get.put(UserController());
               Get.put(HomePageController());

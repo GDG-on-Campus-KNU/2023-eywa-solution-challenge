@@ -1,16 +1,15 @@
 import 'package:eywa_client/model/member.dart';
 import 'package:eywa_client/model/service/get_current_location.dart';
+import 'package:eywa_client/model/service/google_sign_in.dart';
 import 'package:eywa_client/model/service/permissions.dart';
+import 'package:eywa_client/model/service/try_auto_sign_in.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class UserController extends GetxController {
 
-  //////////////////////////////////////////////////////////////////////////////methods
-  @override
-  void onInit() {
-    super.onInit();
+  void signInSuccess(){
     getPosition();
     getMember();
   }
@@ -26,8 +25,22 @@ class UserController extends GetxController {
     return false;
   }
 
-  //////////////////////////////////////////////////////////////////////////////Token
-  String sessionId = "FA8D3EEE6926EAF827256F1654F27CEE";
+  Future<bool> tryAutoSignIn() async {
+    String? newSessionId = await getSessionIdFromLocalStorage();
+    if(newSessionId != null && await trySignIn(newSessionId)){
+      return true;
+    }
+    return false;
+  }
+
+  Future<bool> trySignIn(String sessionId) async {
+    if(await tryLogInToServer(sessionId)){
+      this.sessionId = sessionId;
+      return true;
+    }
+    return false;
+  }
+
 
   //////////////////////////////////////////////////////////////////////////////userInformation
 
