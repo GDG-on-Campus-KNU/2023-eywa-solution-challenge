@@ -39,7 +39,6 @@ Widget _accountAndLevel(BuildContext context) => Container(
 );
 
 Widget _account(BuildContext context) => Container(
-  width: 217.w,
   height: 74.h,
   child: Row(
     mainAxisAlignment: MainAxisAlignment.start,

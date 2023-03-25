@@ -11,7 +11,7 @@ class LoadingPage extends StatelessWidget {
     loadModel();
     Get.find<UserController>().tryAutoSignIn().then((value) {
       if (value) {
-        Get.find<UserController>().getPosition();
+        Get.find<UserController>().signInSuccess();
         Get.offAllNamed("/home");
       }
       else{

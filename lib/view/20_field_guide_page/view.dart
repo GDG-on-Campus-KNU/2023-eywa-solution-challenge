@@ -14,6 +14,8 @@ Widget fieldGuideView(BuildContext context) {
     child: Stack(
       children: [
         Positioned(
+          width: 390.w,
+          height: 730.h,
           child: AnimatedSwitcher(
             duration: Duration(milliseconds: 500),
             switchInCurve: Curves.fastOutSlowIn,

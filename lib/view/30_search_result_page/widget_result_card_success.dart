@@ -108,6 +108,10 @@ Widget _button(BuildContext context) => Container(
   child: Row(
     children: [
       GestureDetector(
+        onTap: (){
+          Get.find<SearchPageViewController>().registerToServer();
+          Get.find<SearchPageViewController>().reportToServer();
+        },
         child: Container(
           width: 148.5.w,
           height: 38.h,

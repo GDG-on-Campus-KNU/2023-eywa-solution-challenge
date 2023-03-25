@@ -36,6 +36,7 @@ class UserController extends GetxController {
   Future<bool> trySignIn(String sessionId) async {
     if(await tryLogInToServer(sessionId)){
       this.sessionId = sessionId;
+      print(sessionId);
       return true;
     }
     return false;
@@ -48,9 +49,12 @@ class UserController extends GetxController {
   Rx<LatLng> curPosition = LatLng(35.8880789, 128.611526).obs;
 
   void getPosition() async {
-    geolocatorPermission();
-    Position curPos = await returnCurPosition();
-    curPosition(LatLng(curPos.latitude, curPos.longitude));
+    try {
+      Position curPos = await returnCurPosition();
+      curPosition(LatLng(curPos.latitude, curPos.longitude));
+    } catch (e) {
+      geolocatorPermission();
+    }
   }
 
   ////Member

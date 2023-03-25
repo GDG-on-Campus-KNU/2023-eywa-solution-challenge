@@ -8,14 +8,12 @@ import 'package:eywa_client/view_model/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 import 'view/00_loading_page/loading_page.dart';
 import 'view/01_sign_in_page/sign_in_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
   return runApp(Eywa());
 }
 
@@ -33,9 +31,6 @@ class Eywa extends StatelessWidget {
             initialRoute: "/",
             initialBinding: BindingsBuilder(() {
               Get.put(UserController());
-              Get.put(HomePageController());
-              Get.put(FieldGuidePageController());
-              Get.put(SearchPageViewController());
             }),
 
             getPages: [
@@ -55,6 +50,11 @@ class Eywa extends StatelessWidget {
               GetPage(
                 name: "/home",
                 page: () => const HomePage(),
+                binding: BindingsBuilder(() {
+                  Get.put(HomePageController());
+                  Get.put(FieldGuidePageController());
+                  Get.put(SearchPageViewController());
+                }),
               ),
 
               //Field Guide Page
