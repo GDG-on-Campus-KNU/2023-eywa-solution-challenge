@@ -12,6 +12,7 @@ class FieldGuideElement{
   String summary;
   String kind;
   String image;
+  bool registered;
 
   FieldGuideElement({
     required this.id,
@@ -20,6 +21,7 @@ class FieldGuideElement{
     required this.summary,
     required this.kind,
     required this.image,
+    required this.registered,
   });
 }
 
@@ -39,6 +41,7 @@ class FieldGuideElementAnimal extends FieldGuideElement{
     required String summary,
     required String kind,
     required String image,
+    required bool registered,
     required this.shape,
     required this.ecological,
     required this.introduction,
@@ -53,6 +56,7 @@ class FieldGuideElementAnimal extends FieldGuideElement{
     summary: summary,
     kind: kind,
     image: image,
+    registered: registered,
   );
 }
 
@@ -69,6 +73,7 @@ class FieldGuideElementPlant extends FieldGuideElement{
     required String summary,
     required String kind,
     required String image,
+    required bool registered,
     required this.shape,
     required this.ecological,
     required this.introduction,
@@ -79,6 +84,7 @@ class FieldGuideElementPlant extends FieldGuideElement{
     summary: summary,
     kind: kind,
     image: image,
+    registered: registered,
   );
 }
 
@@ -103,19 +109,21 @@ class FieldGuideElementPlantAndAnimal{
     );
 
     List<dynamic>.from(json).forEach((element) {
-      Map<String, dynamic> e = Map<String, dynamic>.from(element);
+      Map<String, dynamic> e = Map<String, dynamic>.from(Map<String, dynamic>.from(element)["data"]);
+      bool registered = Map<String, dynamic>.from(element)["register"] ?? false;
       if(e["kind"] == "plant"){
         newFieldGuideElementPlantAndAnimal.plants.add(
           FieldGuideElementPlant(
             id: e["id"],
-            korName: e["korName"] ?? "null",
-            engName: e["engName"] ?? "null",
-            summary: e["summary"] ?? "null",
-            kind: e["kind"] ?? "null",
-            image: e["image"] ?? "null",
-            shape: Map<String, String>.from(e["shape"].map((key, dynamic value) => MapEntry(key, value ?? "null"))),
-            ecological: Map<String, String>.from(e["ecological"].map((key, dynamic value) => MapEntry(key, value ?? "null"))),
-            introduction: Map<String, String>.from(e["introduction"].map((key, dynamic value) => MapEntry(key, value ?? "null"))),
+            korName: e["koreanName"] ?? "no data",
+            engName: e["englishName"] ?? "no data",
+            summary: e["summary"] ?? "no data",
+            kind: e["kind"] ?? "no data",
+            image: e["image"] ?? "no data",
+            shape: Map<String, String>.from(e["shape"].map((key, dynamic value) => MapEntry(key, value ?? "no data"))),
+            ecological: Map<String, String>.from(e["ecological"].map((key, dynamic value) => MapEntry(key, value ?? "no data"))),
+            introduction: Map<String, String>.from(e["introduction"].map((key, dynamic value) => MapEntry(key, value ?? "no data"))),
+            registered: registered,
           )
         );
       }
@@ -123,18 +131,19 @@ class FieldGuideElementPlantAndAnimal{
         newFieldGuideElementPlantAndAnimal.animals.add(
           FieldGuideElementAnimal(
             id: e["id"],
-            korName: e["korName"] ?? "null",
-            engName: e["engName"] ?? "null",
-            summary: e["summary"] ?? "null",
-            kind: e["kind"] ?? "null",
-            image: e["image"] ?? "null",
-            shape: e["shape"] ?? "null",
-            ecological: Map<String, String>.from(e["ecological"] == null ? {} : e["ecological"].map((key, dynamic value) => MapEntry(key, value ?? "null"))),
-            introduction: Map<String, String>.from(e["introduction"] == null ? {} : e["introduction"].map((key, dynamic value) => MapEntry(key, value ?? "null"))),
-            distribution: e["distribution"] ?? "null",
-            effect: Map<String, String>.from(e["effect"] == null ? {} : e["effect"].map((key, dynamic value) => MapEntry(key, value ?? "null"))),
-            regulate: Map<String, String>.from(e["regulate"] == null ? {} : e["regulate"].map((key, dynamic value) => MapEntry(key, value ?? "null"))),
-            designation: Map<String, String>.from(e["designation"] == null ? {} : e["designation"].map((key, dynamic value) => MapEntry(key, value ?? "null"))),
+            korName: e["koreanName"] ?? "no data",
+            engName: e["englishName"] ?? "no data",
+            summary: e["summary"] ?? "no data",
+            kind: e["kind"] ?? "no data",
+            image: e["image"] ?? "no data",
+            shape: e["shape"] ?? "no data",
+            ecological: Map<String, String>.from(e["ecological"] == null ? {} : e["ecological"].map((key, dynamic value) => MapEntry(key, value ?? "no data"))),
+            introduction: Map<String, String>.from(e["introduction"] == null ? {} : e["introduction"].map((key, dynamic value) => MapEntry(key, value ?? "no data"))),
+            distribution: e["distribution"] ?? "no data",
+            effect: Map<String, String>.from(e["effect"] == null ? {} : e["effect"].map((key, dynamic value) => MapEntry(key, value ?? "no data"))),
+            regulate: Map<String, String>.from(e["regulate"] == null ? {} : e["regulate"].map((key, dynamic value) => MapEntry(key, value ?? "no data"))),
+            designation: Map<String, String>.from(e["designation"] == null ? {} : e["designation"].map((key, dynamic value) => MapEntry(key, value ?? "no data"))),
+            registered: registered,
           )
         );
       }

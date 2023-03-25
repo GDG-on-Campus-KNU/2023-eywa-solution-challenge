@@ -38,7 +38,7 @@ Widget _listViewElementPlant(BuildContext context, FieldGuideElementPlant elemen
       margin: EdgeInsets.only(bottom: 17.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.r),
-        color: context.theme.primaryColor
+        color: context.theme.primaryColor,
       ),
       child: Row(
         children: [
@@ -47,11 +47,19 @@ Widget _listViewElementPlant(BuildContext context, FieldGuideElementPlant elemen
             height: 100.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20.r),
-              image: DecorationImage(
-                image: NetworkImage(element.image),
-                fit: BoxFit.cover,
-              ),
             ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20.r),
+              child: ColorFiltered(
+                colorFilter: element.registered ?
+                  ColorFilter.mode(Colors.transparent, BlendMode.saturation)
+                  : ColorFilter.mode(Colors.grey, BlendMode.saturation),
+                child: Image.network(
+                  element.image,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            )
           ),
           SizedBox(width: 11.w),
           Column(
@@ -62,6 +70,7 @@ Widget _listViewElementPlant(BuildContext context, FieldGuideElementPlant elemen
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w700,
                 color: context.theme.backgroundColor,
+                overflow: TextOverflow.ellipsis,
               )),
               Text(element.korName, style: TextStyle(
                 fontSize: 15.sp,
@@ -95,7 +104,7 @@ Widget _listViewElementAnimal(BuildContext context, FieldGuideElementAnimal elem
       margin: EdgeInsets.only(bottom: 17.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.r),
-        color: context.theme.primaryColor
+        color: context.theme.primaryColor,
       ),
       child: Row(
         children: [
@@ -104,11 +113,19 @@ Widget _listViewElementAnimal(BuildContext context, FieldGuideElementAnimal elem
             height: 100.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20.r),
-              image: DecorationImage(
-                image: NetworkImage(element.image),
-                fit: BoxFit.cover,
-              ),
             ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20.r),
+              child: ColorFiltered(
+                colorFilter: element.registered ?
+                  ColorFilter.mode(Colors.transparent, BlendMode.saturation)
+                  : ColorFilter.mode(Colors.grey, BlendMode.saturation),
+                child: Image.network(
+                  element.image,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            )
           ),
           SizedBox(width: 11.w),
           Container(
