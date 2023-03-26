@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:eywa_client/view_model/field_guide_page_controller.dart';
+import 'package:eywa_client/view_model/user_controller.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'constants/key.dart';
@@ -58,6 +60,17 @@ class FieldGuideElementAnimal extends FieldGuideElement{
     image: image,
     registered: registered,
   );
+
+  //////////////////////////////////////////////////////////////////////////////
+  static FieldGuideElementAnimal? fieldGuideElementAnimalFromId(int dictionaryId){
+    for (var element in Get.find<FieldGuidePageController>().animalElements) {
+      if(element.id == dictionaryId) {
+        return element;
+      }
+    }
+    return null;
+  }
+
 }
 
 class FieldGuideElementPlant extends FieldGuideElement{
@@ -86,6 +99,16 @@ class FieldGuideElementPlant extends FieldGuideElement{
     image: image,
     registered: registered,
   );
+
+  //////////////////////////////////////////////////////////////////////////////
+  static FieldGuideElementPlant? fieldGuideElementPlantFromId(int dictionaryId){
+    for (var element in Get.find<FieldGuidePageController>().plantElements) {
+      if(element.id == dictionaryId) {
+        return element;
+      }
+    }
+    return null;
+  }
 }
 
 class FieldGuideElementPlantAndAnimal{
@@ -110,7 +133,7 @@ class FieldGuideElementPlantAndAnimal{
 
     List<dynamic>.from(json).forEach((element) {
       Map<String, dynamic> e = Map<String, dynamic>.from(Map<String, dynamic>.from(element)["data"]);
-      bool registered = Map<String, dynamic>.from(element)["register"] ?? false;
+      bool registered = Map<String, dynamic>.from(element)["register"] != null ? true : false;
       if(e["kind"] == "plant"){
         newFieldGuideElementPlantAndAnimal.plants.add(
           FieldGuideElementPlant(
@@ -157,7 +180,10 @@ class FieldGuideElementPlantAndAnimal{
 
     try {
       final response = await http.get(
-          Uri.parse("http://" + baseUrl + '/' + URLGetFieldGuideElement),
+        Uri.https(baseUrl, URLGetFieldGuideElement),
+        headers: {
+          "cookie" : "JSESSIONID=${Get.find<UserController>().sessionId}"
+        },
       );
 
       print(utf8.decode(response.bodyBytes));

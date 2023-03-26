@@ -29,7 +29,7 @@ Widget _image() => Container(
   decoration: BoxDecoration(
     borderRadius: BorderRadius.circular(20.r),
     image: DecorationImage(
-      image: XFileImage(Get.find<SearchPageViewController>().image!),
+      image: XFileImage(Get.find<SearchPageViewController>().image!.value),
       fit: BoxFit.cover,
     ),
   ),

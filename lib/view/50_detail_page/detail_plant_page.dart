@@ -7,23 +7,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-BackdropFilter DetailDialogAnimal(BuildContext context, FieldGuideElementAnimal element){
-  return BackdropFilter(
-    filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-    child: Dialog(
-      insetPadding: EdgeInsets.all(0),
-      backgroundColor: Color(0x00000000),
+class DetailPlant extends StatelessWidget {
+  FieldGuideElementPlant element;
+  String imagePath;
+  DetailPlant({
+    Key? key,
+    required this.element,
+    required this.imagePath,
+  }) : super(key: key);
 
-      child: Obx(() => Stack(
-        alignment: Alignment.center,
-        children: [
-          _background(),
-          _detail(context, element),
-          _image(element.image),
-        ],
-      )),
-    ),
-  );
+  @override
+  Widget build(BuildContext context) {
+    return BackdropFilter(
+      filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+
+        body: Obx(() => Stack(
+          alignment: Alignment.center,
+          children: [
+            _background(),
+            _detail(context, element),
+            _image(imagePath, element.id),
+          ],
+        )),
+      ),
+    );
+  }
 }
 
 Widget _background(){
@@ -39,11 +49,11 @@ Widget _background(){
   );
 }
 
-Widget _image(String image){
+Widget _image(String image, int id){
   return Positioned(
     bottom: 485.h,
     child: Hero(
-      tag: "fieldGuideElement",
+      tag: id.toString(),
       child: Container(
         width: 250.w,
         height: 250.w,
@@ -59,7 +69,7 @@ Widget _image(String image){
   );
 }
 
-Widget _detail(BuildContext context, FieldGuideElementAnimal element){
+Widget _detail(BuildContext context, FieldGuideElementPlant element){
   return Positioned(
     bottom: 0,
     child: Container(
@@ -90,7 +100,7 @@ Widget _detail(BuildContext context, FieldGuideElementAnimal element){
   );
 }
 
-Widget _cardSection(BuildContext context, FieldGuideElementAnimal element){
+Widget _cardSection(BuildContext context, FieldGuideElementPlant element){
   return Container(
     width: 390.w,
     height: 340.h,
@@ -98,7 +108,7 @@ Widget _cardSection(BuildContext context, FieldGuideElementAnimal element){
       children: [
         AnimatedPositioned(
           duration: Duration(milliseconds: 200),
-          width: (250.w * 5) + (10.w * 4),
+          width: (250.w * 3) + (10.w * 2),
           left: -1 * (
             (250.w * (Get.find<FieldGuidePageController>().cardIndex.value - 1) )
           + (10.w * (Get.find<FieldGuidePageController>().cardIndex.value - 1) )
@@ -110,31 +120,19 @@ Widget _cardSection(BuildContext context, FieldGuideElementAnimal element){
               AnimatedScale(
                 scale: Get.find<FieldGuidePageController>().cardIndex.value == 0 ? 1 : 0.8,
                 duration: Duration(milliseconds: 200),
-                child: _cardElement(context, "ecological", element.ecological),
+                child: _cardElement(context, "shape", element.shape),
               ),
               SizedBox(width: 10.w,),
               AnimatedScale(
                 scale: Get.find<FieldGuidePageController>().cardIndex.value == 1 ? 1 : 0.8,
                 duration: Duration(milliseconds: 200),
-                child: _cardElement(context, "introduction", element.introduction),
+                child: _cardElement(context, "ecological", element.ecological),
               ),
               SizedBox(width: 10.w,),
               AnimatedScale(
                 scale: Get.find<FieldGuidePageController>().cardIndex.value == 2 ? 1 : 0.8,
                 duration: Duration(milliseconds: 200),
-                child: _cardElement(context, "effect", element.effect),
-              ),
-              SizedBox(width: 10.w,),
-              AnimatedScale(
-                scale: Get.find<FieldGuidePageController>().cardIndex.value == 3 ? 1 : 0.8,
-                duration: Duration(milliseconds: 200),
-                child: _cardElement(context, "regulate", element.regulate),
-              ),
-              SizedBox(width: 10.w,),
-              AnimatedScale(
-                scale: Get.find<FieldGuidePageController>().cardIndex.value == 4 ? 1 : 0.8,
-                duration: Duration(milliseconds: 200),
-                child: _cardElement(context, "designation", element.designation),
+                child: _cardElement(context, "introduction", element.introduction),
               ),
             ],
           )

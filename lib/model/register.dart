@@ -21,7 +21,6 @@ class Register{
   }) async {
   ApiResponse apiResponse = ApiResponse();
 
-    print("hello");
     try {
       final response = await http.post(
         Uri.https(baseUrl, URLRegister),
@@ -49,8 +48,6 @@ class Register{
     } on SocketException {
       apiResponse.apiError = ApiError(error: "Server error. Please retry");
     }
-
-    print("fuck!");
 
     return false;
   }

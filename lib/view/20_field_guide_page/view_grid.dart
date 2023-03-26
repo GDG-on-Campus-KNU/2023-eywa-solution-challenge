@@ -1,5 +1,5 @@
-import 'package:eywa_client/view/21_detail_dialog/detail_dialog_animal.dart';
-import 'package:eywa_client/view/21_detail_dialog/detail_dialog_plant.dart';
+import 'package:eywa_client/view/50_detail_page/detail_animal_page.dart';
+import 'package:eywa_client/view/50_detail_page/detail_plant_page.dart';
 import "package:flutter/material.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
 import "package:get/get.dart";
@@ -28,37 +28,44 @@ Widget fieldGuideGridView(BuildContext context){
 Widget _gridViewElementPlant(BuildContext context, FieldGuideElementPlant element){
   return GestureDetector(
     onTap: (){
-      Get.dialog(
-        DetailDialogPlant(context, element),
-        barrierColor: Color(0x00000000),
+      Get.to(
+        DetailPlant(
+          element: element,
+          imagePath: element.image,
+        ),
+        opaque: false,
+        transition: Transition.downToUp
       );
     },
     child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.r),
       ),
-      child: Container(
-        width: 100.w,
-        height: 100.w,
-        margin: EdgeInsets.all(11.w),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: context.theme.primaryColorDark,
-            width: 5.w),
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(15.r),
-          child: ColorFiltered(
-            colorFilter: element.registered ?
-            ColorFilter.mode(Colors.transparent, BlendMode.saturation)
-            : ColorFilter.mode(Colors.grey, BlendMode.saturation),
-            child: Image.network(
-              element.image,
-              fit: BoxFit.cover,
-            ),
+      child: Hero(
+        tag: element.id.toString(),
+        child: Container(
+          width: 100.w,
+          height: 100.w,
+          margin: EdgeInsets.all(11.w),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: context.theme.primaryColorDark,
+              width: 5.w),
           ),
-        )
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15.r),
+            child: ColorFiltered(
+              colorFilter: element.registered ?
+              ColorFilter.mode(Colors.transparent, BlendMode.saturation)
+              : ColorFilter.mode(Colors.grey, BlendMode.saturation),
+              child: Image.network(
+                element.image,
+                fit: BoxFit.cover,
+              ),
+            ),
+          )
+        ),
       ),
     ),
   );
@@ -67,10 +74,10 @@ Widget _gridViewElementPlant(BuildContext context, FieldGuideElementPlant elemen
 Widget _gridViewElementAnimal(BuildContext context, FieldGuideElementAnimal element){
   return GestureDetector(
     onTap: (){
-      Get.dialog(DetailDialogAnimal(context, element));
+      Get.to(DetailAnimal(element: element, imagePath: element.image,), opaque: false, transition: Transition.downToUp);
     },
     child: Hero(
-      tag: "fieldGuideElement",
+      tag: element.id.toString(),
       child: Container(
         width: 100.w,
         height: 100.w,

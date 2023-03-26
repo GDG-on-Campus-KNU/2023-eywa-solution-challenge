@@ -26,7 +26,7 @@ class Member{
     return Member(
       name: json['name'],
       email: json['email'],
-      exp: json['exp'],
+      exp: json['exp'] % 100,
       profileImage: json['picture'],
       level: json['level'],
     );

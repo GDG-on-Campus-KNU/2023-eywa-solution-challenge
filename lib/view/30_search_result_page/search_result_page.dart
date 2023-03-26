@@ -17,10 +17,10 @@ class SearchResultPage extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           _background(context),
-          Get.find<SearchPageViewController>().ifImageNull.value ?
-          Container()
-          : Get.find<SearchPageViewController>().ifImageAlienSpecies ?
-              resultCardSuccess(context, Get.find<SearchPageViewController>().image!.path, Get.find<SearchPageViewController>().searchElement)
+          Get.find<SearchPageViewController>().classifiedSpeciesDictionary != 0 ?
+            Get.find<SearchPageViewController>().plantSearchElement != null ?
+              resultCardSuccess(context, Get.find<SearchPageViewController>().image!.value.path, Get.find<SearchPageViewController>().plantSearchElement!)
+            : resultCardSuccess(context, Get.find<SearchPageViewController>().image!.value.path, Get.find<SearchPageViewController>().animalSearchElement!)
             : resultCardFail(context),
           searchPageNavigationBar(context),
         ],

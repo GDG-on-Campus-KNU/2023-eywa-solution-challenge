@@ -1,5 +1,5 @@
-import 'package:eywa_client/view/21_detail_dialog/detail_dialog_animal.dart';
-import 'package:eywa_client/view/21_detail_dialog/detail_dialog_plant.dart';
+import "package:eywa_client/view/50_detail_page/detail_animal_page.dart";
+import "package:eywa_client/view/50_detail_page/detail_plant_page.dart";
 import "package:flutter/material.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
 import "package:get/get.dart";
@@ -27,10 +27,7 @@ Widget fieldGuideListView(BuildContext context){
 Widget _listViewElementPlant(BuildContext context, FieldGuideElementPlant element) {
   return GestureDetector(
     onTap: (){
-      Get.dialog(
-        DetailDialogPlant(context, element),
-        barrierColor: Color(0x00000000),
-      );
+      Get.to(DetailPlant(element: element, imagePath: element.image,), opaque: false, transition: Transition.downToUp);
     },
     child: Container(
       width: 310.w,
@@ -42,47 +39,53 @@ Widget _listViewElementPlant(BuildContext context, FieldGuideElementPlant elemen
       ),
       child: Row(
         children: [
-          Container(
-            width: 100.h,
-            height: 100.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20.r),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20.r),
-              child: ColorFiltered(
-                colorFilter: element.registered ?
-                  ColorFilter.mode(Colors.transparent, BlendMode.saturation)
-                  : ColorFilter.mode(Colors.grey, BlendMode.saturation),
-                child: Image.network(
-                  element.image,
-                  fit: BoxFit.cover,
-                ),
+          Hero(
+            tag: element.id.toString(),
+            child: Container(
+              width: 100.h,
+              height: 100.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.r),
               ),
-            )
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20.r),
+                child: ColorFiltered(
+                  colorFilter: element.registered ?
+                    ColorFilter.mode(Colors.transparent, BlendMode.saturation)
+                    : ColorFilter.mode(Colors.grey, BlendMode.saturation),
+                  child: Image.network(
+                    element.image,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              )
+            ),
           ),
           SizedBox(width: 11.w),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(element.engName, style: TextStyle(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.w700,
-                color: context.theme.backgroundColor,
-                overflow: TextOverflow.ellipsis,
-              )),
-              Text(element.korName, style: TextStyle(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w500,
-                color: context.theme.backgroundColor,
-              )),
-              Text(element.kind, style: TextStyle(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w500,
-                color: context.theme.backgroundColor,
-              )),
-            ],
+          Container(
+            width: 300.w - 100.h - 11.w,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(element.engName, style: TextStyle(
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w700,
+                  color: context.theme.backgroundColor,
+                  overflow: TextOverflow.ellipsis,
+                )),
+                Text(element.korName, style: TextStyle(
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w500,
+                  color: context.theme.backgroundColor,
+                )),
+                Text(element.kind, style: TextStyle(
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w500,
+                  color: context.theme.backgroundColor,
+                )),
+              ],
+            ),
           )
         ],
       ),
@@ -93,10 +96,7 @@ Widget _listViewElementPlant(BuildContext context, FieldGuideElementPlant elemen
 Widget _listViewElementAnimal(BuildContext context, FieldGuideElementAnimal element) {
   return GestureDetector(
     onTap: (){
-      Get.dialog(
-        DetailDialogAnimal(context, element),
-        barrierColor: Color(0x00000000),
-      );
+      Get.to(DetailAnimal(element: element, imagePath: element.image,), opaque: false, transition: Transition.downToUp);
     },
     child: Container(
       width: 310.w,
@@ -108,24 +108,27 @@ Widget _listViewElementAnimal(BuildContext context, FieldGuideElementAnimal elem
       ),
       child: Row(
         children: [
-          Container(
-            width: 100.h,
-            height: 100.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20.r),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20.r),
-              child: ColorFiltered(
-                colorFilter: element.registered ?
-                  ColorFilter.mode(Colors.transparent, BlendMode.saturation)
-                  : ColorFilter.mode(Colors.grey, BlendMode.saturation),
-                child: Image.network(
-                  element.image,
-                  fit: BoxFit.cover,
-                ),
+          Hero(
+            tag: element.id.toString(),
+            child: Container(
+              width: 100.h,
+              height: 100.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.r),
               ),
-            )
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20.r),
+                child: ColorFiltered(
+                  colorFilter: element.registered ?
+                    ColorFilter.mode(Colors.transparent, BlendMode.saturation)
+                    : ColorFilter.mode(Colors.grey, BlendMode.saturation),
+                  child: Image.network(
+                    element.image,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              )
+            ),
           ),
           SizedBox(width: 11.w),
           Container(
