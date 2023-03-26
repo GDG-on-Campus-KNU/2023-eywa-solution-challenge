@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
       body: Stack(
         alignment: Alignment.center,
         children: [
-          homeMap(),
+          homeMap(context),
           homeNavigationBar(context),
         ],
       )

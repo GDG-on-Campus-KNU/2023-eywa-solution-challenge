@@ -38,7 +38,11 @@ Widget _reCamera(BuildContext context) => Positioned(
   top: 0,
   child: GestureDetector(
     onTap: (){
-      Get.find<SearchPageViewController>().takePhoto();
+      Get.find<SearchPageViewController>().takePhoto(true).then((value){
+        if(value){
+          Get.toNamed("/search_result");
+        }
+      });
     },
     child: Container(
       width: 76.h,
