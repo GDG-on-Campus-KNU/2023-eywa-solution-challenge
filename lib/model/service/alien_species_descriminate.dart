@@ -11,7 +11,7 @@ void loadModel() {
   );
 }
 
-void classifyImage(XFile image) async {
+Future<int> classifyImage(XFile image) async {
   var timeStamp = DateTime.now().millisecondsSinceEpoch;
   var output = await Tflite.runModelOnImage(
       path: File(image!.path).path,
@@ -22,5 +22,31 @@ void classifyImage(XFile image) async {
       asynch: true // defaults to true
   );
   print("-------------> ${DateTime.now().millisecondsSinceEpoch - timeStamp}");
-  print(output);
+  if(output!.isNotEmpty){
+    String classifyOutput = output[0]["label"];
+    String result = "";
+    int ind = 0;
+
+    try{
+      for(ind = 0; ind < classifyOutput.length; ind++){
+        if(classifyOutput[ind] == "'") {
+          break;
+        }
+      }
+      ind++;
+      for(; ind < classifyOutput.length; ind++){
+        if(classifyOutput[ind] == "'") {
+          break;
+        }
+        result += classifyOutput[ind];
+      }
+      return int.parse(result);
+    }
+    catch(e){
+      return 0;
+    }
+  }
+  else{
+    return 0;
+  }
 }

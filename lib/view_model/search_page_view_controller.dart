@@ -10,36 +10,29 @@ import 'package:image_picker/image_picker.dart';
 
 class SearchPageViewController extends GetxController {
 
-  @override
-  void onInit() {
-    super.onInit();
-    loadModel();
-  }
+  Rx<XFile>? image;
 
-  RxBool ifImageNull = true.obs;
-  XFile? image;
+  RxInt classifiedSpeciesDictionary = 0.obs;
 
-  bool ifImageAlienSpecies = true;
+  FieldGuideElementPlant? plantSearchElement;
+  FieldGuideElementAnimal? animalSearchElement;
 
-  FieldGuideElement searchElement = FieldGuideElement(
-    id: 5,
-    korName: "test",
-    engName: "test",
-    summary: "test",
-    kind: "test",
-    image: "test",
-    registered: false,
-  );
-
-  Future<bool> takePhoto() async {
-    image = await takePhotoCamera();
-
-    if(image == null) {
-      ifImageNull(true);
+  Future<bool> takePhoto(bool ifCamera) async {
+    XFile? newImage = ifCamera ? await takePhotoCamera() : await takePhotoGallery();
+    if(newImage == null) {
       return false;
     }
-    classifyImage(image!);
-    ifImageNull(false);
+
+    image = newImage.obs;
+    int newClassifiedSpeciesDictionary = await classifyImage(newImage);
+    classifiedSpeciesDictionary(newClassifiedSpeciesDictionary);
+    if(newClassifiedSpeciesDictionary == 0) {
+      return true;
+    }
+
+    plantSearchElement = FieldGuideElementPlant.fieldGuideElementPlantFromId(newClassifiedSpeciesDictionary);
+    animalSearchElement = FieldGuideElementAnimal.fieldGuideElementAnimalFromId(newClassifiedSpeciesDictionary);
+
     return true;
   }
 
@@ -48,7 +41,7 @@ class SearchPageViewController extends GetxController {
     if( await Register.POSTRegister(
       register: Register(
         coor: Get.find<UserController>().curPosition.value,
-        dictionaryId: searchElement.id,
+        dictionaryId: classifiedSpeciesDictionary.value,
       )
     )){
       return true;
@@ -64,9 +57,10 @@ class SearchPageViewController extends GetxController {
       report: Report(
         registerInfo: Register(
           coor: Get.find<UserController>().curPosition.value,
-          dictionaryId: searchElement.id,
+          dictionaryId: classifiedSpeciesDictionary.value,
         ),
-        ImagePath: image!.path,
+        imagePath: image!.value.path,
+        reportId: 0,
       ),
     )){
       return true;

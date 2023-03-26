@@ -5,7 +5,9 @@ import 'dart:ui';
 import 'package:eywa_client/view_model/search_page_view_controller.dart';
 import 'package:eywa_client/view_model/user_controller.dart';
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
+import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 import 'constants/key.dart';
 import 'service/api.dart';
@@ -14,11 +16,13 @@ import 'package:image/image.dart' as img;
 
 class Report{
   Register registerInfo;
-  String ImagePath;
+  String imagePath;
+  int reportId;
 
   Report({
     required this.registerInfo,
-    required this.ImagePath,
+    required this.imagePath,
+    required this.reportId,
   });
 
   static Future<bool> POSTReport({
@@ -28,19 +32,22 @@ class Report{
     var request = http.MultipartRequest('POST', Uri.https(baseUrl, URLReport));
     request.headers.addAll({
       "Cookie" : "JSESSIONID=${Get.find<UserController>().sessionId};",
-      // "Content-Type": "application/json; image/jpg",
     });
 
-    request.fields["reportRequestDto"] = jsonEncode({
-      "latitude": report.registerInfo.coor.latitude,
-      "longitude": report.registerInfo.coor.longitude,
-      "dictionaryId": report.registerInfo.dictionaryId,
-    });
+    request.files.add(http.MultipartFile.fromString(
+        "reportRequestDto", jsonEncode({
+        "latitude": report.registerInfo.coor.latitude,
+        "longitude": report.registerInfo.coor.longitude,
+        "dictionaryId": report.registerInfo.dictionaryId,
+      }),
+      contentType: MediaType.parse("application/json"),
+    ));
 
     request.files.add(
       await http.MultipartFile.fromPath(
         'image',
-        report.ImagePath,
+        report.imagePath,
+        contentType: MediaType('image', 'jpg'),
       ),
     );
 
@@ -48,5 +55,52 @@ class Report{
     print(response.statusCode);
 
     return true;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////[Get] reports
+  static List<Report> ReportListFromJson(dynamic json){
+    List<Report> reports = [];
+    List<dynamic>.from(json).forEach((element) {
+      Map<String, dynamic> e = Map<String, dynamic>.from(element);
+      reports.add(Report(
+        registerInfo: Register(
+          coor: LatLng(e["latitude"], e["longitude"]),
+          dictionaryId: Map<String, dynamic>.from(Map<String, dynamic>.from(e["dictionary"])["data"])["id"],
+        ),
+        imagePath: e["picture"],
+        reportId: e["id"],
+      ));
+    });
+    return reports;
+  }
+
+  static Future<List<Report>> GETReports() async {
+    ApiResponse apiResponse = ApiResponse();
+
+    try {
+      final response = await http.get(
+        Uri.https(baseUrl, URLReport),
+        headers: {
+          "cookie" : "JSESSIONID=${Get.find<UserController>().sessionId};",
+        },
+      );
+
+      print(utf8.decode(response.bodyBytes));
+
+      switch (response.statusCode) {
+        case 200:
+          return ReportListFromJson(json.decode(response.body));
+        case 401:
+          apiResponse.apiError = ApiError.fromJson(json.decode(response.body));
+          break;
+        default:
+          apiResponse.apiError = ApiError.fromJson(json.decode(response.body));
+          break;
+      }
+    } on SocketException {
+      apiResponse.apiError = ApiError(error: "Server error. Please retry");
+    }
+
+    return [];
   }
 }
