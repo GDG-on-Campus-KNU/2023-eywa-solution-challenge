@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:cross_file_image/cross_file_image.dart';
 import 'package:eywa_client/model/field_guid_element.dart';
 import 'package:eywa_client/view_model/field_guide_page_controller.dart';
 import 'package:eywa_client/view_model/search_page_view_controller.dart';
@@ -7,56 +8,74 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-BackdropFilter DetailDialogPlant(BuildContext context, FieldGuideElementPlant element){
-  return BackdropFilter(
-    filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-    child: Dialog(
-      insetPadding: EdgeInsets.all(0),
-      backgroundColor: Color(0x00000000),
+class DetailAnimal extends StatelessWidget {
+  FieldGuideElementAnimal element;
+  String? imagePath;
+  XFileImage? xFileImage;
+  DetailAnimal({
+    Key? key,
+    required this.element,
+    this.imagePath,
+    this.xFileImage,
+  }) : super(key: key);
 
-      child: Obx(() => Stack(
-        alignment: Alignment.center,
-        children: [
-          _background(),
-          _detail(context, element),
-          _image(element.image),
-        ],
-      )),
-    ),
-  );
+  @override
+  Widget build(BuildContext context) {
+    return BackdropFilter(
+      filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+
+        body: Obx(() => Stack(
+          alignment: Alignment.center,
+          children: [
+            _background(),
+            _detail(context, element),
+            _image(imagePath, xFileImage, element.id),
+          ],
+        )),
+      ),
+    );
+  }
 }
 
 Widget _background(){
   return Positioned(
     width: 390.w,
     height: 844.h,
-    child: GestureDetector(
-      onTap: (){
-        Get.find<FieldGuidePageController>().initCardIndex();
-        Get.back();
-      },
+    child: Container(
+      color: Colors.transparent,
+      child: GestureDetector(
+        onTap: (){
+          Get.find<FieldGuidePageController>().initCardIndex();
+          Get.back();
+        },
+      ),
     )
   );
 }
 
-Widget _image(String image){
+Widget _image(String? imagePath, XFileImage? xFileImage, int id){
   return Positioned(
     bottom: 485.h,
-    child: Container(
-      width: 250.w,
-      height: 250.w,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.r),
-        image: DecorationImage(
-          image: NetworkImage(image),
-          fit: BoxFit.cover,
+    child: Hero(
+      tag: id.toString(),
+      child: Container(
+        width: 250.w,
+        height: 250.w,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.r),
+          image: DecorationImage(
+            image: imagePath == null ? xFileImage! : (NetworkImage(imagePath) as ImageProvider),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     ),
   );
 }
 
-Widget _detail(BuildContext context, FieldGuideElementPlant element){
+Widget _detail(BuildContext context, FieldGuideElementAnimal element){
   return Positioned(
     bottom: 0,
     child: Container(
@@ -87,7 +106,7 @@ Widget _detail(BuildContext context, FieldGuideElementPlant element){
   );
 }
 
-Widget _cardSection(BuildContext context, FieldGuideElementPlant element){
+Widget _cardSection(BuildContext context, FieldGuideElementAnimal element){
   return Container(
     width: 390.w,
     height: 340.h,
@@ -95,7 +114,7 @@ Widget _cardSection(BuildContext context, FieldGuideElementPlant element){
       children: [
         AnimatedPositioned(
           duration: Duration(milliseconds: 200),
-          width: (250.w * 3) + (10.w * 2),
+          width: (250.w * 5) + (10.w * 4),
           left: -1 * (
             (250.w * (Get.find<FieldGuidePageController>().cardIndex.value - 1) )
           + (10.w * (Get.find<FieldGuidePageController>().cardIndex.value - 1) )
@@ -107,19 +126,31 @@ Widget _cardSection(BuildContext context, FieldGuideElementPlant element){
               AnimatedScale(
                 scale: Get.find<FieldGuidePageController>().cardIndex.value == 0 ? 1 : 0.8,
                 duration: Duration(milliseconds: 200),
-                child: _cardElement(context, "shape", element.shape),
+                child: _cardElement(context, "ecological", element.ecological),
               ),
               SizedBox(width: 10.w,),
               AnimatedScale(
                 scale: Get.find<FieldGuidePageController>().cardIndex.value == 1 ? 1 : 0.8,
                 duration: Duration(milliseconds: 200),
-                child: _cardElement(context, "ecological", element.ecological),
+                child: _cardElement(context, "introduction", element.introduction),
               ),
               SizedBox(width: 10.w,),
               AnimatedScale(
                 scale: Get.find<FieldGuidePageController>().cardIndex.value == 2 ? 1 : 0.8,
                 duration: Duration(milliseconds: 200),
-                child: _cardElement(context, "introduction", element.introduction),
+                child: _cardElement(context, "effect", element.effect),
+              ),
+              SizedBox(width: 10.w,),
+              AnimatedScale(
+                scale: Get.find<FieldGuidePageController>().cardIndex.value == 3 ? 1 : 0.8,
+                duration: Duration(milliseconds: 200),
+                child: _cardElement(context, "regulate", element.regulate),
+              ),
+              SizedBox(width: 10.w,),
+              AnimatedScale(
+                scale: Get.find<FieldGuidePageController>().cardIndex.value == 4 ? 1 : 0.8,
+                duration: Duration(milliseconds: 200),
+                child: _cardElement(context, "designation", element.designation),
               ),
             ],
           )
