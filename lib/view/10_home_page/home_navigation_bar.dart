@@ -1,4 +1,5 @@
 import 'package:eywa_client/model/service/alien_species_descriminate.dart';
+import 'package:eywa_client/view/10_home_page/dialog_camera_select.dart';
 import 'package:eywa_client/view/40_account_page/account_page_dialog.dart';
 import 'package:eywa_client/view_model/search_page_view_controller.dart';
 import 'package:flutter/material.dart';
@@ -50,8 +51,7 @@ Widget _fieldGuide(BuildContext context) => Positioned(
 Widget _camera(BuildContext context) => Positioned(
   child: GestureDetector(
     onTap: (){
-      Get.toNamed("/search_result");
-      Get.find<SearchPageViewController>().takePhoto();
+      Get.dialog(DialogCameraSelect(), barrierColor: Color(0x00000000));
     },
     child: Container(
       width: 76.h,
