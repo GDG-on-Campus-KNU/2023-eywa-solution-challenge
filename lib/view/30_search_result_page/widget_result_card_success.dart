@@ -1,4 +1,7 @@
 import 'package:cross_file_image/cross_file_image.dart';
+import 'package:eywa_client/view/50_detail_page/detail_animal_page.dart';
+import 'package:eywa_client/view/50_detail_page/detail_plant_page.dart';
+import 'package:eywa_client/view_model/home_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -34,31 +37,36 @@ Widget resultCardSuccess(BuildContext context, String imagePath, FieldGuideEleme
   ),
 );
 
-Widget _image(String imagePath) => Container(
-  width: 300.w,
-  height: 300.w,
-  decoration: BoxDecoration(
-    borderRadius: BorderRadius.circular(20.r),
-    image: DecorationImage(
-      image: XFileImage(Get.find<SearchPageViewController>().image!),
-      fit: BoxFit.cover,
+Widget _image(String imagePath) => Hero(
+  tag: Get.find<SearchPageViewController>().classifiedSpeciesDictionary.toString(),
+  child: Container(
+    width: 300.w,
+    height: 300.w,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(20.r),
+      image: DecorationImage(
+        image: XFileImage(Get.find<SearchPageViewController>().image!.value),
+        fit: BoxFit.cover,
+      ),
     ),
   ),
 );
 
-Widget _name(BuildContext context, String name) => Text(
-  name,
-  style: TextStyle(
-    color: context.theme.backgroundColor,
-    fontSize: 25.sp,
-    fontWeight: FontWeight.w600,
-    shadows: [
-      Shadow(
-        color: Colors.black.withOpacity(0.25),
-        blurRadius: 7,
-        offset: Offset(0, 4), // changes position of shadow
-      ),
-    ],
+Widget _name(BuildContext context, String name) => FittedBox(
+  child: Text(
+    name,
+    style: TextStyle(
+      color: context.theme.backgroundColor,
+      fontSize: 25.sp,
+      fontWeight: FontWeight.w600,
+      shadows: [
+        Shadow(
+          color: Colors.black.withOpacity(0.25),
+          blurRadius: 7,
+          offset: Offset(0, 4), // changes position of shadow
+        ),
+      ],
+    ),
   ),
 );
 
@@ -96,6 +104,7 @@ Widget _description(BuildContext context, FieldGuideElement element) => Containe
         color: context.theme.primaryColor,
         fontSize: 15.sp,
         fontWeight: FontWeight.w600,
+        overflow: TextOverflow.ellipsis,
       ),),
     ],
   )
@@ -110,7 +119,12 @@ Widget _button(BuildContext context) => Container(
       GestureDetector(
         onTap: (){
           Get.find<SearchPageViewController>().registerToServer();
-          Get.find<SearchPageViewController>().reportToServer();
+          Get.find<SearchPageViewController>().reportToServer().then(
+            (value){
+              Get.find<HomePageController>().getReports();
+              Get.toNamed("/home");
+            }
+          );
         },
         child: Container(
           width: 148.5.w,
@@ -135,6 +149,28 @@ Widget _button(BuildContext context) => Container(
         color: context.theme.backgroundColor,
       ),
       GestureDetector(
+        onTap: (){
+          if(Get.find<SearchPageViewController>().plantSearchElement != null){
+            Get.to(
+              DetailPlant(
+                element: Get.find<SearchPageViewController>().plantSearchElement!,
+                imagePath: Get.find<SearchPageViewController>().image!.value.path,
+              ),
+              opaque: false,
+              transition: Transition.downToUp
+            );
+          }
+          else{
+            Get.to(
+                DetailAnimal(
+                  element: Get.find<SearchPageViewController>().animalSearchElement!,
+                  xFileImage: XFileImage(Get.find<SearchPageViewController>().image!.value),
+                ),
+                opaque: false,
+                transition: Transition.downToUp
+            );
+          }
+        },
         child: Container(
           width: 148.5.w,
           height: 38.h,
