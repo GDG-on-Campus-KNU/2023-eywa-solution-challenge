@@ -3,7 +3,6 @@ package kr.ac.knu.gdsc.Eywa.auth;
 import kr.ac.knu.gdsc.Eywa.member.domain.Authorities;
 import kr.ac.knu.gdsc.Eywa.member.domain.GoogleUserInfo;
 import kr.ac.knu.gdsc.Eywa.member.domain.Member;
-import kr.ac.knu.gdsc.Eywa.member.respository.MemberRepository;
 import kr.ac.knu.gdsc.Eywa.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -36,9 +35,13 @@ public class PrincipalDetailService extends DefaultOAuth2UserService {
                     .build();
         } else { // 회원 가입한 경우 이메일 갱신
             member = memberOptional.get();
-            member.setEmail(googleUserInfo.getEmail());
+            member.updateEmail(googleUserInfo.getEmail());
         }
         memberService.saveMember(member);
         return new PrincipalDetail(member, oAuth2User.getAttributes());
+    }
+
+    public Member getMemberBySub(String sub) {
+        return memberService.getMemberBySub(sub).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다."));
     }
 }

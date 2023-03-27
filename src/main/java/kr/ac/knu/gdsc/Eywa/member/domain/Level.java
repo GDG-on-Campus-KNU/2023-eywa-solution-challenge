@@ -14,18 +14,16 @@ public class Level {
     @Id @GeneratedValue
     @Column(name = "level_id")
     private Long id;
-
     @NotNull
     private int level;
-
     @NotNull
     private int maxExp;
-
     @NotNull
     private int minExp;
-
-    @OneToOne(mappedBy = "level")
-    private Member member;
+//
+//    @OneToOne(mappedBy = "level")
+//    private Member member;
+//
 
     @Builder
     public Level(int level, int maxExp, int minExp) {

@@ -9,6 +9,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
 import java.math.BigDecimal;
 
 @Getter
@@ -24,16 +26,19 @@ public class Report extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "report_seq")
     @Column(name = "report_id")
     private Long id;
-
+    @DecimalMin("0.0000001")
+    @Digits(integer = 10, fraction = 6)
     private BigDecimal latitude;
+    @DecimalMin("0.0000001")
+    @Digits(integer = 10, fraction = 6)
     private BigDecimal longitude;
     private String picture;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dictionary_id")
     private Dictionary dictionary;
 
