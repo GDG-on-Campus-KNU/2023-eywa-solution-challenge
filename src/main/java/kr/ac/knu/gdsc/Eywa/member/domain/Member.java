@@ -48,7 +48,7 @@ public class Member extends BaseTimeEntity {
     @NotNull
     private Authorities authority;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "level_id")
     private Level level;
 
@@ -58,13 +58,15 @@ public class Member extends BaseTimeEntity {
     @OneToMany(mappedBy = "member")
     private List<Report> reports = new ArrayList<>();
 
+
     @Builder
-    public Member(String sub, String name, String picture, String email, Authorities authority) {
+    public Member(String sub, String name, String picture, String email, Authorities authority, Level level) {
         this.sub = sub;
         this.name = name;
         this.picture = picture;
         this.email = email;
         this.authority = authority;
+        this.level = level;
     }
 
     // convert to dto
@@ -74,7 +76,35 @@ public class Member extends BaseTimeEntity {
                 .email(this.email)
                 .exp(this.exp)
                 .picture(this.picture)
-                .level(this.level == null ? 0 : this.level.getLevel())
+                .level(this.level.getLevel())
                 .build();
     }
+
+    //==비즈니스 로직==//
+
+    /**
+     * 경험치 추가
+     */
+    public void addExp(int exp) {
+        this.exp += exp;
+    }
+
+    /**
+     * 레벨 갱신
+     */
+    public void updateLevel(Level level) {
+        this.level = level;
+    }
+
+
+
+    /**
+     * 이메일 갱신
+     */
+    public void updateEmail(String email) {
+        this.email = email;
+    }
+
+
+
 }
