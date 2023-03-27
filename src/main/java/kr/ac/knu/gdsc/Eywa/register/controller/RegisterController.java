@@ -58,11 +58,11 @@ public class RegisterController {
     public ResponseEntity<?> register(@RequestBody RegisterRequestDto request, @AuthenticationPrincipal PrincipalDetail oAuth2User) {
         Long dictionaryId = request.getDictionaryId();
         Member member = oAuth2User.getMember();
-        // 도감 기록 여부 확인
-        Optional<Register> registerOptional = registerService.getRegisterByDictionaryAndMember(dictionaryId, member.getId());
-        if (registerOptional.isPresent()) {
-            return ResponseEntity.badRequest().build();
-        }
+//        // 도감 기록 여부 확인
+//        Optional<Register> registerOptional = registerService.getRegisterByDictionaryAndMember(dictionaryId, member.getId());
+//        if (registerOptional.isPresent()) {
+//            return ResponseEntity.badRequest().build();
+//        }
         // 도감 기록
         registerService.saveRegister(member, request);
 
