@@ -89,7 +89,7 @@ public class ReportController {
                 .member(member)
                 .dictionary(this.dictionaryService.getDictionary(dictionaryId).orElse(null))
                 .build();
-        memberService.updateExpById(member.getId(), 5000);
+        memberService.updateExpById(member.getId(), 30);
         this.reportService.saveReport(report);
     }
 }
