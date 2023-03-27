@@ -97,7 +97,6 @@ public class Member extends BaseTimeEntity {
     }
 
 
-
     /**
      * 이메일 갱신
      */

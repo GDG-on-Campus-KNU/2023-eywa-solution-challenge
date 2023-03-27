@@ -17,9 +17,7 @@ public class MemberService {
     private final LevelService levelService;
 
     public Member saveMember(Member member) {
-
-        Level level= levelService.findLevelByExp(member.getExp());
-        member.updateLevel(level);
+        member.updateLevel(levelService.findLevelByExp(member.getExp()));
         return memberRepository.save(member);
     }
 
@@ -35,11 +33,12 @@ public class MemberService {
         return memberRepository.findBySub(sub);
     }
 
-    public void updateExpById(Long id) {
+    public void updateExpById(Long id, int exp) {
         Member member = memberRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
-        member.addExp(10);
-        Level level = levelService.findLevelByExp(member.getExp());
-        member.updateLevel(level);
+        if(member.getExp() + exp <= levelService.findByMaxExpByLevel(10)){
+            member.addExp(exp);
+        }
+        member.updateLevel(levelService.findLevelByExp(member.getExp()));
         memberRepository.save(member);
     }
 }

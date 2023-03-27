@@ -22,7 +22,6 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping(value = "/members")
 public class MemberController {
 
-    private final LevelService levelService;
     private final PrincipalDetailService principalDetailService;
     private final MemberService memberService;
 
