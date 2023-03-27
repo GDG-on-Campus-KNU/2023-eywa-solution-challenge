@@ -1,8 +1,9 @@
 package kr.ac.knu.gdsc.Eywa.register.controller;
 
+import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetail;
 import kr.ac.knu.gdsc.Eywa.member.domain.Authorities;
 import kr.ac.knu.gdsc.Eywa.member.domain.Member;
-import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetail;
+import kr.ac.knu.gdsc.Eywa.member.service.MemberService;
 import kr.ac.knu.gdsc.Eywa.register.domain.Register;
 import kr.ac.knu.gdsc.Eywa.register.dto.RegisterRequestDto;
 import kr.ac.knu.gdsc.Eywa.register.dto.RegisterResponseDto;
@@ -11,7 +12,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +26,7 @@ import java.util.Optional;
 @RequestMapping(value="/registers")
 public class RegisterController {
     private final RegisterService registerService;
+    private final MemberService memberService;
 
     // 도감 본인 기록 조회
     @Secured(Authorities.ROLES.USER)
@@ -45,7 +50,6 @@ public class RegisterController {
             registerResponseDtoList.add(register.toDto());
         });
         return ResponseEntity.ok().body(registerResponseDtoList);
-
     }
 
     // 도감 기록
@@ -61,6 +65,10 @@ public class RegisterController {
         }
         // 도감 기록
         registerService.saveRegister(member, request);
+
+        //도감 등록 시 경험치 상승
+        memberService.updateExpById(member.getId());
+
         return ResponseEntity.ok().build();
     }
 }

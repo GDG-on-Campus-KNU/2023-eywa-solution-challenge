@@ -2,8 +2,8 @@ package kr.ac.knu.gdsc.Eywa.report.controller;
 
 import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetail;
 import kr.ac.knu.gdsc.Eywa.dictionary.service.DictionaryService;
-import kr.ac.knu.gdsc.Eywa.member.domain.Member;
 import kr.ac.knu.gdsc.Eywa.member.domain.Authorities;
+import kr.ac.knu.gdsc.Eywa.member.domain.Member;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import kr.ac.knu.gdsc.Eywa.report.dto.ReportRequestDto;
 import kr.ac.knu.gdsc.Eywa.report.dto.ReportResponseDto;
@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value="/reports")
+@RequestMapping(value = "/reports")
 @RequiredArgsConstructor
 public class ReportController {
     private final ReportService reportService;

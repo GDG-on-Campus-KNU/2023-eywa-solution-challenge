@@ -24,13 +24,12 @@ public class Register extends BaseTimeEntity {
 
     private BigDecimal longitude;
 
-    @ManyToOne
-
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     @JsonIgnore
     private Member member;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dictionary_id")
     private Dictionary dictionary;
 

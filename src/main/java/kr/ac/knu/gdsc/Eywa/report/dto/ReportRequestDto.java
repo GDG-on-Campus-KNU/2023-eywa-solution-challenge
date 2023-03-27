@@ -1,12 +1,11 @@
 package kr.ac.knu.gdsc.Eywa.report.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class ReportRequestDto {
     private BigDecimal longitude;
