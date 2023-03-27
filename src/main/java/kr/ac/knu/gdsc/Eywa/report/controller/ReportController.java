@@ -4,6 +4,7 @@ import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetail;
 import kr.ac.knu.gdsc.Eywa.dictionary.service.DictionaryService;
 import kr.ac.knu.gdsc.Eywa.member.domain.Authorities;
 import kr.ac.knu.gdsc.Eywa.member.domain.Member;
+import kr.ac.knu.gdsc.Eywa.member.service.MemberService;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import kr.ac.knu.gdsc.Eywa.report.dto.ReportRequestDto;
 import kr.ac.knu.gdsc.Eywa.report.dto.ReportResponseDto;
@@ -29,6 +30,8 @@ public class ReportController {
     private final ReportService reportService;
     private final DictionaryService dictionaryService;
     private final CloudStorageService cloudStorageService;
+
+    private final MemberService memberService;
 
     // 생태계교란종 신고 목록 조회
     @RequestMapping(method = RequestMethod.GET)
@@ -86,6 +89,7 @@ public class ReportController {
                 .member(member)
                 .dictionary(this.dictionaryService.getDictionary(dictionaryId).orElse(null))
                 .build();
+        memberService.updateExpById(member.getId(), 5000);
         this.reportService.saveReport(report);
     }
 }
