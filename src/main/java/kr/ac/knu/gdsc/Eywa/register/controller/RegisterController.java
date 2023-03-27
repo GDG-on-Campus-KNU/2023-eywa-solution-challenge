@@ -56,18 +56,20 @@ public class RegisterController {
     @Secured(Authorities.ROLES.USER)
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> register(@RequestBody RegisterRequestDto request, @AuthenticationPrincipal PrincipalDetail oAuth2User) {
-        Long dictionaryId = request.getDictionaryId();
         Member member = oAuth2User.getMember();
+
 //        // 도감 기록 여부 확인
+//        Long dictionaryId = request.getDictionaryId();
 //        Optional<Register> registerOptional = registerService.getRegisterByDictionaryAndMember(dictionaryId, member.getId());
 //        if (registerOptional.isPresent()) {
 //            return ResponseEntity.badRequest().build();
 //        }
+
         // 도감 기록
         registerService.saveRegister(member, request);
 
         //도감 등록 시 경험치 상승
-        memberService.updateExpById(member.getId());
+        memberService.updateExpById(member.getId(), 10);
 
         return ResponseEntity.ok().build();
     }
