@@ -1,4 +1,3 @@
-import 'package:eywa_client/model/service/google_sign_in.dart';
 import 'package:eywa_client/view_model/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,19 +10,29 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: context.theme.backgroundColor,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          _logo(),
-          SizedBox(height: 261.h),
-          _signInButton(context),
-        ],
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _logo(),
+            SizedBox(height: 261.h),
+            _signInButton(context),
+          ],
+        ),
       ),
     );
   }
 
   Widget _logo() {
-    return Container();
+    return Hero(
+      tag: "logo",
+      child: Image.asset(
+        "assets/images/logo.jpg",
+        width: 221.w,
+      ),
+    );
   }
 
   Widget _signInButton(BuildContext context) {
