@@ -7,5 +7,6 @@ import java.util.Optional;
 
 public interface MemberRepository extends JpaRepository<Member, Long> {
     Optional<Member> findBySub(String sub);
+    @Override
     Optional<Member> findById(Long id);
 }

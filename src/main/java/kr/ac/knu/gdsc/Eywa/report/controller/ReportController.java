@@ -4,6 +4,7 @@ import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetail;
 import kr.ac.knu.gdsc.Eywa.dictionary.service.DictionaryService;
 import kr.ac.knu.gdsc.Eywa.member.domain.Authorities;
 import kr.ac.knu.gdsc.Eywa.member.domain.Member;
+import kr.ac.knu.gdsc.Eywa.member.service.MemberService;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
 import kr.ac.knu.gdsc.Eywa.report.dto.ReportRequestDto;
 import kr.ac.knu.gdsc.Eywa.report.dto.ReportResponseDto;
@@ -30,6 +31,8 @@ public class ReportController {
     private final DictionaryService dictionaryService;
     private final CloudStorageService cloudStorageService;
 
+    private final MemberService memberService;
+
     // 생태계교란종 신고 목록 조회
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<ReportResponseDto>> getReportList() {
@@ -44,7 +47,7 @@ public class ReportController {
     @RequestMapping(method = RequestMethod.GET, value = "/members/me")
     public ResponseEntity<List<ReportResponseDto>> getMyReportList(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
         Member member = oAuth2User.getMember();
-        List<Report> reportList = this.reportService.getReportListByMemberId(member.getId());
+        List<Report> reportList = this.reportService.getReportListOfMember(member.getId());
         List<ReportResponseDto> reportResponseDtoList = new ArrayList<>();
         reportList.forEach(report -> {
             reportResponseDtoList.add(report.toDto());
@@ -86,6 +89,7 @@ public class ReportController {
                 .member(member)
                 .dictionary(this.dictionaryService.getDictionary(dictionaryId).orElse(null))
                 .build();
+        memberService.updateExpOfMember(member.getId(), 30);
         this.reportService.saveReport(report);
     }
 }

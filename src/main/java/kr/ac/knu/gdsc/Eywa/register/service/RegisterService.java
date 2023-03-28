@@ -5,10 +5,8 @@ import kr.ac.knu.gdsc.Eywa.dictionary.service.DictionaryService;
 import kr.ac.knu.gdsc.Eywa.member.domain.Member;
 import kr.ac.knu.gdsc.Eywa.register.domain.Register;
 import kr.ac.knu.gdsc.Eywa.register.dto.RegisterRequestDto;
-import kr.ac.knu.gdsc.Eywa.register.dto.RegisterResponseDto;
 import kr.ac.knu.gdsc.Eywa.register.repository.RegisterRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,12 +20,9 @@ public class RegisterService {
 
     // 도감 등록
     public void saveRegister(Member member, RegisterRequestDto request) {
-        System.out.println(request.getDictionaryId());
-        Optional<Dictionary> dictionaryOptional = dictionaryService.getDictionary(request.getDictionaryId());
-        if (dictionaryOptional.isEmpty()) {
-            return;
-        }
-        Dictionary dictionary = dictionaryOptional.get();
+        long dictionaryId = request.getDictionaryId();
+        Dictionary dictionary = dictionaryService.getDictionary(dictionaryId).orElseThrow(() ->
+                new IllegalArgumentException(String.format("%d에 해당하는 도감이 존재하지 않습니다.", dictionaryId)));
         Register register = Register.builder()
                 .latitude(request.getLatitude())
                 .longitude(request.getLongitude())
@@ -42,15 +37,7 @@ public class RegisterService {
         return registerRepository.findAll();
     }
 
-    public List<Register> getRegisterListByMember(Long memberId) {
+    public List<Register> getRegisterListOfMember(Long memberId) {
         return registerRepository.findByMemberId(memberId);
-    }
-
-    public Optional<Register> getRegisterByDictionaryAndMember(Long dictionaryID, Long memberId) {
-        return registerRepository.findByDictionaryIdAndMemberId(dictionaryID, memberId);
-    }
-
-    public Optional<Register> getRegister(Long registerId) {
-        return registerRepository.findById(registerId);
     }
 }

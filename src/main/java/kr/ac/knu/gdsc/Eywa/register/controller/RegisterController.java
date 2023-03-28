@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
@@ -31,9 +31,9 @@ public class RegisterController {
     // 도감 본인 기록 조회
     @Secured(Authorities.ROLES.USER)
     @RequestMapping(method = RequestMethod.GET, value = "/members/me")
-    public ResponseEntity<List<RegisterResponseDto>> getMyRegisterList(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
-        Member member = oAuth2User.getMember();
-        List<Register> registerList = this.registerService.getRegisterListByMember(member.getId());
+    public ResponseEntity<List<RegisterResponseDto>> getMyRegisterList(@AuthenticationPrincipal PrincipalDetail principalDetail) {
+        Member member = principalDetail.getMember();
+        List<Register> registerList = this.registerService.getRegisterListOfMember(member.getId());
         List<RegisterResponseDto> registerResponseDtoList = new ArrayList<>();
         registerList.forEach(register -> {
             registerResponseDtoList.add(register.toDto());
@@ -55,20 +55,12 @@ public class RegisterController {
     // 도감 기록
     @Secured(Authorities.ROLES.USER)
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> register(@RequestBody RegisterRequestDto request, @AuthenticationPrincipal PrincipalDetail oAuth2User) {
-        Long dictionaryId = request.getDictionaryId();
-        Member member = oAuth2User.getMember();
-//        // 도감 기록 여부 확인
-//        Optional<Register> registerOptional = registerService.getRegisterByDictionaryAndMember(dictionaryId, member.getId());
-//        if (registerOptional.isPresent()) {
-//            return ResponseEntity.badRequest().build();
-//        }
+    public ResponseEntity<?> register(@RequestBody RegisterRequestDto request, @AuthenticationPrincipal PrincipalDetail principalDetail) {
+        Member member = principalDetail.getMember();
         // 도감 기록
         registerService.saveRegister(member, request);
-
-        //도감 등록 시 경험치 상승
-        memberService.updateExpById(member.getId());
-
+        // 도감 등록 시 경험치 10 상승
+        memberService.updateExpOfMember(member.getId(), 10);
         return ResponseEntity.ok().build();
     }
 }

@@ -1,4 +1,4 @@
-package kr.ac.knu.gdsc.Eywa.member.domain;
+package kr.ac.knu.gdsc.Eywa.level.domain;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -20,10 +20,6 @@ public class Level {
     private int maxExp;
     @NotNull
     private int minExp;
-//
-//    @OneToOne(mappedBy = "level")
-//    private Member member;
-//
 
     @Builder
     public Level(int level, int maxExp, int minExp) {
