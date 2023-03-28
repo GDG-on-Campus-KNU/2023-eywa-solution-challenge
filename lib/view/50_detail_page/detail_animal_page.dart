@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cross_file_image/cross_file_image.dart';
 import 'package:eywa_client/model/field_guid_element.dart';
 import 'package:eywa_client/view_model/field_guide_page_controller.dart';
@@ -63,10 +64,30 @@ Widget _image(String? imagePath, XFileImage? xFileImage, int id){
       child: Container(
         width: 250.w,
         height: 250.w,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.r),
-          image: DecorationImage(
-            image: imagePath == null ? xFileImage! : (NetworkImage(imagePath) as ImageProvider),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(15.r),
+          child: imagePath == null ?
+          Image(
+            image: xFileImage!,
+            fit: BoxFit.cover,
+          ) :
+          CachedNetworkImage(
+            placeholder: (context, url) => Container(
+              child: Container(
+                width: 10.w,
+                height: 10.w,
+                color: Colors.transparent,
+                alignment: Alignment.center,
+                child: CircularProgressIndicator(
+                  color: context.theme.primaryColorDark,
+                ),
+              ),
+            ),
+            errorWidget: (context, url, error) => Icon(
+              Icons.error,
+              color: context.theme.primaryColorDark,
+            ),
+            imageUrl: imagePath,
             fit: BoxFit.cover,
           ),
         ),

@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cross_file_image/cross_file_image.dart';
 import 'package:eywa_client/model/field_guid_element.dart';
 import 'package:eywa_client/view_model/field_guide_page_controller.dart';
 import 'package:eywa_client/view_model/search_page_view_controller.dart';
@@ -9,11 +11,13 @@ import 'package:get/get.dart';
 
 class DetailPlant extends StatelessWidget {
   FieldGuideElementPlant element;
-  String imagePath;
+  String? imagePath;
+  XFileImage? xFileImage;
   DetailPlant({
     Key? key,
     required this.element,
-    required this.imagePath,
+    this.imagePath,
+    this.xFileImage,
   }) : super(key: key);
 
   @override
@@ -28,7 +32,7 @@ class DetailPlant extends StatelessWidget {
           children: [
             _background(),
             _detail(context, element),
-            _image(imagePath, element.id),
+            _image(imagePath, xFileImage, element.id),
           ],
         )),
       ),
@@ -49,7 +53,7 @@ Widget _background(){
   );
 }
 
-Widget _image(String image, int id){
+Widget _image(String? imagePath, XFileImage? xFileImage, int id){
   return Positioned(
     bottom: 485.h,
     child: Hero(
@@ -57,10 +61,30 @@ Widget _image(String image, int id){
       child: Container(
         width: 250.w,
         height: 250.w,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.r),
-          image: DecorationImage(
-            image: NetworkImage(image),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(15.r),
+          child: imagePath == null ?
+          Image(
+            image: xFileImage!,
+            fit: BoxFit.cover,
+          ) :
+          CachedNetworkImage(
+            placeholder: (context, url) => Container(
+              child: Container(
+                width: 10.w,
+                height: 10.w,
+                color: Colors.transparent,
+                alignment: Alignment.center,
+                child: CircularProgressIndicator(
+                  color: context.theme.primaryColorDark,
+                ),
+              ),
+            ),
+            errorWidget: (context, url, error) => Icon(
+              Icons.error,
+              color: context.theme.primaryColorDark,
+            ),
+            imageUrl: imagePath,
             fit: BoxFit.cover,
           ),
         ),

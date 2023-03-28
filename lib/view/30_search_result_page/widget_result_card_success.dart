@@ -154,7 +154,7 @@ Widget _button(BuildContext context) => Container(
             Get.to(
               DetailPlant(
                 element: Get.find<SearchPageViewController>().plantSearchElement!,
-                imagePath: Get.find<SearchPageViewController>().image!.value.path,
+                xFileImage: XFileImage(Get.find<SearchPageViewController>().image!.value),
               ),
               opaque: false,
               transition: Transition.downToUp
