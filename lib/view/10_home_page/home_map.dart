@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:custom_map_markers/custom_map_markers.dart';
 import 'package:eywa_client/model/field_guid_element.dart';
 import 'package:eywa_client/view/50_detail_page/detail_animal_page.dart';
@@ -49,8 +50,23 @@ Widget homeMap(BuildContext context) {
                   height: 45.w,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50.r),
-                    child: Image.network(
-                      e.imagePath,
+                    child: CachedNetworkImage(
+                      placeholder: (context, url) => Container(
+                        child: Container(
+                          width: 10.w,
+                          height: 10.w,
+                          color: Colors.transparent,
+                          alignment: Alignment.center,
+                          child: CircularProgressIndicator(
+                            color: context.theme.primaryColorDark,
+                          ),
+                        ),
+                      ),
+                      errorWidget: (context, url, error) => Icon(
+                        Icons.error,
+                        color: context.theme.primaryColorDark,
+                      ),
+                      imageUrl: e.imagePath,
                       fit: BoxFit.cover,
                     ),
                   ),

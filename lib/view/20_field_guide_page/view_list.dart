@@ -1,3 +1,4 @@
+import "package:cached_network_image/cached_network_image.dart";
 import "package:eywa_client/view/50_detail_page/detail_animal_page.dart";
 import "package:eywa_client/view/50_detail_page/detail_plant_page.dart";
 import "package:flutter/material.dart";
@@ -53,8 +54,23 @@ Widget _listViewElementPlant(BuildContext context, FieldGuideElementPlant elemen
                   colorFilter: element.registered ?
                     ColorFilter.mode(Colors.transparent, BlendMode.saturation)
                     : ColorFilter.mode(Colors.grey, BlendMode.saturation),
-                  child: Image.network(
-                    element.image,
+                  child: CachedNetworkImage(
+                    placeholder: (context, url) => Container(
+                      child: Container(
+                        width: 10.w,
+                        height: 10.w,
+                        color: Colors.transparent,
+                        alignment: Alignment.center,
+                        child: CircularProgressIndicator(
+                          color: context.theme.primaryColorDark,
+                        ),
+                      ),
+                    ),
+                    errorWidget: (context, url, error) => Icon(
+                      Icons.error,
+                      color: context.theme.primaryColorDark,
+                    ),
+                    imageUrl: element.image,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -122,8 +138,23 @@ Widget _listViewElementAnimal(BuildContext context, FieldGuideElementAnimal elem
                   colorFilter: element.registered ?
                     ColorFilter.mode(Colors.transparent, BlendMode.saturation)
                     : ColorFilter.mode(Colors.grey, BlendMode.saturation),
-                  child: Image.network(
-                    element.image,
+                  child: CachedNetworkImage(
+                    placeholder: (context, url) => Container(
+                      child: Container(
+                        width: 10.w,
+                        height: 10.w,
+                        color: Colors.transparent,
+                        alignment: Alignment.center,
+                        child: CircularProgressIndicator(
+                          color: context.theme.primaryColorDark,
+                        ),
+                      ),
+                    ),
+                    errorWidget: (context, url, error) => Icon(
+                      Icons.error,
+                      color: context.theme.primaryColorDark,
+                    ),
+                    imageUrl: element.image,
                     fit: BoxFit.cover,
                   ),
                 ),
