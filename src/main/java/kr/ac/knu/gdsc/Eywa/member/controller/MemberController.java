@@ -1,10 +1,8 @@
 package kr.ac.knu.gdsc.Eywa.member.controller;
 
 import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetail;
-import kr.ac.knu.gdsc.Eywa.auth.PrincipalDetailService;
 import kr.ac.knu.gdsc.Eywa.member.domain.Member;
 import kr.ac.knu.gdsc.Eywa.member.dto.MemberDto;
-import kr.ac.knu.gdsc.Eywa.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -22,18 +20,14 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping(value = "/members")
 public class MemberController {
 
-    private final PrincipalDetailService principalDetailService;
-    private final MemberService memberService;
-
+    // 본인 정보 조회
     @RequestMapping(method = RequestMethod.GET, value="/me")
-    public ResponseEntity<MemberDto> getMember(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
-
-        Member member = principalDetailService.getMemberBySub(oAuth2User.getMember().getSub());
-        memberService.saveMember(member);
+    public ResponseEntity<MemberDto> getMember(@AuthenticationPrincipal PrincipalDetail principalDetail) {
+        Member member = principalDetail.getMember();
         return ResponseEntity.ok().body(member.toDto());
     }
 
-
+    // 본인 세션 조회
     @RequestMapping(method = RequestMethod.GET, value = "/session")
     public ResponseEntity<?> getSession(HttpServletRequest request, @CookieValue("JSESSIONID") String sessionId) {
         String userAgent = request.getHeader("user-agent");
@@ -49,5 +43,4 @@ public class MemberController {
         }
         return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY).headers(headers).build();
     }
-
 }

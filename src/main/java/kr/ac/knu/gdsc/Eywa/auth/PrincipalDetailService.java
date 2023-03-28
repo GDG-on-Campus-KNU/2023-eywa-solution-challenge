@@ -40,8 +40,4 @@ public class PrincipalDetailService extends DefaultOAuth2UserService {
         memberService.saveMember(member);
         return new PrincipalDetail(member, oAuth2User.getAttributes());
     }
-
-    public Member getMemberBySub(String sub) {
-        return memberService.getMemberBySub(sub).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다."));
-    }
 }

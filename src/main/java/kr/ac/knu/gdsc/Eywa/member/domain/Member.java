@@ -2,6 +2,7 @@ package kr.ac.knu.gdsc.Eywa.member.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import kr.ac.knu.gdsc.Eywa.common.domain.BaseTimeEntity;
+import kr.ac.knu.gdsc.Eywa.level.domain.Level;
 import kr.ac.knu.gdsc.Eywa.member.dto.MemberDto;
 import kr.ac.knu.gdsc.Eywa.register.domain.Register;
 import kr.ac.knu.gdsc.Eywa.report.domain.Report;
@@ -58,7 +59,6 @@ public class Member extends BaseTimeEntity {
     @OneToMany(mappedBy = "member")
     private List<Report> reports = new ArrayList<>();
 
-
     @Builder
     public Member(String sub, String name, String picture, String email, Authorities authority, Level level) {
         this.sub = sub;
@@ -80,8 +80,6 @@ public class Member extends BaseTimeEntity {
                 .build();
     }
 
-    //==비즈니스 로직==//
-
     /**
      * 경험치 추가
      */
@@ -96,14 +94,10 @@ public class Member extends BaseTimeEntity {
         this.level = level;
     }
 
-
     /**
      * 이메일 갱신
      */
     public void updateEmail(String email) {
         this.email = email;
     }
-
-
-
 }

@@ -1,11 +1,10 @@
 package kr.ac.knu.gdsc.Eywa.member.service;
 
-import kr.ac.knu.gdsc.Eywa.member.controller.LevelService;
-import kr.ac.knu.gdsc.Eywa.member.domain.Level;
+import kr.ac.knu.gdsc.Eywa.level.domain.Level;
+import kr.ac.knu.gdsc.Eywa.level.service.LevelService;
 import kr.ac.knu.gdsc.Eywa.member.domain.Member;
 import kr.ac.knu.gdsc.Eywa.member.respository.MemberRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -16,29 +15,28 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final LevelService levelService;
 
-    public Member saveMember(Member member) {
-        member.updateLevel(levelService.findLevelByExp(member.getExp()));
-        return memberRepository.save(member);
-    }
-
-    public Optional<Member> getMember(OAuth2User oAuth2User) {
-        return memberRepository.findBySub(oAuth2User.getName());
-    }
-
-    public Optional<Member> getMember(Long memberId) {
-        return memberRepository.findById(memberId);
+    public void saveMember(Member member) {
+        int memberExp = member.getExp();
+        Level updatedLevel = levelService.getLevelBetweenExp(memberExp).orElseThrow(() -> new IllegalArgumentException(String.format("경험치 구간 %d에 해당하는 레벨이 존재하지 않습니다.", memberExp)));
+        member.updateLevel(updatedLevel);
+        memberRepository.save(member);
     }
 
     public Optional<Member> getMemberBySub(String sub) {
         return memberRepository.findBySub(sub);
     }
 
-    public void updateExpById(Long id, int exp) {
-        Member member = memberRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
-        if(member.getExp() + exp <= levelService.findByMaxExpByLevel(10)){
+    public void updateExpOfMember(Long memberId, int exp) {
+        Member member = memberRepository.findById(memberId).orElseThrow(() -> new IllegalArgumentException(String.format("%d에 해당하는 사용자가 존재하지 않습니다.", memberId)));
+        int maxExp = levelService.getMaxExpOfLevel(10).orElseThrow(() -> new IllegalArgumentException(String.format("레벨 10의 최대 경험치가 설정되지 않았습니다.")));
+        // 최대 레벨이 아닌 경우 경험치 갱신
+        if (member.getExp() + exp <= maxExp) {
             member.addExp(exp);
         }
-        member.updateLevel(levelService.findLevelByExp(member.getExp()));
+        // 레벨업 처리
+        int memberExp = member.getExp();
+        Level updatedLevel = levelService.getLevelBetweenExp(memberExp).orElseThrow(() -> new IllegalArgumentException(String.format("경험치 구간 %d에 해당하는 레벨이 존재하지 않습니다.", memberExp)));
+        member.updateLevel(updatedLevel);
         memberRepository.save(member);
     }
 }

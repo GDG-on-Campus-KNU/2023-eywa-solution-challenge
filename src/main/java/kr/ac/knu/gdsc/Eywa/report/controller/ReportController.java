@@ -47,7 +47,7 @@ public class ReportController {
     @RequestMapping(method = RequestMethod.GET, value = "/members/me")
     public ResponseEntity<List<ReportResponseDto>> getMyReportList(@AuthenticationPrincipal PrincipalDetail oAuth2User) {
         Member member = oAuth2User.getMember();
-        List<Report> reportList = this.reportService.getReportListByMemberId(member.getId());
+        List<Report> reportList = this.reportService.getReportListOfMember(member.getId());
         List<ReportResponseDto> reportResponseDtoList = new ArrayList<>();
         reportList.forEach(report -> {
             reportResponseDtoList.add(report.toDto());
@@ -89,7 +89,7 @@ public class ReportController {
                 .member(member)
                 .dictionary(this.dictionaryService.getDictionary(dictionaryId).orElse(null))
                 .build();
-        memberService.updateExpById(member.getId(), 30);
+        memberService.updateExpOfMember(member.getId(), 30);
         this.reportService.saveReport(report);
     }
 }

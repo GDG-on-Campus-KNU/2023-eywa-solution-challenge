@@ -18,6 +18,7 @@ public class RegisterRequestDto {
     @DecimalMin("0.0000001")
     @Digits(integer = 10, fraction = 6)
     private BigDecimal latitude;
+
     @DecimalMin("0.0000001")
     @Digits(integer = 10, fraction = 6)
     private BigDecimal longitude;

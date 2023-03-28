@@ -17,15 +17,15 @@ public class ReportService {
         reportRepository.save(report);
     }
 
-    public Optional<Report> getReport(Long id) {
-        return reportRepository.findById(id);
+    public Optional<Report> getReport(Long reportId) {
+        return reportRepository.findById(reportId);
     }
 
     public List<Report> getReportList() {
         return reportRepository.findAll();
     }
 
-    public List<Report> getReportListByMemberId(Long memberId) {
+    public List<Report> getReportListOfMember(Long memberId) {
         return reportRepository.findAllByMemberId(memberId);
     }
 }
