@@ -122,8 +122,14 @@ Widget _button(BuildContext context) => Container(
           Get.find<SearchPageViewController>().registerToServer();
           Get.find<SearchPageViewController>().reportToServer().then(
             (value){
-              Get.find<HomePageController>().getReports();
-              Get.toNamed("/home");
+              if(value) {
+                Get.find<HomePageController>().getReports();
+                Get.offAndToNamed("/home");
+                showToastMessage(message: "Report Success", backgroundColor: context.theme.primaryColor);
+              }
+              else{
+                showToastMessage(message: "Report Failed", backgroundColor: context.theme.primaryColor);
+              }
             }
           );
         },
