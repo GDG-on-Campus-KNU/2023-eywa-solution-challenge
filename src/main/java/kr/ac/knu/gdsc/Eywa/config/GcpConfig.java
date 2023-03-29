@@ -8,6 +8,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Setter
 @Getter
 public class GcpConfig {
-    private String bucketName;
-    private String keyPath;
+  private String bucketName;
+  private String keyPath;
 }

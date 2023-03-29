@@ -6,11 +6,11 @@ import lombok.Getter;
 
 @Getter
 public class DictionaryDto {
-    private final Dictionary data;
-    private final RegisterResponseDto register;
+  private final Dictionary data;
+  private final RegisterResponseDto register;
 
-    public DictionaryDto(Dictionary dictionary, RegisterResponseDto registerResponseDto) {
-        this.data = dictionary;
-        this.register = registerResponseDto;
-    }
+  public DictionaryDto(Dictionary dictionary, RegisterResponseDto registerResponseDto) {
+    this.data = dictionary;
+    this.register = registerResponseDto;
+  }
 }
