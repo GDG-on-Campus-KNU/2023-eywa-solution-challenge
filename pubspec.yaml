@@ -52,6 +52,7 @@ dependencies:
   http_parser: ^4.0.2
   custom_map_markers: ^0.0.2+1
   cached_network_image: ^3.2.3
+  fluttertoast: ^8.2.1
 
 dev_dependencies:
   flutter_test:
