@@ -49,7 +49,7 @@ Widget _account(BuildContext context) => Container(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(
-            image: NetworkImage(Get.find<UserController>().member.profileImage),
+            image: NetworkImage(Get.find<UserController>().member.value.profileImage),
             fit: BoxFit.cover,
           ),
         ),
@@ -60,7 +60,7 @@ Widget _account(BuildContext context) => Container(
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(Get.find<UserController>().member.name,
+          Text(Get.find<UserController>().member.value.name,
             style: TextStyle(
               fontSize: 40.sp,
               fontWeight: FontWeight.w600,
@@ -68,7 +68,7 @@ Widget _account(BuildContext context) => Container(
               color: context.theme.primaryColorDark,
             ),
           ),
-          Text(Get.find<UserController>().member.email,
+          Text(Get.find<UserController>().member.value.email,
             style: TextStyle(
               fontSize: 15.sp,
               fontWeight: FontWeight.w600,
@@ -90,7 +90,7 @@ Widget _level(BuildContext context) => Container(
         children: [
           Flex(direction: Axis.horizontal, children: [
             Expanded(
-              flex: Get.find<UserController>().member.exp,
+              flex: Get.find<UserController>().member.value.exp,
               child: Container(
                 height: 10.h,
                 decoration: BoxDecoration(
@@ -111,7 +111,7 @@ Widget _level(BuildContext context) => Container(
               )
             ),
             Expanded(
-              flex: 100 - Get.find<UserController>().member.exp,
+              flex: 100 - Get.find<UserController>().member.value.exp,
               child: Container(
                 height: 10.h,
                 decoration: BoxDecoration(
@@ -130,16 +130,16 @@ Widget _level(BuildContext context) => Container(
         children: [
           Flex(direction: Axis.horizontal, children: [
             Expanded(
-              flex: Get.find<UserController>().member.exp,
+              flex: Get.find<UserController>().member.value.exp,
               child: Container(),
             ),
-            Text("Lv.${Get.find<UserController>().member.level}", style: TextStyle(
+            Text("Lv.${Get.find<UserController>().member.value.level}", style: TextStyle(
               fontSize: 12.sp,
               fontWeight: FontWeight.w600,
               color: context.theme.primaryColorDark,
             ),),
             Expanded(
-              flex: 100 - Get.find<UserController>().member.exp,
+              flex: 100 - Get.find<UserController>().member.value.exp,
               child: Container(),
             ),
           ]),

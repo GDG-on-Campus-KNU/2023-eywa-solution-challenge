@@ -14,7 +14,7 @@ BackdropFilter AccountPageDialog(BuildContext context){
       insetPadding: EdgeInsets.all(0),
       backgroundColor: context.theme.backgroundColor.withOpacity(0.8),
       elevation: 0,
-      child: Container(
+      child: Obx(() => Container(
         width: 390.w,
         height: 844.h,
         color: Colors.transparent,
@@ -24,7 +24,7 @@ BackdropFilter AccountPageDialog(BuildContext context){
             accountPageNavigationBar(context),
           ],
         ),
-      ),
+      )),
     ),
   );
 }

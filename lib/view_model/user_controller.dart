@@ -58,10 +58,10 @@ class UserController extends GetxController {
   }
 
   ////Member
-  Member member = Member.nullInit();
+  Rx<Member> member = Member.nullInit().obs;
 
-  void getMember() async{
-    member = await Member.GETMember(sessionId);
+  void getMember() async {
+    member(await Member.GETMember(sessionId));
   }
 
   int animalsFound = 12;
