@@ -1,18 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
-import 'dart:typed_data';
-import 'dart:ui';
-import 'package:eywa_client/view_model/search_page_view_controller.dart';
 import 'package:eywa_client/view_model/user_controller.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
-import 'package:image_picker/image_picker.dart';
 import 'constants/key.dart';
 import 'service/api.dart';
 import 'package:eywa_client/model/register.dart';
-import 'package:image/image.dart' as img;
 
 class Report{
   Register registerInfo;
@@ -36,8 +31,8 @@ class Report{
 
     request.files.add(http.MultipartFile.fromString(
         "reportRequestDto", jsonEncode({
-        "latitude": report.registerInfo.coor.latitude,
-        "longitude": report.registerInfo.coor.longitude,
+        "latitude": double.parse(report.registerInfo.coor.latitude.toStringAsFixed(6)),
+        "longitude": double.parse(report.registerInfo.coor.longitude.toStringAsFixed(6)),
         "dictionaryId": report.registerInfo.dictionaryId,
       }),
       contentType: MediaType.parse("application/json"),
@@ -52,9 +47,14 @@ class Report{
     );
 
     var response = await request.send();
-    print(response.statusCode);
+    print("report status : ${response.statusCode}");
 
-    return true;
+    switch(response.statusCode){
+      case 200:
+        return true;
+      default:
+        return false;
+    }
   }
 
   //////////////////////////////////////////////////////////////////////////////[Get] reports
