@@ -13,13 +13,9 @@ public class LevelService {
 
   // 경험치의 구간에 해당하는 레벨을 반환
   public Level getLevelBetweenExp(int exp) {
-    Level level = this.levelRepository
+    return this.levelRepository
         .findBetweenExp(exp)
         .orElseThrow(() -> new IllegalArgumentException(ErrorCode.LEVEL_NOT_FOUND.getMessage()));
-    System.out.println(level.getLevel());
-    System.out.println(level.getMinExp());
-    System.out.println(level.getMaxExp());
-    return level;
   }
 
   // 레벨의 최대 경험치를 반환
