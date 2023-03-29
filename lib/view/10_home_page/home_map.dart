@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:custom_map_markers/custom_map_markers.dart';
 import 'package:eywa_client/model/field_guid_element.dart';
-import 'package:eywa_client/view/50_detail_page/detail_animal_page.dart';
-import 'package:eywa_client/view/50_detail_page/detail_plant_page.dart';
+import 'package:eywa_client/view/common_widgets/detail_animal_page.dart';
+import 'package:eywa_client/view/common_widgets/detail_plant_page.dart';
 import 'package:eywa_client/view_model/field_guide_page_controller.dart';
 import 'package:eywa_client/view_model/home_page_controller.dart';
 import 'package:eywa_client/view_model/user_controller.dart';

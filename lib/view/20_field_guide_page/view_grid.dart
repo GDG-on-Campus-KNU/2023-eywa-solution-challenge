@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:eywa_client/view/50_detail_page/detail_animal_page.dart';
-import 'package:eywa_client/view/50_detail_page/detail_plant_page.dart';
+import 'package:eywa_client/view/common_widgets/detail_animal_page.dart';
+import 'package:eywa_client/view/common_widgets/detail_plant_page.dart';
 import "package:flutter/material.dart";
 import "package:flutter_screenutil/flutter_screenutil.dart";
 import "package:get/get.dart";

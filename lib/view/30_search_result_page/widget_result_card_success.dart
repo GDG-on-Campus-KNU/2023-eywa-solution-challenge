@@ -1,6 +1,7 @@
 import 'package:cross_file_image/cross_file_image.dart';
-import 'package:eywa_client/view/50_detail_page/detail_animal_page.dart';
-import 'package:eywa_client/view/50_detail_page/detail_plant_page.dart';
+import 'package:eywa_client/view/common_widgets/detail_animal_page.dart';
+import 'package:eywa_client/view/common_widgets/detail_plant_page.dart';
+import 'package:eywa_client/view/common_widgets/toast_message.dart';
 import 'package:eywa_client/view_model/home_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
