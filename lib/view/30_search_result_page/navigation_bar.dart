@@ -27,7 +27,7 @@ Widget _cancel(BuildContext context) => Positioned(
   bottom: 12.h,
   child: GestureDetector(
     onTap: (){
-      Get.back();
+      Get.offAndToNamed("/home");
     },
     child: Image.asset("assets/icons/cancel.png", height: 30.h,),
   ),

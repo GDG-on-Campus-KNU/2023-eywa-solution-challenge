@@ -40,7 +40,7 @@ class SignInPage extends StatelessWidget {
       onPressed: () {
         Get.find<UserController>().googleLogin().then((value){
           if (value) {
-            Get.find<UserController>().getPosition();
+            Get.find<UserController>().signInSuccess();
             Get.offAllNamed("/home");
           }
         });

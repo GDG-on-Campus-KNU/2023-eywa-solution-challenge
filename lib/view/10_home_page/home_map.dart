@@ -14,6 +14,7 @@ import 'package:get/get.dart';
 Widget homeMap(BuildContext context) {
   return Positioned(
     child: Obx(() => CustomGoogleMapMarkerBuilder(
+      screenshotDelay: Duration(milliseconds: 3000),
       customMarkers: List<MarkerData>.from(Get.find<HomePageController>().reports.map((e) {
         return MarkerData(
           marker: Marker(
