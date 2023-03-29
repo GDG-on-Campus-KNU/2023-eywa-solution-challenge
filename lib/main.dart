@@ -6,6 +6,7 @@ import 'package:eywa_client/view_model/home_page_controller.dart';
 import 'package:eywa_client/view_model/search_page_view_controller.dart';
 import 'package:eywa_client/view_model/user_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,6 +26,7 @@ class Eywa extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       builder: (context, child) {
+        SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
         return GetMaterialApp(
           title: 'Eywa',
           debugShowCheckedModeBanner: false,
