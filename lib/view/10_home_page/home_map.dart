@@ -18,62 +18,63 @@ Widget homeMap(BuildContext context) {
       customMarkers: List<MarkerData>.from(Get.find<HomePageController>().reports.map((e) {
         return MarkerData(
           marker: Marker(
-            markerId: MarkerId(e.reportId.toString()),
-            position: e.registerInfo.coor,
-            onTap: (){
-              bool ifPlant = false;
-              Get.find<FieldGuidePageController>().plantElements.forEach((element) {
-                if(element.id == e.registerInfo.dictionaryId){
-                  ifPlant = true;
-                }
-              });
+              markerId: MarkerId(e.reportId.toString()),
+              position: e.registerInfo.coor,
+              onTap: (){
+                bool ifPlant = false;
+                Get.find<FieldGuidePageController>().plantElements.forEach((element) {
+                  if(element.id == e.registerInfo.dictionaryId){
+                    ifPlant = true;
+                  }
+                });
 
-              if(ifPlant){
-                FieldGuideElementPlant element = Get.find<FieldGuidePageController>().plantElements.firstWhere((element) => element.id == e.registerInfo.dictionaryId);
-                Get.to(DetailPlant(element: element, imagePath: e.imagePath,), opaque: false, transition: Transition.downToUp);
+                if(ifPlant){
+                  FieldGuideElementPlant element = Get.find<FieldGuidePageController>().plantElements.firstWhere((element) => element.id == e.registerInfo.dictionaryId);
+                  Get.to(DetailPlant(element: element, imagePath: e.imagePath,), opaque: false, transition: Transition.downToUp);
+                }
+                else{
+                  FieldGuideElementAnimal element = Get.find<FieldGuidePageController>().animalElements.firstWhere((element) => element.id == e.registerInfo.dictionaryId);
+                  Get.to(DetailAnimal(element: element, imagePath: e.imagePath,), opaque: false, transition: Transition.downToUp);
+                }
               }
-              else{
-                FieldGuideElementAnimal element = Get.find<FieldGuidePageController>().animalElements.firstWhere((element) => element.id == e.registerInfo.dictionaryId);
-                Get.to(DetailAnimal(element: element, imagePath: e.imagePath,), opaque: false, transition: Transition.downToUp);
-              }
-            }
           ),
           child: Stack(
-            alignment: Alignment.center,
-            children:[
-              Positioned(
-                child: Image.asset("assets/icons/marker.png", width: 49.w,),
-              ),
-              Positioned(
-                top: 2.w,
-                child: Container(
-                  width: 45.w,
-                  height: 45.w,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(50.r),
-                    child: CachedNetworkImage(
-                      placeholder: (context, url) => Container(
-                        child: Container(
-                          width: 10.w,
-                          height: 10.w,
-                          color: Colors.transparent,
-                          alignment: Alignment.center,
-                          child: CircularProgressIndicator(
+              alignment: Alignment.center,
+              children:[
+                Positioned(
+                  child: Image.asset("assets/icons/marker.png", width: 49.w,),
+                ),
+                Positioned(
+                    top: 2.w,
+                    child: Container(
+                      width: 45.w,
+                      height: 45.w,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(50.r),
+                        // child: Image.network(e.imagePath, fit: BoxFit.cover,),
+                        child: CachedNetworkImage(
+                          placeholder: (context, url) => Container(
+                            child: Container(
+                              width: 10.w,
+                              height: 10.w,
+                              color: Colors.transparent,
+                              alignment: Alignment.center,
+                              child: CircularProgressIndicator(
+                                color: context.theme.primaryColorDark,
+                              ),
+                            ),
+                          ),
+                          errorWidget: (context, url, error) => Icon(
+                            Icons.error,
                             color: context.theme.primaryColorDark,
                           ),
+                          imageUrl: e.imagePath,
+                          fit: BoxFit.cover,
                         ),
                       ),
-                      errorWidget: (context, url, error) => Icon(
-                        Icons.error,
-                        color: context.theme.primaryColorDark,
-                      ),
-                      imageUrl: e.imagePath,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                )
-              ),
-            ]
+                    )
+                ),
+              ]
           ),
         );
       }).toList()),
@@ -86,29 +87,6 @@ Widget homeMap(BuildContext context) {
             zoom: 15,
           ),
           markers: markers ?? <Marker>{},
-          // markers: Set<Marker>.from(Get.find<HomePageController>().reports.map(
-          //   (e) => Marker(
-          //     markerId: MarkerId(e.reportId.toString()),
-          //     position: e.registerInfo.coor,
-          //     onTap: (){
-          //       bool ifPlant = false;
-          //       Get.find<FieldGuidePageController>().plantElements.forEach((element) {
-          //         if(element.id == e.registerInfo.dictionaryId){
-          //           ifPlant = true;
-          //         }
-          //       });
-          //
-          //       if(ifPlant){
-          //         FieldGuideElementPlant element = Get.find<FieldGuidePageController>().plantElements.firstWhere((element) => element.id == e.registerInfo.dictionaryId);
-          //         Get.to(DetailPlant(element: element, imagePath: e.imagePath,), opaque: false);
-          //       }
-          //       else{
-          //         FieldGuideElementAnimal element = Get.find<FieldGuidePageController>().animalElements.firstWhere((element) => element.id == e.registerInfo.dictionaryId);
-          //         Get.to(DetailAnimal(element: element, imagePath: e.imagePath,), opaque: false);
-          //       }
-          //     }
-          //   )
-          // ),)
         );
       }
     )),

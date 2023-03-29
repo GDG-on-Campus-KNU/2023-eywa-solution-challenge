@@ -4,7 +4,6 @@ import 'package:eywa_client/model/report.dart';
 import 'package:eywa_client/model/service/alien_species_descriminate.dart';
 import 'package:eywa_client/model/service/take_photo_camera.dart';
 import 'package:eywa_client/view_model/user_controller.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
