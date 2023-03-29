@@ -50,7 +50,7 @@ Widget _text(BuildContext context) => Container(
         ),
       ),
       Text(
-        "a alien species",
+        "a invasive species",
         style: TextStyle(
           color: context.theme.backgroundColor,
           fontSize: 30.sp,
