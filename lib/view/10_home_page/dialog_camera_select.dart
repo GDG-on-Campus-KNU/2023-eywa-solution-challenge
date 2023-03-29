@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:eywa_client/view_model/search_page_view_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,17 +10,20 @@ class DialogCameraSelect extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Dialog(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      insetPadding: EdgeInsets.zero,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          _background(),
-          _camera(context),
-          _gallery(context),
-        ],
+    return BackdropFilter(
+      filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
+      child: Dialog(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        insetPadding: EdgeInsets.zero,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            _background(),
+            _camera(context),
+            _gallery(context),
+          ],
+        ),
       ),
     );
   }
@@ -77,6 +82,15 @@ Widget _gallery(BuildContext context) => Positioned(
       decoration: BoxDecoration(
         color: context.theme.backgroundColor,
         shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.25),
+            spreadRadius: 2,
+            blurRadius: 7,
+            offset: Offset(0, 4), // changes position of shadow
+          ),
+        ],
+        // border: Border.all(color: context.theme.primaryColor, width: 2.w),
       ),
       alignment: Alignment.center,
       child: Image.asset("assets/icons/gallary.png", width: 30.w,),

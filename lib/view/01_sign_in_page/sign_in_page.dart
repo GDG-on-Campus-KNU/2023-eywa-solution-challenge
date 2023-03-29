@@ -30,7 +30,7 @@ class SignInPage extends StatelessWidget {
       tag: "logo",
       child: Image.asset(
         "assets/images/logo.jpg",
-        width: 221.w,
+        width: 250.w,
       ),
     );
   }

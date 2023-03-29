@@ -53,20 +53,23 @@ Widget _image(String imagePath) => Hero(
   ),
 );
 
-Widget _name(BuildContext context, String name) => FittedBox(
-  child: Text(
-    name,
-    style: TextStyle(
-      color: context.theme.backgroundColor,
-      fontSize: 25.sp,
-      fontWeight: FontWeight.w600,
-      shadows: [
-        Shadow(
-          color: Colors.black.withOpacity(0.25),
-          blurRadius: 7,
-          offset: Offset(0, 4), // changes position of shadow
-        ),
-      ],
+Widget _name(BuildContext context, String name) => Container(
+  width: 269.w,
+  child: FittedBox(
+    child: Text(
+      name,
+      style: TextStyle(
+        color: context.theme.backgroundColor,
+        fontSize: 25.sp,
+        fontWeight: FontWeight.w600,
+        shadows: [
+          Shadow(
+            color: Colors.black.withOpacity(0.25),
+            blurRadius: 7,
+            offset: Offset(0, 4), // changes position of shadow
+          ),
+        ],
+      ),
     ),
   ),
 );
