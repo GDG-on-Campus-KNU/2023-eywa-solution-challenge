@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:eywa_client/view_model/field_guide_page_controller.dart';
 import 'package:eywa_client/view_model/user_controller.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -29,14 +30,18 @@ class Register{
           "Content-Type": "application/json",
         },
         body: jsonEncode({
-          "latitude": register.coor.latitude,
-          "longitude": register.coor.longitude,
+          "latitude": double.parse((register.coor.latitude + 1).toStringAsFixed(6)),
+          "longitude": double.parse(register.coor.longitude.toStringAsFixed(6)),
           "dictionaryId": register.dictionaryId,
         }),
       );
 
+      print("register status : ${response.statusCode}");
+
       switch (response.statusCode) {
         case 200:
+          Get.find<FieldGuidePageController>().plantElements.firstWhereOrNull((element) => element.id == register.dictionaryId)?.registered = true;
+          Get.find<FieldGuidePageController>().animalElements.firstWhereOrNull((element) => element.id == register.dictionaryId)?.registered = true;
           return true;
         case 401:
           apiResponse.apiError = ApiError.fromJson(json.decode(response.body));
