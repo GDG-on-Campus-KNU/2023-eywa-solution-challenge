@@ -1,44 +1,48 @@
 package kr.ac.knu.gdsc.Eywa.member.service;
 
-import kr.ac.knu.gdsc.Eywa.member.controller.LevelService;
-import kr.ac.knu.gdsc.Eywa.member.domain.Level;
+import java.util.Optional;
+import kr.ac.knu.gdsc.Eywa.common.ErrorCode;
+import kr.ac.knu.gdsc.Eywa.level.domain.Level;
+import kr.ac.knu.gdsc.Eywa.level.service.LevelService;
 import kr.ac.knu.gdsc.Eywa.member.domain.Member;
 import kr.ac.knu.gdsc.Eywa.member.respository.MemberRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class MemberService {
-    private final MemberRepository memberRepository;
-    private final LevelService levelService;
+  private final MemberRepository memberRepository;
+  private final LevelService levelService;
 
-    public Member saveMember(Member member) {
-        member.updateLevel(levelService.findLevelByExp(member.getExp()));
-        return memberRepository.save(member);
+  public void saveMember(Member member) {
+    int memberExp = member.getExp();
+    Level updatedLevel = levelService.getLevelBetweenExp(memberExp);
+    member.updateLevel(updatedLevel);
+    memberRepository.save(member);
+  }
+
+  public Optional<Member> getMemberBySub(String sub) {
+    return this.memberRepository.findBySub(sub);
+  }
+
+  public Member getMemberById(Long id) {
+    return this.memberRepository
+        .findById(id)
+        .orElseThrow(() -> new IllegalArgumentException(ErrorCode.MEMBER_NOT_FOUND.getMessage()));
+  }
+
+  public void updateExpOfMember(Member member, int exp) {
+    int maxExp = this.levelService.getMaxExpOfLevel(10);
+
+    // 최대 경험치를 넘지 않도록 경험치 갱신
+    if (member.getExp() + exp < maxExp) {
+      member.addExp(exp);
     }
 
-    public Optional<Member> getMember(OAuth2User oAuth2User) {
-        return memberRepository.findBySub(oAuth2User.getName());
-    }
-
-    public Optional<Member> getMember(Long memberId) {
-        return memberRepository.findById(memberId);
-    }
-
-    public Optional<Member> getMemberBySub(String sub) {
-        return memberRepository.findBySub(sub);
-    }
-
-    public void updateExpById(Long id, int exp) {
-        Member member = memberRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
-        if(member.getExp() + exp <= levelService.findByMaxExpByLevel(10)){
-            member.addExp(exp);
-        }
-        member.updateLevel(levelService.findLevelByExp(member.getExp()));
-        memberRepository.save(member);
-    }
+    // 레벨 갱신
+    Level updatedLevel = this.levelService.getLevelBetweenExp(member.getExp());
+    member.updateLevel(updatedLevel);
+    this.memberRepository.save(member);
+  }
 }
