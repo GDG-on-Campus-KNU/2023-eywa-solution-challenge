@@ -49,7 +49,7 @@ Eywa is only available on Android devices. iOS devices are not supported yet.
 
 ## 📽 Demo Video Link
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DNkR5_yOndk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![Eywa](https://i.imgur.com/Wzr7r4r.png)](https://youtu.be/DNkR5_yOndk)
 
 ## 👥 Team Members
 
