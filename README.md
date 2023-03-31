@@ -4,6 +4,8 @@
 
 Invasive species are a major threat to biodiversity and can cause significant ecological and economic damage by outcompeting native species in new environments. Despite this, there is a widespread lack of awareness among the public about which species are considered invasive and their environmental impacts. This knowledge gap presents a significant challenge to preventing their spread. In addition, insufficient data collection and management of invasive species information further compound this issue, making it difficult to effectively control and manage their populations. Addressing this challenge will require a substantial increase in the dataset to better understand and manage invasive species. To address and solve these problems, we present our solution, **Eywa**.
 
+The title of our project, **Eywa**, is taken from the tree "Eywa" that protects the planet's ecosystem in the movie "Avatar". Taking inspiration from this, we named our project **Eywa** with the intention of making a positive impact on the Earth's ecosystem.
+
 ## 😎 Features
 
 - Field guides: It provides various information such as photos of shape, ecology, and introduction characteristics.
