@@ -1,0 +1,34 @@
+{
+  "id": "18",
+  "korean_name": "\uc544\ub974\ud5e8\ud2f0\ub098 \uac1c\ubbf8",
+  "english_name": "argentine ant",
+  "summary": "The Argentine ant (Linepithema humile, formerly Iridomyrmex humilis) is an ant native to northern Argentina, Uruguay, Paraguay, Bolivia and southern Brazil. It is an invasive species that has been established in many Mediterranean climate areas, inadvertently introduced by humans to many places, including South Africa, New Zealand, Japan, Easter Island, Australia, Europe, Hawaii, and the continental United States.",
+  "kind": "insect",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202103/20210302090549054_thumb.jpg",
+  "shape": "Body length is usually 2.2-2.6mm, male ant 2.8-3.0mm, queen ant 4.5-5.0mm, body color is dark brown, male and queen ants are darker in color than worker ants, body surface is painted on the back, chest and head hairless, antennae 12 segments, prothorax slightly raised",
+  "ecological": {
+    "habitat": null,
+    "lifespan": null,
+    "etc": null
+  },
+  "introduction": {
+    "origin": "South America (Argentina, Uruguay, Paraguay, Brazil)",
+    "period": null,
+    "purpose": null
+  },
+  "distribution": null,
+  "effect": {
+    "ecosystem": "It eats plant nectar, aphid honeydew, and animal carcasses, hunts other insects, and has a symbiotic relationship that protects aphids that damage plants from natural enemies. Damages crop buds, flower buds, flowers, etc., or eats seeds gathered in cabbage, sugarcane, corn, etc.",
+    "entity": null
+  },
+  "regulate": {
+    "past": null,
+    "reason": null,
+    "method": null
+  },
+  "designation": {
+    "domestic": "2020. 6. 1. Designation of management pests by the Agriculture, Forestry and Livestock Quarantine Headquarters 2011. 6. 15.",
+    "overseas": null,
+    "organization": "IUCN malignant invasive alien species"
+  }
+}

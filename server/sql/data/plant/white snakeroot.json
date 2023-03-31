@@ -1,0 +1,30 @@
+{
+  "id": "31",
+  "korean_name": "\uc11c\uc591\ub4f1\uace8\ub098\ubb3c",
+  "english_name": "white snakeroot",
+  "summary": "White snakeroot is a common name for several flowering plants in the aster family, Asteraceae, and may refer to:  Ageratina altissima, native to eastern North America (older name: Eupatorium rugosum) Ayapana triplinervis, native to the tropical Americas",
+  "kind": "plant",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202203/20220323143103368_thumb.jpg",
+  "shape": {
+    "flower": {
+      "description": "Head flowers 7-8 mm in diameter, 15-25 regular flowers. Involucre cylindrical, 4-5.5 mm long, involucral segment arranged in 1 row, narrow oblong shape, hairs on dorsal side. 5 rows at the end of normalization, style of stigma, 2 core rows, exposed outside the corolla.",
+      "color": "White"
+    },
+    "size": "30-130cm",
+    "stem": "Short rhizome, hairs only on top of stem. The plant itself tends to lignify.",
+    "leaf": "Ovoid, 2-10 cm long, 1.5-6 cm wide. Stem apex, acute or circular, leaf edge rough acute, petiole 2-6 cm long.",
+    "fruit": "Achenes 2 mm long, 4-5 angular, black, glossy."
+  },
+  "ecological": {
+    "habitat": {
+      "domestic": "roadside, shade",
+      "overseas": "around the forest, on the roadside"
+    },
+    "growth_period": "perennial",
+    "bloom_period": null
+  },
+  "introduction": {
+    "origin": "eastern North America temperate region",
+    "period": "1961-1980"
+  }
+}

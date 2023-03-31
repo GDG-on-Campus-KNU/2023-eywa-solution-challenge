@@ -1,0 +1,30 @@
+{
+  "id": "32",
+  "korean_name": "\uc560\uae30\uc218\uc601",
+  "english_name": "rumex acetosella",
+  "summary": "Rumex acetosella, commonly known as red sorrel, sheep's sorrel, field sorrel and sour weed, is a species of flowering plant in the buckwheat family Polygonaceae. Native to Eurasia and the British Isles, the plant and its subspecies are common perennial weeds. It has green arrowhead-shaped leaves and red-tinted deeply ridged stems, and it sprouts from an aggressive and spreading rhizome. The flowers emerge from a tall, upright stem. Female flowers are maroon in color.",
+  "kind": "plant",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202302/20230215134527448_thumb.jpg",
+  "shape": {
+    "flower": {
+      "description": "It is unisexual, male flowers have 6 stamens, female flowers have 3 stigmas, and the tip is thinly ground like a tassel. Seeds have three ridges. length 1.5mm",
+      "color": "crimson green"
+    },
+    "size": "15-50cm",
+    "stem": "Propagated by rhizomes, stems are erect and have vertical ridges. very branched",
+    "leaf": "Radical leaves grow in clumps, and the leaves are 3-5 cm long and 1-2 cm wide, spear-shaped. The tip is sharp, and the ear-like protrusions spread to the left and right at the bottom. Cauline leaves are alternate and lanceolate.",
+    "fruit": "Seed ridges 3, 1.5 mm long, light brown."
+  },
+  "ecological": {
+    "habitat": {
+      "domestic": "ranch, roadside",
+      "overseas": "acidic soil"
+    },
+    "growth_period": "perennial",
+    "bloom_period": null
+  },
+  "introduction": {
+    "origin": "europe",
+    "period": "After the opening of the port - 1921"
+  }
+}

@@ -1,0 +1,34 @@
+{
+	"id": "6",
+	"korean_name": "\ubd89\uc740\uadc0\uac70\ubd81",
+	"english_name": "pond slider",
+	"summary": "The pond slider (Trachemys scripta) is a species of common, medium-sized, semiaquatic turtle. Three subspecies are described, the most recognizable of which is the red-eared slider (T. s. elegans), which is popular in the pet trade and has been introduced to other parts of the world by people releasing it to the wild. Hatchling and juvenile pond sliders have a green upper shell (carapace), yellow bottom shell (plastron), and green and yellow stripes and markings on their skin. These patterns and colors in the skin and shell fade with age until the carapace is a muted olive green to brown and the plastron is a dull yellow or darker. Some sliders become almost black with few visible markings. The carapace is oval with a bit of rounding and a central crest with knobs, but these features soften and fade with age, adults being smoother and flatter. For determining an adult slider's sex, males typically have much longer front claws than adult females, while females usually have shorter, more slender tails than males. Their lifespans range from 20 to 50 years.",
+	"kind": "reptile",
+	"image": "https://kias.nie.re.kr/upload_data/cls/202111/20211125112413064_thumb.jpg",
+	"shape": "The color of the carapace changes as the turtle ages, but is usually dark green with yellow stripes. It is characterized by a red pattern right behind the eye, from which the name originates. The lower jaw is rounded, and the hind toes are connected by membranes like other aquatic animals. Young or newly hatched chicks are leafy or vivid green, with a coloration between brown and olive. The chest area is always bright yellow and has an irregular pattern in the center. The head, legs and tail are green with small, irregular yellow lines. The length of the carapace is about 15.6 cm for males and about 20 cm for females. It grows up to 29 cm, but there are large individuals that reach 40 cm or more. Females are usually larger than males, and sex can be identified by the claws. Adult males' front claws grow twice as long as their hind claws or female claws. In the case of the anus, in the case of males, the anus located on the tail is exposed beyond the tip of the carapace, but in the case of females, it cannot escape. Also, the male's tail is thick and long, but the female's is not.",
+	"ecological": {
+		"habitat": "As a species native to the warm climate of the southeastern United States, it lives near water including slow-flowing rivers such as ponds, lakes, swamps, and streams.",
+		"lifespan": "They are omnivores and eat a variety of foods. When they are young, they eat everything from small fish to snails, earthworms, and tadpoles to various vegetables and grasses. In captivity, it eats pork or chicken that people eat.",
+		"etc": "In general, they have a lifespan of 20 to 30 years, and some live for more than 40 years, and the average lifespan in breeding is shorter."
+	},
+	"introduction": {
+		"origin": "USA",
+		"period": "Since the 1970s",
+		"purpose": "Introduced for the purpose of pet use and religious use"
+	},
+	"distribution": "Nationwide, April (puddles, ponds, reservoirs, rivers)",
+	"effect": {
+		"ecosystem": "The age of maturation is low, and the younger the age, the higher the productivity and the negative impact of occupying the ecosystem. They also transmit disease and compete with other turtles for food and breeding space. Red-eared turtles are considered a serious threat to native tortoise species, as they mature faster, are larger, produce more offspring and are more aggressive. And it can carry other diseases and parasites, such as Salmonella, and spread it to other turtles and the environment. In particular, when Salmonella contaminates drinking water, it is highly likely to infect humans.",
+		"entity": "In Australia, breeding populations have been found in New South Wales and Queensland, and separate individuals have been found in the wild in Victoria and western Australia."
+	},
+	"regulate": {
+		"past": "Imports from Europe and Japan have been completely banned, but there is no clear effect yet. The Australian government continues to require experts to manage these tortoises as a priority species and generally requires a national prevention and eradication strategy, including joint education and compliance programs to combat illegal trade, possession and release. In Korea, in December 2001, it was designated as an 'exotic animal and plant endangering the ecosystem' and its import was banned. Currently, research is being conducted in many fields, such as the relationship between red-eared turtles and other species. Eradication work was being carried out periodically in a specific area, but information on the extent of damage caused by ecosystem disturbance to publicity and heterogeneous species was incomplete.",
+		"reason": "Because it shakes the ecosystem food chain, it is necessary to gradually adjust the density.",
+		"method": "net, line, foot"
+	},
+	"designation": {
+		"domestic": "2013. 2. 2. (Announcement on the designation of exotic animals and plants endangering the ecosystem 2001. 12. 24.)",
+		"overseas": "New Zealand, UK, Japan and Globally Threatened Exotic Species (GISD)",
+		"organization": "Listed as one of the world's top 100 invasive alien species by IUCN"
+	}
+}

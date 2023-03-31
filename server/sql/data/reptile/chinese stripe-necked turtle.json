@@ -1,0 +1,34 @@
+{
+  "id": "5",
+  "korean_name": "\uc911\uad6d\uc904\ubb34\ub2ac\ubaa9\uac70\ubd81",
+  "english_name": "chinese stripe-necked turtle",
+  "summary": "The Chinese stripe-necked turtle (Mauremys sinensis) or golden thread turtle, is a species of turtle in the family Geoemydidae. Like many other Geoemydidae, this species hybridizes vigorously with related and not-so-closely related members of its family. It is one of the two most commonly found species used for divination that have been recovered from Shang dynasty sites, despite the Shang capital being over 1000 km north of its modern-day distribution range.",
+  "kind": "reptile",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202111/20211125112914158_thumb.jpg",
+  "shape": "The Chinese striped turtle has a green body, and when it is young, the three-pronged keel forms a clear line on its back. The chest (belly armor) is ivory with black spots on each plate, and when viewed from the bottom, circular patterns are lined up along the edge of the body. The distinct stripes on the neck and legs are the most distinctive external features that distinguish this species from others. The tail tends to be longer compared to other semi-aquatic species, especially in females than in males. The body shape of young individuals is flat, but as they grow, their carapace rises little by little. Based on adult standards, males are 20 cm and females are around 25 cm, which is larger than females.",
+  "ecological": {
+    "habitat": "It lives in lakes, swamps, and rivers with shallow, slow-flowing, soft mud or clay bottoms. They have sensitive skin and are prone to disease if the water quality is poor. In nature, it lives in clean swamps or fresh water, so it is a species that is more sensitive to water temperature and water quality than other semi-aquatic turtles.",
+    "lifespan": "It is mainly herbivorous, but occasionally carnivorous.",
+    "etc": null
+  },
+  "introduction": {
+    "origin": "Taiwan, China, Laos, Vietnam.",
+    "period": "Introduction date unconfirmed",
+    "purpose": "Imported for release and pets on Jeongwol Daeboreum"
+  },
+  "distribution": "It has been observed in lagoons on the East Coast.",
+  "effect": {
+    "ecosystem": "Korea, Japan: Ecosystem disturbance due to food competition and mating with native tortoise species. The Chinese striped-necked turtle has been designated as an internationally endangered species (CITES Appendices III) in China and Taiwan since the end of 2005.",
+    "entity": null
+  },
+  "regulate": {
+    "past": null,
+    "reason": null,
+    "method": null
+  },
+  "designation": {
+    "domestic": "Announcement on designation of organisms disturbing ecosystems 2020. 3. 30.",
+    "overseas": "japan",
+    "organization": null
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "21",
+  "korean_name": "\uac00\uc2dc\uc0c1\ucd94",
+  "english_name": "prickly lettuce",
+  "summary": "Lactuca serriola, also called prickly lettuce, milk thistle (not to be confused with Silybum marianum, also called milk thistle), compass plant, and scarole, is an annual or biennial plant in the tribe Cichorieae within the family Asteraceae. It has a slightly fetid odor and is commonly considered a weed of orchards, roadsides and field crops.  It is the closest wild relative of cultivated lettuce (Lactuca sativa L.). Lactuca serriola is known as the compass plant because in the sun the upper leaves twist round to hold their margins upright.Lactuca serriola is native to Europe, Asia, and north Africa, and has become naturalized elsewhere.",
+  "kind": "plant",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202203/20220321103925221_thumb.jpg",
+  "shape": {
+    "flower": {
+      "description": "The head flower is about 1.2 cm in diameter and consists of only 6-12 snow flowers, and the gun is cylindrical and the height is 6-9 mm. There are 5 teeth at the tip of snow shoes.",
+      "color": "yellow"
+    },
+    "size": "20-80cm",
+    "stem": "It is erect, branched at the upper part, and has spine-like hairs at the lower part.",
+    "leaf": "Oblong, 10-20cm long, 2-7cm wide, sharp head, easer, part of stem wrapped around. Scattered or pinnate, marginal spines, dorsal midrib spines.",
+    "fruit": "The fruit is obovate, 7mm long, light brown, and has a beak-shaped projection with a length of 4-8mm. The cap is white."
+  },
+  "ecological": {
+    "habitat": {
+      "domestic": "roadside, paddock, landfill",
+      "overseas": "farmland, orchard"
+    },
+    "growth_period": "1-2 year old",
+    "bloom_period": null
+  },
+  "introduction": {
+    "origin": "Eurasia, North Africa",
+    "period": "Before 1980"
+  }
+}

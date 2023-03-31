@@ -1,0 +1,34 @@
+{
+  "id": "13",
+  "korean_name": "\uaf43\ub9e4\ubbf8",
+  "english_name": "spotted lanternfly",
+  "summary": "The spotted lanternfly (Lycorma delicatula) is a planthopper indigenous to parts of China and Vietnam. It has spread invasively to Japan, South Korea, and the United States. Its preferred host is tree of heaven (Ailanthus altissima), but it infests economically significant plants including soybean, grapes, stone fruits, and Malus spp. In its native habitat, L. delicatula populations are kept in check by parasitic wasps. The spotted lanternfly's life cycle is often centered on its preferred host Ailanthus altissima but L. delicatula can associate with more than 173 plants. Early life stages (instars) of the spotted lanternfly are characterized by spotted black and white nymphs that develop a red pigmentation and wings as they mature. Early life instars display a large host range that narrows with maturation. Adult spotted lanternflies display a black head, grey wings, and red hind wings. Adults do not display any specialized feeding associations with herbaceous plants but have been known to cause extensive damage to crops and ornamental plants. The piercing wounds caused by their mouthparts and the honeydew waste they excrete have been found to be significantly detrimental to the health of host plants. Spotted Lanternflies lay egg masses containing 30-50 eggs, often covered with a grayish mud-like coating. In temperate climates, these egg masses overwinter.The species was accidentally introduced into South Korea in 2006 and Japan in 2009, and has since been considered a pest. In September 2014, L. delicatula was first recorded in the United States, and as of 2022, it is an invasive species in much of Northeastern United States and is rapidly spreading south and west. L. delicatula's egg masses have been found to be the primary vector of spread, with Ailanthus altissima populations seen as a risk factor for further infestation globally. Ongoing pest control efforts have sought to limit population growth, due to the threat L. delicatula poses to global agricultural industries.",
+  "kind": "insect",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202111/20211125140710396_thumb.jpg",
+  "shape": "Eggs are oval-shaped and brown, and are laid in average 40 to 50 lumps. It goes through the nymph process of the 4th instar and develops into an adult. The body color of the 2nd and 3rd instars has white dots scattered on a black background, and the body color of the 4th instar has white dots scattered on a red background. Adults have an average body length of 15 to 20 mm and an average wingspan of 35 to 45 mm. 1/2 of the hind wing has black spots and black brown on a red background. Females have a red ovipositor at the end of the abdomen.",
+  "ecological": {
+    "habitat": null,
+    "lifespan": null,
+    "etc": null
+  },
+  "introduction": {
+    "origin": "Hot regions of southern China and Southeast Asia",
+    "period": null,
+    "purpose": "unintentional"
+  },
+  "distribution": "It was first reported in 1932, but it disappeared without being able to settle in Korea, and it is judged to have re-invaded recently, and damage was reported in 2006. Currently, it has occurred in Seoul, Incheon, Gyeonggi, Cheongju in Chungcheongbuk-do, Cheonan in Chungcheongnam-do, Gongju, Sejong, Jeongeup in Jeonbuk, and Sangju in Gyeongbuk.",
+  "effect": {
+    "ecosystem": "It occurred in Cheonan, a large-scale grape-growing complex, and in grape-growing areas such as Gyeongsan, Yeongcheon, Okcheon, and Cheongju. In addition to vineyards, it is known to damage fruit trees such as plums, peaches, apples, plums, and kiwis, but there has been no case that it has spread to the extent of a problem. As a damage type, it directly sucks vines, etc. to slow down growth, or causes sooty disease by nectar secreted by flower cicadas to wither nearby plants and hinder metabolic activity by inhibiting photosynthesis of leaves. In addition, it inhibits ripening of fruit and infects disease by making wounds. Soot disease on the surface of the fruit damages the value of the product and increases economic damage.",
+    "entity": "It damages fruit trees such as grapes, plums, peaches, apples, plums, and kiwi."
+  },
+  "regulate": {
+    "past": null,
+    "reason": null,
+    "method": "In limited cases, intensive elimination can be achieved by trapping or destroying the eggs. In large-scale vineyards, insecticides, etc. are sprayed to manage pests in cultivated fields or orchards, but it is difficult to eradicate cicadas living in neighboring houses or mountains, as they fly back. Insecticides are also sprayed in terms of managing pests on roadside trees, but in any case, care must be taken to prevent pesticides from being released into nature indiscriminately. In cases where it occurs in the vicinity of a mountain or along a river, it is better to avoid spraying pesticides and focus on physical removal. In mountainous valleys, the growth of terrestrial insects is greatly restricted by the spraying of pesticides, and it can also damage fish growth, so it is necessary to pay attention to changes in the insect fauna in the natural state."
+  },
+  "designation": {
+    "domestic": "2013. 2. 2. (Announcement on designation of organisms disturbing ecosystems 2012. 12. 31.)",
+    "overseas": null,
+    "organization": null
+  }
+}

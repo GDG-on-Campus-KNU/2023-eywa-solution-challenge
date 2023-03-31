@@ -1,0 +1,34 @@
+{
+  "id": "3",
+  "korean_name": "\ub9ac\ubc84\ucfe0\ud130",
+  "english_name": "river cooter",
+  "summary": "The river cooter (Pseudemys concinna) is a species of freshwater turtle in the family Emydidae. The species is native to the central and eastern United States, but has been introduced into parts of California, Washington, and British Columbia.",
+  "kind": "reptile",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202111/20211125110805488_thumb.jpg",
+  "shape": "The carapace can be as large as 32cm for males and 40cm for females. Sexual maturity is 19cm in length at about 6 years for males and 24cm for females at 13 to 24 years, depending on the place.",
+  "ecological": {
+    "habitat": "It mainly inhabits rivers rich in aquatic plants in medium or larger rivers, and is also found in hohuna and swamps.",
+    "lifespan": "River cooter supplies nutrients to aquatic plants and feeds mainly on aquatic plants, playing an important role in the ecosystem through this cycle. It has also been known to consume terrestrial plants, insects, worms, and dead fish or fish that grow along the margins of some rivers.",
+    "etc": "The average life span is 20 to 30 years, and can live up to 40 years."
+  },
+  "introduction": {
+    "origin": "florida usa",
+    "period": "Introduction date unconfirmed",
+    "purpose": "Introduction as an exhibition animal or companion animal"
+  },
+  "distribution": null,
+  "effect": {
+    "ecosystem": "When introduced into the natural ecosystem, it competes with other turtles and can cause ecosystem disturbance.",
+    "entity": null
+  },
+  "regulate": {
+    "past": null,
+    "reason": null,
+    "method": null
+  },
+  "designation": {
+    "domestic": "Announcement on designation of organisms disturbing ecosystems 2020. 3. 30.",
+    "overseas": "japan",
+    "organization": null
+  }
+}

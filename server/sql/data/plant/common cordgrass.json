@@ -1,0 +1,30 @@
+{
+  "id": "34",
+  "korean_name": "\uc601\uad6d\uac2f\ub048\ud480",
+  "english_name": "common cordgrass",
+  "summary": "Sporobolus anglicus (common cordgrass) is a species of cordgrass that originated in southern England in about 1870 and is a neonative species in Britain. It was reclassified as Sporobolus anglicus after a taxonomic revision in 2014, but Spartina anglica is still in common usage.:\u200a1119\u200a It is an allotetraploid species derived from the hybrid Sporobolus \u00d7 townsendii, which arose when the European native cordgrass Sporobolus maritimus (Small Cordgrass) hybridised with the introduced American Sporobolus alterniflorus (Smooth Cordgrass).It is a herbaceous perennial plant growing 0.4\u20131.3 metres (1\u20134 ft) tall, yellowish green in spring and summer, and turning light brown in autumn and winter. The leaves are 20\u201360 centimetres (8\u201324 in) long, and 1.5 centimetres (1\u20442 in) broad at the base, tapering to a point. It produces flowers and seeds on only one side of the stalk. The flowers are a yellowish-green, turning brown by the winter.",
+  "kind": "plant",
+  "image": "https://kias.nie.re.kr/upload_data/cls/202112/20211201161827564_thumb.jpg",
+  "shape": {
+    "flower": {
+      "description": "The ivory-colored anther sac ruptures and yellow anthers protrude. The length of the operating table is 7-9.5 mm. The dark brown brush-shaped pistil is 3-7\u339c and the style is 3-5.5\u339c. The keel plate and body of the glumes are densely grown with 0.1-0.3 mm of downy hair. The downy hair at the base of the glumes is 0.5-0.6mm longer than the downy hair on the body. The tip of the glumes is pointed, but there are no awns on the glumes.",
+      "color": null
+    },
+    "size": "130-190\u339d",
+    "stem": "Stem hollow, nodule present. Each segment is about 4.9-5.4 cm long. Nodes are not visible from the outside",
+    "leaf": "Bright green, leaf width 1-1.5 cm, length 40-50 cm, ligule 1.5-2.0 mm long, very densely grown in the form of a brush, not visible from the outside.",
+    "fruit": "Seeds are 5-8 mm long and 0.8-1 mm wide."
+  },
+  "ecological": {
+    "habitat": {
+      "domestic": null,
+      "overseas": null
+    },
+    "growth_period": "perennial",
+    "bloom_period": null
+  },
+  "introduction": {
+    "origin": "uk",
+    "period": null
+  }
+}
