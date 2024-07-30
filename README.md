@@ -47,39 +47,25 @@ Eywa is only available on Android devices. iOS devices are not supported yet.
 
 ## 🛠 Project Architecture
 
-![architecture](https://i.imgur.com/4HuYwav.png)
+![](https://github.com/user-attachments/assets/d6b683d8-a282-4548-9cb6-f0a2685cb3f9)
 
 ## 📽 Demo Video Link
 
-[![Eywa](https://i.imgur.com/Wzr7r4r.png)](https://youtu.be/DNkR5_yOndk)
+[![](https://github.com/user-attachments/assets/ec5732af-6708-4659-a9ca-87397cb7710a)](https://youtu.be/DNkR5_yOndk)
 
 ## 👥 Team Members
 
 <table>
   <tr>
-    <td><a href="https://github.com/HyeonJunSong">Hyeonjun Song</a></td>
-    <td><a href="https://github.com/scv1702">Changyu Shin</td>
-    <td><a href="https://github.com/edengloria">DongHa Shin</td>
-    <td><a href="https://github.com/tigermint">Seungyeol Lee</td>
-  </tr>
-  <tr>
     <td>Front-end</td>
     <td>Back-end</td>
-    <td>AI</td>
     <td>Back-end</td>
+    <td>AI</td>
   </tr>
   <tr>
-    <td>
-      <img style="border: 0px solid black !important; border-radius:50%;" src="https://i.imgur.com/ofkREWh.jpeg" width="180px" height = "180px" />
-   </td>
-    <td>
-     <img style="border: 0px solid black !important; border-radius:50%; " src="https://i.imgur.com/GebFhWN.jpeg" width="180px" height = "180px" />
-   </td>
-    <td>
-     <img style="border: 0px solid black !important; border-radius:50%; " src="https://i.imgur.com/lqqlqwM.jpeg" width="180px" height = "180px" />
-   </td>
-     <td>
-     <img style="border: 0px solid black !important; border-radius:50%; " src="https://i.imgur.com/IlrLGJL.jpeg" width="180px" height = "180px" />
-   </td>
+    <td><a href="https://github.com/HyeonJunSong">Hyeonjun Song</a></td>
+    <td><a href="https://github.com/scv1702">Changyu Shin</td>
+    <td><a href="https://github.com/tigermint">Seungyeol Lee</td>
+    <td><a href="https://github.com/edengloria">DongHa Shin</td>
   </tr>
 </table>
